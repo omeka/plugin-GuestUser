@@ -1,0 +1,45 @@
+div#guest-user-dropdown-bar {
+    width: 150px;
+    border: 1px solid black;
+    position: relative;
+    right: 120px;
+    margin: 0px;
+    display: none;
+}
+
+span#guest-user-user {
+
+
+}
+
+span#guest-user-login {
+
+}
+
+div#guest-user-bar {
+    float: right;
+    margin: 3px 15px 3px 3px;
+    width: 50px;
+}
+
+div#guest-user-bar > p {
+    margin-bottom: 0px;
+}
+
+div.guest-user-widget {
+    border: 1px solid black;
+    margin: 3px 12px 3px 24px;
+    padding: 9px;
+    width: 210px;
+    height: 200px;
+    overflow: auto;
+    float: left;
+}
+
+div.guest-user-widget-odd {
+    clear:right;
+}
+
+div.guest-user-widget-even {
+
+}
