@@ -7,7 +7,8 @@ class GuestUser extends Omeka_Plugin_Abstract
         'public_theme_page_header',
         'public_theme_header',
         'config',
-        'config_form'
+        'config_form',
+        'before_save_form_user'
     );
 
     protected $_filters = array(
@@ -94,6 +95,17 @@ class GuestUser extends Omeka_Plugin_Abstract
         echo $html;
     }
 
+    public function hookBeforeSaveFormUser($record, $post)
+    {
+        if (! $record->active && $post['active'] == 1) {
+            try {
+                $this->sendMadeActiveEmail($record);
+            } catch (Exception $e) {
+                _log($e);
+            }
+        }
+    }
+
     public function filterGuestUserLinks($links)
     {
         $url = uri('guest-user/user/me');
@@ -113,6 +125,23 @@ class GuestUser extends Omeka_Plugin_Abstract
         $html .= "</ul>";
         $widgets[] = $html;
         return $widgets;
+    }
+
+    private function sendMadeActiveEmail($record)
+    {
+        $entity = $record->getEntity();
+        $siteTitle  = get_option('site_title');
+        $subject = "Your $siteTitle account";
+        $body = "An admin has made your account active. You can now log in with your password";
+        $from = get_option('administrator_email');
+        $mail = new Zend_Mail();
+        $mail->setBodyText($body);
+        $mail->setFrom($from, "$siteTitle Administrator");
+        $mail->addTo($entity->email, $entity->getName());
+        $mail->setSubject($subject);
+        $mail->addHeader('X-Mailer', 'PHP/' . phpversion());
+        $mail->send();
+        _log($body);
     }
 }
 

@@ -166,7 +166,12 @@ class GuestUser_UserController extends Omeka_Controller_Action
         }
         $subject = "Registration for $siteTitle";
         $mail = $this->getMail($user->getEntity(), $body, $subject);
-        $mail->send();
+        try {
+            $mail->send();
+        } catch (Exception $e) {
+            _log($body);
+        }
+
     }
 
     protected function sendConfirmationEmail($user, $token)
@@ -180,7 +185,11 @@ class GuestUser_UserController extends Omeka_Controller_Action
         $body .= "\n\n<a href='$url'>$url</a>";
 
         $mail = $this->getMail($user->getEntity(), $body, $subject);
-        $mail->send();
+        try {
+            $mail->send();
+        } catch (Exception $e) {
+            _log($body);
+        }
     }
 
     protected function sendAdminNewConfirmedUserEmail($user)
@@ -193,7 +202,11 @@ class GuestUser_UserController extends Omeka_Controller_Action
         $mail = $this->getMail($user->getEntity(), $body, $subject);
         $mail->clearRecipients();
         $mail->addTo(get_option('administrator_email'), "$siteTitle Administrator");
-        $mail->send();
+         try {
+            $mail->send();
+        } catch (Exception $e) {
+            _log($body);
+        }
     }
 
     protected function getMail($entity, $body, $subject)
