@@ -6,6 +6,7 @@ class GuestUser extends Omeka_Plugin_Abstract
         'define_acl',
         'public_theme_page_header',
         'public_theme_header',
+        'admin_theme_header',
         'config',
         'config_form',
         'before_save_form_user'
@@ -57,6 +58,17 @@ class GuestUser extends Omeka_Plugin_Abstract
         include 'config_form.php';
     }
 
+    public function hookAdminThemeHeader($request)
+    {
+        if($request->getParam('name') == 'GuestUser') {
+            queue_js('tiny_mce/tiny_mce');
+            $js = "if (typeof(Omeka) !== 'undefined'){
+                Omeka.wysiwyg();
+            };";
+            queue_js_string($js);
+        }
+
+    }
     public function hookPublicThemeHeader($request)
     {
 
@@ -97,7 +109,7 @@ class GuestUser extends Omeka_Plugin_Abstract
 
     public function hookBeforeSaveFormUser($record, $post)
     {
-        if (! $record->active && $post['active'] == 1) {
+        if (! $record->active && ($record->role == 'guest') && ($post['active'] == 1)) {
             try {
                 $this->sendMadeActiveEmail($record);
             } catch (Exception $e) {
