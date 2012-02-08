@@ -87,7 +87,11 @@ class GuestUser extends Omeka_Plugin_Abstract
 
             $links = array();
             $links = apply_filters('guest_user_links', $links);
-            $html.= "<p id='guest-user-user'>{$user->username}</p>";
+            $userText = get_option('guest_user_user_text');
+            if($userText == '') {
+                $userText = $user->username;
+            }
+            $html.= "<p id='guest-user-user'>$userText</p>";
             $html .= "<div id='guest-user-dropdown-bar'>";
             $html .= "<ul>";
             foreach($links as $link) {
@@ -99,8 +103,8 @@ class GuestUser extends Omeka_Plugin_Abstract
         } else {
             $registerUrl = uri('guest-user/user/register');
             $loginUrl = uri('users/login');
-            $html.= "<p><span id='guest-user-login'><a href='$loginUrl'>Login</a></span>";
-            $html .= " / <span id='guest-user-register'><a href='$registerUrl'>Register</a></span></p>";
+            $html.= "<p><span id='guest-user-login'><a href='$loginUrl'>" . get_option('guest_user_login_text') . "</a></span>";
+            $html .= " / <span id='guest-user-register'><a href='$registerUrl'>" . get_option('guest_user_register_text') . "</a></span></p>";
         }
         $html .= "</div>";
         echo $html;
