@@ -38,6 +38,7 @@ div.guest-user-widget {
     height: 200px;
     overflow: auto;
     float: left;
+    background-color: white;
 }
 
 div.guest-user-widget-odd {

@@ -74,11 +74,14 @@ class GuestUser_UserController extends Omeka_Controller_Action
                 $token = $this->createToken($user);
                 $this->sendConfirmationEmail($user, $token); //confirms that they registration request is legit
                 if($openRegistration) {
-                    $this->flashSuccess('Please check your email for a confirmation message before trying to sign in.');
-                    $this->redirect->gotoUrl('/guest-users/users/me');
-                    } else {
-                    $this->flashSuccess('Please check your email for a confirmation message before trying to sign in.');
-                    $this->redirect->gotoUrl('/users/login');
+                    $message = "Please check your email for a confirmation message before trying to sign in. ";
+                    $message .= "Once you have confirmed your request, you will be able to log right in.";
+                    $this->flashSuccess($message);
+                } else {
+                    $message = "Please check your email for a confirmation message. ";
+                    $message .= "Once you have confirmed your request and an administrator activates your account, ";
+                    $message .= "you will be able to log right in.";
+                    $this->flashSuccess($message);
                 }
             }
         } catch (Omeka_Validator_Exception $e) {
