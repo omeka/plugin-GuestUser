@@ -31,11 +31,11 @@ class GuestUser extends Omeka_Plugin_Abstract
                   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
                   `token` text COLLATE utf8_unicode_ci NOT NULL,
                   `user_id` int NOT NULL,
-                  `email` tinytext COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `email` tinytext COLLATE utf8_unicode_ci NOT NULL,
                   `created` datetime NOT NULL,
                   `confirmed` tinyint(1) DEFAULT '0',
                   PRIMARY KEY (`id`)
-                ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+                ) ENGINE=MyISAM CHARSET=utf8 COLLATE=utf8_unicode_ci;
                 ";
 
         $db->exec($sql);
@@ -60,7 +60,7 @@ class GuestUser extends Omeka_Plugin_Abstract
 
     public function hookAdminThemeHeader($request)
     {
-        if($request->getParam('name') == 'GuestUser') {
+        if($request->getControllerName() == 'plugins' && $request->getParam('name') == 'GuestUser') {
             queue_js('tiny_mce/tiny_mce');
             $js = "if (typeof(Omeka) !== 'undefined'){
                 Omeka.wysiwyg();
@@ -71,7 +71,6 @@ class GuestUser extends Omeka_Plugin_Abstract
     }
     public function hookPublicThemeHeader($request)
     {
-
         queue_css('guest-user');
         queue_js('guest-user');
         if($request->getModuleName() == 'guest-user') {

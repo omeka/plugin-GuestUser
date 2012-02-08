@@ -13,9 +13,8 @@ class GuestUser_ControllerPlugin extends Zend_Controller_Plugin_Abstract
     protected function _preventAdminAccess($request)
     {
         $user = Omeka_Context::getInstance()->getCurrentUser();
-        // If we're logged in, then prevent access to the admin for MyOmeka users
+        // If we're logged in, then prevent access to the admin for guest users
         if ($user && $user->role == 'guest' && is_admin_theme()) {
-            //$url = uri('guest-user/user/me');
             $this->getRedirect()->gotoUrl(WEB_ROOT . '/guest-user/user/me');
         }
     }
