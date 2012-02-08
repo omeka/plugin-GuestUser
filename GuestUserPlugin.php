@@ -39,6 +39,9 @@ class GuestUser extends Omeka_Plugin_Abstract
                 ";
 
         $db->exec($sql);
+        set_option('guest_users_logged_in_text', '');
+        set_option('guest_users_login_text', 'Login');
+        set_option('guest_users_registration_text', 'Register');
     }
 
 
@@ -49,8 +52,11 @@ class GuestUser extends Omeka_Plugin_Abstract
 
     public function hookConfig()
     {
-        set_option('guest_users_open', $_POST['guest_users_open']);
-        set_option('guest_users_capabilities', $_POST['guest_users_capabilities']);
+        set_option('guest_user_open', $_POST['guest_user_open']);
+        set_option('guest_user_capabilities', $_POST['guest_user_capabilities']);
+        set_option('guest_user_logged_in_text', $_POST['guest_user_logged_in_text']);
+        set_option('guest_user_login_text', $_POST['guest_user_login_text']);
+        set_option('guest_user_register_text', $_POST['guest_user_register_text']);
     }
 
     public function hookConfigForm()
@@ -87,7 +93,7 @@ class GuestUser extends Omeka_Plugin_Abstract
 
             $links = array();
             $links = apply_filters('guest_user_links', $links);
-            $userText = get_option('guest_user_user_text');
+            $userText = get_option('guest_user_logged_in_text');
             if($userText == '') {
                 $userText = $user->username;
             }
