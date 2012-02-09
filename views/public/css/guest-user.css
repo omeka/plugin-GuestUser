@@ -1,11 +1,12 @@
 div#guest-user-dropdown-bar {
-    width: 150px;
+    width: 200px;
     border: 1px solid black;
     position: absolute;
     right: 0px;
     top: -3;
     background-color: white;
     margin: 0px;
+    padding: 3px;
     display: none;
 
 }

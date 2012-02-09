@@ -52,11 +52,9 @@ class GuestUser extends Omeka_Plugin_Abstract
 
     public function hookConfig()
     {
-        set_option('guest_user_open', $_POST['guest_user_open']);
-        set_option('guest_user_capabilities', $_POST['guest_user_capabilities']);
-        set_option('guest_user_logged_in_text', $_POST['guest_user_logged_in_text']);
-        set_option('guest_user_login_text', $_POST['guest_user_login_text']);
-        set_option('guest_user_register_text', $_POST['guest_user_register_text']);
+        foreach($_POST as $option=>$value) {
+            set_option($option, $value);
+        }
     }
 
     public function hookConfigForm()
@@ -111,6 +109,12 @@ class GuestUser extends Omeka_Plugin_Abstract
             $loginUrl = uri('users/login');
             $html.= "<p><span id='guest-user-login'><a href='$loginUrl'>" . get_option('guest_user_login_text') . "</a></span>";
             $html .= " / <span id='guest-user-register'><a href='$registerUrl'>" . get_option('guest_user_register_text') . "</a></span></p>";
+            $shortCapabilities = get_option('guest_user_short_capabilities');
+            if($shortCapabilities != '') {
+                $html .= "<div id='guest-user-dropdown-bar'>";
+                $html .= $shortCapabilities;
+                $html .= "</div>";
+            }
         }
         $html .= "</div>";
         echo $html;
