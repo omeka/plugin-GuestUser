@@ -4,7 +4,7 @@
         As you enable and configure plugins that make use of the guest user, please give them guidance
         about what they can and cannot do.
         </p>
-        <textarea name="guest_users_capabilities" ><?php echo get_option('guest_user_capabilities'); ?></textarea>
+        <textarea name="guest_user_capabilities" ><?php echo get_option('guest_user_capabilities'); ?></textarea>
         <br/>
         <br/>
         <p class='explanation'>Add a shorter version to use as a dropdown from the user bar.
@@ -25,6 +25,13 @@
         <input name="guest_user_open" type="checkbox" <?php if($checked) {echo "checked='checked'"; } ?>  />
         <br/>
         <br/>
+
+        <label for="guest_user_dashboard_label">Dashboard label</label>
+        <input name="guest_user_dashboard_label" type="text" value="<?php echo get_option('guest_user_dashboard_label'); ?>" />
+        <p class='explanation'>The text to use for the label on the user's dashboard</p>
+        <br/>
+        <br/>
+
         <label for="guest_user_login_text">Login link text</label>
         <input name="guest_user_login_text" type="text" value="<?php echo get_option('guest_user_login_text'); ?>" />
         <p class='explanation'>The text to use for the 'Login' link in the user bar.</p>

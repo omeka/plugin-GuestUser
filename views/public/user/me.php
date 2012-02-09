@@ -1,6 +1,6 @@
 <?php
 $user = current_user();
-$pageTitle =  ucfirst($user->username) . ' Dashboard';
+$pageTitle =  get_option('guest_user_dashboard_label');
 head(array('title' => $pageTitle));
 ?>
 <h1><?php echo $pageTitle; ?></h1>
@@ -10,7 +10,7 @@ head(array('title' => $pageTitle));
 <p>Browse and manage your work here.</p>
 <?php foreach($widgets as $index=>$widget): ?>
 <div class='guest-user-widget <?php if(is_odd($index)): ?>guest-user-widget-odd <?php else:?>guest-user-widget-even<?php endif;?>'>
-<?php echo $widget; ?>
+<?php echo guest_user_widget($widget); ?>
 </div>
 <?php endforeach; ?>
 

@@ -1,3 +1,7 @@
+h2.guest-user-widget-label {
+    border-bottom: 1px solid;
+}
+
 div#guest-user-dropdown-bar {
     width: 200px;
     border: 1px solid black;

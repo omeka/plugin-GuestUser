@@ -143,12 +143,13 @@ class GuestUser extends Omeka_Plugin_Abstract
 
     public function filterGuestUserWidgets($widgets)
     {
-        $html = "<h2>My Account</h2>";
+        $widget = array('label'=>'My Account');
         $passwordUrl = uri('guest-user/user/change-password');
         $html .= "<ul>";
         $html .= "<li><a href='$passwordUrl'>Change Password</a></li>";
         $html .= "</ul>";
-        $widgets[] = $html;
+        $widget['content'] = $html;
+        $widgets[] = $widget;
         return $widgets;
     }
 
