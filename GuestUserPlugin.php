@@ -38,7 +38,7 @@ class GuestUser extends Omeka_Plugin_Abstract
                 ) ENGINE=MyISAM CHARSET=utf8 COLLATE=utf8_unicode_ci;
                 ";
 
-        $db->exec($sql);
+        $db->query($sql);
         set_option('guest_users_logged_in_text', '');
         set_option('guest_users_login_text', 'Login');
         set_option('guest_users_registration_text', 'Register');
