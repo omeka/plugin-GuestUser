@@ -168,7 +168,7 @@ class GuestUser_UserController extends Omeka_Controller_Action
                     "can log in with the password you chose.";
         }
         $subject = "Registration for $siteTitle";
-        $mail = $this->getMail($user->getEntity(), $body, $subject);
+        $mail = $this->getMail($user, $body, $subject);
         try {
             $mail->send();
         } catch (Exception $e) {
@@ -187,7 +187,7 @@ class GuestUser_UserController extends Omeka_Controller_Action
 
         $body .= "\n\n<a href='$url'>$url</a>";
 
-        $mail = $this->getMail($user->getEntity(), $body, $subject);
+        $mail = $this->getMail($user, $body, $subject);
         try {
             $mail->send();
         } catch (Exception $e) {
@@ -202,7 +202,7 @@ class GuestUser_UserController extends Omeka_Controller_Action
         $subject = "New request to join $siteTitle";
         $body = "A new user has confirmed that they want to join $siteTitle.  ";
         $body .= "\n\n<a href='$url'>" . $user->username . "</a>";
-        $mail = $this->getMail($user->getEntity(), $body, $subject);
+        $mail = $this->getMail($user, $body, $subject);
         $mail->clearRecipients();
         $mail->addTo(get_option('administrator_email'), "$siteTitle Administrator");
          try {
@@ -212,14 +212,22 @@ class GuestUser_UserController extends Omeka_Controller_Action
         }
     }
 
-    protected function getMail($entity, $body, $subject)
+    protected function getMail($user, $body, $subject)
     {
+        if(method_exists($user, 'getEntity')) {
+            $entity = $user->getEntity();
+            $email = $entity->email;
+            $name = $entity->getName();
+        } else {
+            $email = $user->email;
+            $name = $users->name
+        }
         $siteTitle  = get_option('site_title');
         $from = get_option('administrator_email');
         $mail = new Zend_Mail();
         $mail->setBodyText($body);
         $mail->setFrom($from, "$siteTitle Administrator");
-        $mail->addTo($entity->email, $entity->getName());
+        $mail->addTo($email, $name);
         $mail->setSubject($subject);
         $mail->addHeader('X-Mailer', 'PHP/' . phpversion());
         return $mail;
