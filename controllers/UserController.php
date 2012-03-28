@@ -230,7 +230,12 @@ class GuestUser_UserController extends Omeka_Controller_Action
         $token = new GuestUserToken();
         $token->user_id = $user->id;
         $token->token = sha1("tOkenS@1t" . microtime());
-        $token->email = $user->getEntity()->email;
+        if(method_exists($user, 'getEntity')) {
+            $token->email = $user->getEntity()->email;
+        } else {
+            $token->email = $user->email;
+        }
+
         $token->save();
         return $token;
     }

@@ -5,5 +5,4 @@ require_once(GUEST_USER_PLUGIN_DIR . '/GuestUserPlugin.php');
 require_once(GUEST_USER_PLUGIN_DIR . '/helpers/functions.php');
 $gu = new GuestUser();
 $gu->setUp();
-
 ?>
