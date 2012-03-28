@@ -220,7 +220,7 @@ class GuestUser_UserController extends Omeka_Controller_Action
             $name = $entity->getName();
         } else {
             $email = $user->email;
-            $name = $users->name
+            $name = $users->name;
         }
         $siteTitle  = get_option('site_title');
         $from = get_option('administrator_email');
