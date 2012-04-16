@@ -156,7 +156,15 @@ class GuestUser extends Omeka_Plugin_Abstract
 
     private function sendMadeActiveEmail($record)
     {
-        $entity = $record->getEntity();
+        if(method_exists($record, 'getEntity')) {
+            $entity = $record->getEntity();
+            $email = $entity->email;
+            $name = $entity->getName();
+        } else {
+            $email = $record->email;
+            $name = $record->name;
+        }
+
         $siteTitle  = get_option('site_title');
         $subject = "Your $siteTitle account";
         $body = "An admin has made your account active. You can now log in with your password";
@@ -164,7 +172,7 @@ class GuestUser extends Omeka_Plugin_Abstract
         $mail = new Zend_Mail();
         $mail->setBodyText($body);
         $mail->setFrom($from, "$siteTitle Administrator");
-        $mail->addTo($entity->email, $entity->getName());
+        $mail->addTo($email, $name);
         $mail->setSubject($subject);
         $mail->addHeader('X-Mailer', 'PHP/' . phpversion());
         $mail->send();
