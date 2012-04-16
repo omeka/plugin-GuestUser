@@ -135,8 +135,9 @@ class GuestUser extends Omeka_Plugin_Abstract
     {
         $url = uri('guest-user/user/me');
         $logoutUrl = uri('users/logout');
+        $dashboardLabel = get_option('guest_user_dashboard_label');
         $links[] = "<a href='$logoutUrl'>Logout</a>";
-        $links[] = "<a href='$url'>My Dashboard</a>";
+        $links[] = "<a href='$url'>$dashboardLabel</a>";
 
         return $links;
     }
@@ -145,7 +146,7 @@ class GuestUser extends Omeka_Plugin_Abstract
     {
         $widget = array('label'=>'My Account');
         $passwordUrl = uri('guest-user/user/change-password');
-        $html .= "<ul>";
+        $html = "<ul>";
         $html .= "<li><a href='$passwordUrl'>Change Password</a></li>";
         $html .= "</ul>";
         $widget['content'] = $html;
