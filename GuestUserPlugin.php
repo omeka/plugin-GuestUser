@@ -106,7 +106,7 @@ class GuestUser extends Omeka_Plugin_Abstract
             $html .= "</div>";
         } else {
             $registerUrl = uri('guest-user/user/register');
-            $loginUrl = uri('users/login');
+            $loginUrl = uri('guest-user/user/login');
             $html.= "<p><span id='guest-user-login'><a href='$loginUrl'>" . get_option('guest_user_login_text') . "</a></span>";
             $html .= " / <span id='guest-user-register'><a href='$registerUrl'>" . get_option('guest_user_register_text') . "</a></span></p>";
             $shortCapabilities = get_option('guest_user_short_capabilities');

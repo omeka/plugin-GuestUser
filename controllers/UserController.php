@@ -3,6 +3,14 @@
 class GuestUser_UserController extends Omeka_Controller_Action
 {
 
+    public function loginAction()
+    {
+        $session = new Zend_Session_Namespace;
+        $session->redirect = $_SERVER['HTTP_REFERER'];
+_log($session->redirect);
+        $this->_redirect('users/login');
+    }
+
     public function registerAction()
     {
         if(current_user()) {
