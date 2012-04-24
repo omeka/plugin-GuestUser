@@ -9,7 +9,6 @@ function guest_user_widget($widget)
     } else {
         return $widget;
     }
-
 }
 
 ?>
