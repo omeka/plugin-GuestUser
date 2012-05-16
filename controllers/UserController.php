@@ -7,7 +7,6 @@ class GuestUser_UserController extends Omeka_Controller_Action
     {
         $session = new Zend_Session_Namespace;
         $session->redirect = $_SERVER['HTTP_REFERER'];
-_log($session->redirect);
         $this->_redirect('users/login');
     }
 
@@ -16,7 +15,7 @@ _log($session->redirect);
         if(current_user()) {
             $this->redirect->gotoUrl('/');
         }
-        $openRegistration = (get_option('guest_users_open') == 'on');
+        $openRegistration = (get_option('guest_user_open') == 'on');
         $user = new User();
 
         $form = new Omeka_Form_User(array('user'=>$user));

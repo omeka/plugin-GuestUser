@@ -50,9 +50,9 @@ class GuestUser extends Omeka_Plugin_Abstract
         $acl->addRole(new Zend_Acl_Role('guest'), null);
     }
 
-    public function hookConfig()
+    public function hookConfig($post)
     {
-        foreach($_POST as $option=>$value) {
+        foreach($post as $option=>$value) {
             set_option($option, $value);
         }
     }
