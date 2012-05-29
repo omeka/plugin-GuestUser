@@ -74,10 +74,11 @@ class GuestUser_UserController extends Omeka_Controller_Action
         if($openRegistration) {
             $user->active = true;
         }
+        $user->setPassword($_POST['new_password']);
         try {
             if ($user->saveForm($_POST)) {
-                $user->setPassword($_POST['new_password']);
-                $user->save(); // hate the double save, but it makes it go.
+
+                //$user->save(); // hate the double save, but it makes it go.
                 $token = $this->createToken($user);
                 $this->sendConfirmationEmail($user, $token); //confirms that they registration request is legit
                 if($openRegistration) {
