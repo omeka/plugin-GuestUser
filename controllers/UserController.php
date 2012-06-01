@@ -77,18 +77,13 @@ class GuestUser_UserController extends Omeka_Controller_Action
         $user->setPassword($_POST['new_password']);
         try {
             if ($user->saveForm($_POST)) {
-
-                //$user->save(); // hate the double save, but it makes it go.
                 $token = $this->createToken($user);
                 $this->sendConfirmationEmail($user, $token); //confirms that they registration request is legit
                 if($openRegistration) {
-                    $message = "Please check your email for a confirmation message before trying to sign in. ";
-                    $message .= "Once you have confirmed your request, you will be able to log right in.";
+                    $message = "Thank you for registering. Please check your email for a confirmation message. Once you have confirmed your request, you will be able to log in.";
                     $this->flashSuccess($message);
                 } else {
-                    $message = "Please check your email for a confirmation message. ";
-                    $message .= "Once you have confirmed your request and an administrator activates your account, ";
-                    $message .= "you will be able to log right in.";
+                    $message = "Thank you for registering. Please check your email for a confirmation message. Once you have confirmed your request and an administrator activates your account, you will be able to log in.";
                     $this->flashSuccess($message);
                 }
             }
@@ -190,11 +185,7 @@ class GuestUser_UserController extends Omeka_Controller_Action
         $siteTitle = get_option('site_title');
         $url = WEB_ROOT . '/guest-user/user/confirm/token/' . $token->token;
         $subject = "Your request to join $siteTitle";
-        $body = "Please confirm that you are the person who requested to join $siteTitle by clicking the following link ";
-        $body .= "If you did not request to join $siteTitle, please disregard this email. Someone is trying to play tricks on you.";
-
-        $body .= "\n\n<a href='$url'>$url</a>";
-
+        $body = "You have registered for an account on $siteTitle. Please confirm your registration by following this link: $url If you did not request to join $siteTitle please disregard this email.";
         $mail = $this->getMail($user, $body, $subject);
         try {
             $mail->send();
