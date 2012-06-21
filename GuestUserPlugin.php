@@ -39,9 +39,9 @@ class GuestUser extends Omeka_Plugin_Abstract
                 ";
 
         $db->query($sql);
-        set_option('guest_users_logged_in_text', '');
-        set_option('guest_users_login_text', 'Login');
-        set_option('guest_users_registration_text', 'Register');
+        set_option('guest_user_logged_in_text', '');
+        set_option('guest_user_login_text', 'Login');
+        set_option('guest_user_register_text', 'Register');
     }
 
 
