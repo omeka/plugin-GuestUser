@@ -164,7 +164,7 @@ class GuestUser_UserController extends Omeka_Controller_Action
     {
         $siteTitle = get_option('site_title');
         $body = "Thanks for joining $siteTitle!";
-        if(get_option('guest_users_open') == 'on') {
+        if(get_option('guest_user_open') == 'on') {
             $body .= "\n\n You can now log in using the password you chose.";
         } else {
             $body .= "\n\n When an administrator approves your account, you will receive another message that you" .
@@ -175,6 +175,7 @@ class GuestUser_UserController extends Omeka_Controller_Action
         try {
             $mail->send();
         } catch (Exception $e) {
+            _log($e);
             _log($body);
         }
 
@@ -190,6 +191,7 @@ class GuestUser_UserController extends Omeka_Controller_Action
         try {
             $mail->send();
         } catch (Exception $e) {
+            _log($e);
             _log($body);
         }
     }
