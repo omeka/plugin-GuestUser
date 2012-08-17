@@ -131,6 +131,10 @@ class GuestUser extends Omeka_Plugin_Abstract
         }
     }
 
+    /*
+     * Add basic links to the login/user box 
+     */
+    
     public function filterGuestUserLinks($links)
     {
         $url = uri('guest-user/user/me');
@@ -146,8 +150,10 @@ class GuestUser extends Omeka_Plugin_Abstract
     {
         $widget = array('label'=>'My Account');
         $passwordUrl = uri('guest-user/user/change-password');
+        $accountUrl = uri('guest-user/user/update-account');
         $html = "<ul>";
         $html .= "<li><a href='$passwordUrl'>Change Password</a></li>";
+        $html .= "<li><a href='$accountUrl'>Update Account Info</a></li>";
         $html .= "</ul>";
         $widget['content'] = $html;
         $widgets[] = $widget;

@@ -18,52 +18,8 @@ class GuestUser_UserController extends Omeka_Controller_Action
         $openRegistration = (get_option('guest_user_open') == 'on');
         $user = new User();
 
-        $form = new Omeka_Form_User(array('user'=>$user));
-        $form->removeElement('submit');
-        $form->removeElement('institution');
-        $form->addElement('password', 'new_password',
-            array(
-                'label'         => 'New Password',
-                'required'      => true,
-                'class'         => 'textinput',
-                'validators'    => array(
-                    array('validator' => 'NotEmpty', 'breakChainOnFailure' => true, 'options' =>
-                        array(
-                            'messages' => array(
-                                'isEmpty' => Omeka_Form_ChangePassword::ERROR_NEW_PASSWORD_REQUIRED
-                            )
-                        )
-                    ),
-                    array(
-                        'validator' => 'Confirmation',
-                        'options'   => array(
-                            'field'     => 'new_password_confirm',
-                            'messages'  => array(
-                                Omeka_Validate_Confirmation::NOT_MATCH => Omeka_Form_ChangePassword::ERROR_NEW_PASSWORD_CONFIRM_REQUIRED
-                            )
-                         )
-                    ),
-                    array(
-                        'validator' => 'StringLength',
-                        'options'   => array(
-                            'min' => User::PASSWORD_MIN_LENGTH,
-                            'messages' => array(
-                                Zend_Validate_StringLength::TOO_SHORT => Omeka_Form_ChangePassword::ERROR_NEW_PASSWORD_TOO_SHORT
-                            )
-                        )
-                    )
-                )
-            )
-        );
-        $form->addElement('password', 'new_password_confirm',
-            array(
-                'label'         => 'Password again for match',
-                'required'      => true,
-                'class'         => 'textinput',
-                'errorMessages' => array(Omeka_Form_ChangePassword::ERROR_NEW_PASSWORD_CONFIRM_REQUIRED)
-            )
-        );
-        $form->addElement('submit', 'submit', array('label' => 'Register'));
+        //$form = new Omeka_Form_User(array('user'=>$user));
+        $form = new GuestUserForm(array('user'=>$user));
         $form->setSubmitButtonText('Register');
         $this->view->form = $form;
 
@@ -92,6 +48,28 @@ class GuestUser_UserController extends Omeka_Controller_Action
         }
     }
 
+    public function updateAccountAction()
+    {
+        $user = current_user();
+        
+        //$form = new Omeka_Form_User(array('user'=>$user));
+        $form = new GuestUserForm(array('user'=>$user));
+        $form->removeElement('new_password');
+        $form->removeElement('new_password_confirm');
+        $form->setSubmitButtonText('Update');
+        $form->setDefaults($user->toArray());
+        $this->view->form = $form;
+        
+        if (!$this->getRequest()->isPost() || !$form->isValid($_POST)) {
+            return;
+        }  
+        try {
+            $user->saveForm($_POST);
+        } catch (Omeka_Validator_Exception $e) {
+            $this->flashValidationErrors($e);
+        }              
+    }
+    
     public function meAction()
     {
         $user = current_user();
