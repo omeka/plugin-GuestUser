@@ -1,7 +1,7 @@
 <?php
-
+queue_js_file('guest-user-password');
 $pageTitle = 'Register';
-head(array('bodyclass' => 'register', 'title' => $pageTitle));
+echo head(array('bodyclass' => 'register', 'title' => $pageTitle));
 ?>
 <h1><?php echo $pageTitle; ?></h1>
 <div id='primary'>
@@ -11,5 +11,5 @@ head(array('bodyclass' => 'register', 'title' => $pageTitle));
 <?php echo flash(); ?>
 <?php echo $this->form; ?>
 <p id='confirm'></p>
-<?php foot(); ?>
+<?php echo foot(); ?>
 </div>

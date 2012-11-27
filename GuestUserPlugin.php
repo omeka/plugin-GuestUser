@@ -1,11 +1,18 @@
 <?php
-class GuestUser extends Omeka_Plugin_Abstract
+
+define('GUEST_USER_PLUGIN_DIR', PLUGIN_DIR . '/GuestUser');
+require_once(GUEST_USER_PLUGIN_DIR . '/helpers/functions.php');
+include(FORM_DIR . '/User.php');
+//require_once(GUEST_USER_PLUGIN_DIR . '/libraries/GuestUserForm.php');
+
+
+class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
 {
     protected $_hooks = array(
         'install',
         'define_acl',
-        'public_theme_page_header',
-        'public_theme_header',
+        'public_header',
+        'public_head',
         'admin_theme_header',
         'config',
         'config_form',
@@ -13,12 +20,14 @@ class GuestUser extends Omeka_Plugin_Abstract
     );
 
     protected $_filters = array(
-        'guest_user_widgets',
-        'guest_user_links'
+        'public_navigation_admin_bar',
+        'public_show_admin_bar',
+        'guest_user_widgets'       
     );
 
     public function setUp()
     {
+       
         parent::setUp();
         require_once(GUEST_USER_PLUGIN_DIR . '/libraries/GuestUser_ControllerPlugin.php');
         Zend_Controller_Front::getInstance()->registerPlugin(new GuestUser_ControllerPlugin);
@@ -26,7 +35,7 @@ class GuestUser extends Omeka_Plugin_Abstract
 
     public function hookInstall()
     {
-        $db = get_db();
+        $db = $this->_db;
         $sql = "CREATE TABLE IF NOT EXISTS `$db->GuestUserTokens` (
                   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
                   `token` text COLLATE utf8_unicode_ci NOT NULL,
@@ -38,20 +47,21 @@ class GuestUser extends Omeka_Plugin_Abstract
                 ) ENGINE=MyISAM CHARSET=utf8 COLLATE=utf8_unicode_ci;
                 ";
 
-        $db->query($sql);
-        set_option('guest_user_logged_in_text', '');
+        $db->query($sql);        
         set_option('guest_user_login_text', 'Login');
         set_option('guest_user_register_text', 'Register');
     }
 
 
-    public function hookDefineAcl($acl)
+    public function hookDefineAcl($args)
     {
+        $acl = $args['acl'];
         $acl->addRole(new Zend_Acl_Role('guest'), null);
     }
 
-    public function hookConfig($post)
-    {
+    public function hookConfig($args)
+    {        
+        $post = $args['post'];
         foreach($post as $option=>$value) {
             set_option($option, $value);
         }
@@ -62,10 +72,11 @@ class GuestUser extends Omeka_Plugin_Abstract
         include 'config_form.php';
     }
 
-    public function hookAdminThemeHeader($request)
+    public function hookAdminThemeHeader($args)
     {
+        $request = $args['request'];
         if($request->getControllerName() == 'plugins' && $request->getParam('name') == 'GuestUser') {
-            queue_js('tiny_mce/tiny_mce');
+            queue_js_file('tiny_mce/tiny_mce');
             $js = "if (typeof(Omeka) !== 'undefined'){
                 Omeka.wysiwyg();
             };";
@@ -73,84 +84,94 @@ class GuestUser extends Omeka_Plugin_Abstract
         }
 
     }
-    public function hookPublicThemeHeader($request)
+    public function hookPublicHead($args)
     {
-        queue_css('guest-user');
-        queue_js('guest-user');
-        if($request->getModuleName() == 'guest-user') {
-            queue_js('guest-user-password');
-        }
+        //$request = $args['request'];
+        
+        queue_css_file('guest-user');        
+        queue_js_file('guest-user');
+        //if($request->getModuleName() == 'guest-user') {
+        //    queue_js_file('guest-user-password');
+        //}
 
     }
 
-    public function hookPublicThemePageHeader($request)
-    {
-        $html = "<div id='guest-user-bar'>";
+    public function hookPublicHeader($args)
+    {        
+        $html = "<div id='guest-user-register-info'>";
         $user = current_user();
-        if($user) {
-
-            $links = array();
-            $links = apply_filters('guest_user_links', $links);
-            $userText = get_option('guest_user_logged_in_text');
-            if($userText == '') {
-                $userText = $user->username;
-            }
-            $html.= "<p id='guest-user-user'>$userText</p>";
-            $html .= "<div id='guest-user-dropdown-bar'>";
-            $html .= "<ul>";
-            foreach($links as $link) {
-                $html .= "<li>$link</li>";
-            }
-
-            $html .= "</ul>";
-            $html .= "</div>";
-        } else {
-            $registerUrl = uri('guest-user/user/register');
-            $loginUrl = uri('guest-user/user/login');
-            $html.= "<p><span id='guest-user-login'><a href='$loginUrl'>" . get_option('guest_user_login_text') . "</a></span>";
-            $html .= " / <span id='guest-user-register'><a href='$registerUrl'>" . get_option('guest_user_register_text') . "</a></span></p>";
+        if(!$user) {
             $shortCapabilities = get_option('guest_user_short_capabilities');
             if($shortCapabilities != '') {
-                $html .= "<div id='guest-user-dropdown-bar'>";
                 $html .= $shortCapabilities;
-                $html .= "</div>";
             }
         }
         $html .= "</div>";
         echo $html;
     }
 
-    public function hookBeforeSaveFormUser($record, $post)
+    public function hookBeforeSaveFormUser($args)
     {
+        $post = $args['post'];
+        $request = $args['request'];
         if (! $record->active && ($record->role == 'guest') && ($post['active'] == 1)) {
             try {
-                $this->sendMadeActiveEmail($record);
+                $this->_sendMadeActiveEmail($record);
             } catch (Exception $e) {
                 _log($e);
             }
         }
     }
 
-    /*
-     * Add basic links to the login/user box 
-     */
-    
-    public function filterGuestUserLinks($links)
+    public function filterPublicShowAdminBar($show)
     {
-        $url = uri('guest-user/user/me');
-        $logoutUrl = uri('users/logout');
-        $dashboardLabel = get_option('guest_user_dashboard_label');
-        $links[] = "<a href='$logoutUrl'>Logout</a>";
-        $links[] = "<a href='$url'>$dashboardLabel</a>";
-
-        return $links;
+        return true;
     }
+    
+    public function filterPublicNavigationAdminBar($navLinks)
+    {
+        //Clobber the default admin link if user is guest
+        $user = current_user();
+        if($user) {
+            if($user->role == 'guest') {
+                unset($navLinks[1]);
+            } else {
+                $navLinks[0]['id'] = 'admin-bar-welcome';
+                $meLink = array('id'=>'guest-user-me',
+                        'uri'=>url('guest-user/user/me'),
+                        'label' => get_option('guest_user_dashboard_label')
+                );
+                $filteredLinks = apply_filters('guest_user_links' , array('guest-user-me'=>$meLink) );
+                $navLinks[0]['pages'] = $filteredLinks; 
+            }
+            return $navLinks;
+        }
+        
+        $navLinks = array(
+                'guest-user-login' => array(
+                    'id' => 'guest-user-login',
+                    'label' => __('Login'),
+                    'uri' => url('guest-user/user/login')
+                ),
+                
+                'guest-user-register' => array(
+                    'id' => 'guest-user-register', 
+                    'label' => __('Register'),
+                    'uri' => url('guest-user/user/register'),
+                    )
+                
+                );
+        return $navLinks;
+
+        
+    }
+    
 
     public function filterGuestUserWidgets($widgets)
     {
         $widget = array('label'=>'My Account');
-        $passwordUrl = uri('guest-user/user/change-password');
-        $accountUrl = uri('guest-user/user/update-account');
+        $passwordUrl = url('guest-user/user/change-password');
+        $accountUrl = url('guest-user/user/update-account');
         $html = "<ul>";
         $html .= "<li><a href='$passwordUrl'>Change Password</a></li>";
         $html .= "<li><a href='$accountUrl'>Update Account Info</a></li>";
@@ -160,17 +181,11 @@ class GuestUser extends Omeka_Plugin_Abstract
         return $widgets;
     }
 
-    private function sendMadeActiveEmail($record)
+    private function _sendMadeActiveEmail($record)
     {
-        if(method_exists($record, 'getEntity')) {
-            $entity = $record->getEntity();
-            $email = $entity->email;
-            $name = $entity->getName();
-        } else {
-            $email = $record->email;
-            $name = $record->name;
-        }
-
+        $email = $record->email;
+        $name = $record->name;
+ 
         $siteTitle  = get_option('site_title');
         $subject = "Your $siteTitle account";
         $body = "An admin has made your account active. You can now log in with your password";
@@ -182,7 +197,6 @@ class GuestUser extends Omeka_Plugin_Abstract
         $mail->setSubject($subject);
         $mail->addHeader('X-Mailer', 'PHP/' . phpversion());
         $mail->send();
-        _log($body);
     }
 }
 

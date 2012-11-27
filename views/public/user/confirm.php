@@ -1,6 +1,6 @@
 <?php
 
-head(array('title' => 'Confirmation Error'));
+echo head(array('title' => 'Confirmation Error'));
 ?>
 <h1>Confirmation Error</h1>
 
@@ -8,4 +8,4 @@ head(array('title' => 'Confirmation Error'));
 <?php echo flash(); ?>
 </div>
 
-<?php foot(); ?>
+<?php echo foot(); ?>

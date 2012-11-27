@@ -1,6 +1,6 @@
 <?php
 
-class GuestUserToken extends Omeka_Record
+class GuestUserToken extends Omeka_Record_AbstractRecord
 {
     public $id;
     public $token;
@@ -9,11 +9,9 @@ class GuestUserToken extends Omeka_Record
     public $created;
     public $confirmed;
 
-
-
     protected function beforeSave()
     {
-        $this->created = Zend_Date::now()->toString(self::DATE_FORMAT);
+        $this->created = Zend_Date::now()->toString('yyyy-MM-dd HH:mm:ss');
 
     }
 }

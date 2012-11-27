@@ -1,5 +1,5 @@
 <?php
-class GuestUserTokenTable extends Omeka_Db_Table
+class Table_GuestUserToken extends Omeka_Db_Table
 {
     public function findByToken($token)
     {

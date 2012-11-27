@@ -1,38 +1,61 @@
+/* copied from admin theme. alerts */
+
+        #content #flash ul {
+            list-style-type: none;
+            margin-top: 0;
+            padding: 0;
+        }
+        
+            ul.error {
+                list-style-type: none;
+                margin-top: 20px;
+                padding: 0;
+            }
+            
+            #content #flash li, ul.error li {
+                background-color: rgba(255, 255, 255, .5);
+                border: 1px solid #E7E7E7;
+                border-radius: 3px;
+                font-size: 14px;
+                margin-bottom: 20px;
+                padding: .5em;            
+            }
+        
+        .success {
+            color: #729108;
+        }
+            
+        .error, .alert {
+            color: #914E33;
+        }
+
+
+
+a#menu-admin-bar-welcome + ul {
+    display: none;
+    position: absolute;
+    background: #404040;
+}
+
+a#menu-admin-bar-welcome + ul li {
+    display: block;
+    text-align: left;
+    padding: 3px;
+}
+
 h2.guest-user-widget-label {
     border-bottom: 1px solid;
 }
 
-div#guest-user-dropdown-bar {
-    width: 200px;
-    border: 1px solid black;
-    position: absolute;
-    right: 0px;
-    top: -3;
-    background-color: white;
-    margin: 0px;
-    padding: 3px;
+div#guest-user-register-info {
+    background: rgba(0,0,0,0.75);    
+    color: #fff;
+    float: right;
+    font-family:Arvo, serif !important;
+    font-size: 12px;
+    width: 250px;
     display: none;
-
-}
-
-span#guest-user-user {
-
-
-}
-
-span#guest-user-login {
-
-}
-
-div#guest-user-bar {
-    margin: 3px 15px 3px 3px;
-
-    float:right;
-    position: relative;
-}
-
-div#guest-user-bar > p {
-    margin-bottom: 0px;
+    padding: 3px;
 }
 
 div.guest-user-widget {

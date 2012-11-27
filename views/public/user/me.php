@@ -1,7 +1,7 @@
 <?php
 $user = current_user();
 $pageTitle =  get_option('guest_user_dashboard_label');
-head(array('title' => $pageTitle));
+echo head(array('title' => $pageTitle));
 ?>
 <h1><?php echo $pageTitle; ?></h1>
 
@@ -16,4 +16,4 @@ head(array('title' => $pageTitle));
 <?php endforeach; ?>
 
 </div>
-<?php foot(); ?>
+<?php echo foot(); ?>
