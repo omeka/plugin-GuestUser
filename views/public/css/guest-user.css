@@ -35,6 +35,7 @@ a#menu-admin-bar-welcome + ul {
     display: none;
     position: absolute;
     background: #404040;
+    
 }
 
 a#menu-admin-bar-welcome + ul li {
@@ -50,7 +51,9 @@ h2.guest-user-widget-label {
 div#guest-user-register-info {
     background: rgba(0,0,0,0.75);    
     color: #fff;
-    float: right;
+    position:absolute;
+    right: 0;
+    top: 40px;
     font-family:Arvo, serif !important;
     font-size: 12px;
     width: 250px;
