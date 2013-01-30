@@ -99,7 +99,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
     {
         $user = current_user();
         if(!$user) {
-            $this->redirect->gotoUrl('/');
+            $this->redirect('/');
         }
         $widgets = array();
         $widgets = apply_filters('guest_user_widgets', $widgets);
