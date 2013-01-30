@@ -121,45 +121,6 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         }
     }
 
-    public function changePasswordAction()
-    {
-        $user = current_user();
-        if(!$user) {
-            return;
-        }
-
-        $form = new Omeka_Form_ChangePassword();
-        $form->setUser($user);
-        $this->view->form = $form;
-
-        if (!$this->getRequest()->isPost()) {
-            return;
-        }
-
-        if (isset($_POST['new_password'])) {
-            if ($form->isValid($_POST)) {
-                $values = $form->getValues();
-                $user->setPassword($values['new_password']);
-                $user->save();
-                $this->_helper->flashMessenger(__("Password changed!"), 'success');
-                $success = true;
-            }
-        } else {
-            if (!$form->isValid($_POST)) {
-                return;
-            }
-            try {
-                if ($user->saveForm($form->getValues())) {
-                    $this->_helper->flashMessenger(__('The user %s was successfully changed!', $user->username), 'success');
-                    $success = true;
-                }
-            } catch (Omeka_Validator_Exception $e) {
-                $this->flashValidationErrors($e);
-            }
-        }
-
-    }
-
     protected function _getForm($options)
     {
         $form = new Omeka_Form_User($options);
