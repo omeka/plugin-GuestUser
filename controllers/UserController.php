@@ -7,13 +7,13 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
     {
         $session = new Zend_Session_Namespace;
         $session->redirect = $_SERVER['HTTP_REFERER'];
-        $this->_redirect('users/login');
+        $this->redirect('users/login');
     }
 
     public function registerAction()
     {
         if(current_user()) {
-            $this->redirect->gotoUrl('/');
+            $this->redirect($_SERVER['HTTP_REFERER']);
         }
         $openRegistration = (get_option('guest_user_open') == 'on');
         $user = new User();
@@ -52,21 +52,20 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
     {
         $user = current_user();
         
-        //$form = new Omeka_Form_User(array('user'=>$user));
         $form = $this->_getForm(array('user'=>$user));
-        //$form->removeElement('new_password');
-        $form->getElement('new_password')->setLabel("New Password");
-        
+        $form->getElement('new_password')->setLabel(__("New Password"));
+        $form->getElement('new_password')->setRequired(false);
+        $form->getElement('new_password_confirm')->setRequired(false);
         $form->addElement('password', 'current_password',
                         array(
-                                'label'         => 'Current Password',
+                                'label'         => __('Current Password'),
                                 'required'      => true,
                                 'class'         => 'textinput',
                         )
         );        
         
-        $oldPassword = $form->getElement('old_password');
-        $oldPassword->setOrder(3);
+        $oldPassword = $form->getElement('current_password');
+        $oldPassword->setOrder(0);
         $form->addElement($oldPassword);
         
         //$form->removeElement('new_password_confirm');
@@ -77,8 +76,16 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         if (!$this->getRequest()->isPost() || !$form->isValid($_POST)) {
             return;
         }  
+        
+        if($user->password != $user->hashPassword($_POST['current_password'])) {
+            $this->_helper->flashMessenger(__("Incorrect password"), 'error');
+            return;
+        }
+        
+        $user->setPassword($_POST['new_password']);
+        $user->setPostData($_POST);
         try {
-            $user->saveForm($_POST);
+            $user->save($_POST);
         } catch (Omeka_Validator_Exception $e) {
             $this->flashValidationErrors($e);
         }              
