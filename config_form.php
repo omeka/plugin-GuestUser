@@ -30,7 +30,7 @@
 
 <div class="field">
     <div class="two columns alpha">
-        <label>Require Admin Approval?</label>    
+        <label>Allow open registration?</label>    
     </div>
     <div class="inputs five columns omega">
         <p class="explanation">Allow guest user registration without administrator approval?</p>

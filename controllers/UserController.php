@@ -6,12 +6,16 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
     public function loginAction()
     {
         $session = new Zend_Session_Namespace;
-        $session->redirect = $_SERVER['HTTP_REFERER'];
+        if(!$session->redirect) {
+            $session->redirect = $_SERVER['HTTP_REFERER'];
+        }
+        
         $this->redirect('users/login');
     }
 
     public function registerAction()
     {
+        
         if(current_user()) {
             $this->redirect($_SERVER['HTTP_REFERER']);
         }
@@ -102,11 +106,22 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         $this->view->widgets = $widgets;
     }
 
+    public function staleTokenAction() 
+    {
+        $auth = $this->getInvokeArg('bootstrap')->getResource('Auth');
+        //http://framework.zend.com/manual/en/zend.auth.html
+        $auth->clearIdentity();
+        //$_SESSION = array();
+        //Zend_Session::destroy();
+        
+    }
+    
     public function confirmAction()
     {
         $db = get_db();
         $token = $this->getRequest()->getParam('token');
-        $record = $db->getTable('GuestUserToken')->findByToken($token);
+        $records = $db->getTable('GuestUserToken')->findBy(array('token'=>$token));
+        $record = $records[0];
         if($record) {
             $record->confirmed = true;
             $record->save();
@@ -115,7 +130,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
             $this->_sendConfirmedEmail($user);
             $message = "Please check the email we just sent you for the next steps! You're almost there!";
             $this->_helper->flashMessenger($message, 'success');
-            $this->redirect->gotoUrl('users/login');
+            $this->redirect('users/login');
         } else {
             $this->_helper->flashMessenger('Invalid token', 'error');
         }
