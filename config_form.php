@@ -30,37 +30,6 @@
 
 <div class="field">
     <div class="two columns alpha">
-        <label>Allow open registration?</label>    
-    </div>
-    <div class="inputs five columns omega">
-        <p class="explanation">Allow guest user registration without administrator approval?</p>
-        <div class="input-block">        
-            <?php
-                $checked = ( get_option('guest_user_open') == 'on') ? true : false;
-            ?>
-            <input name="guest_user_open" type="checkbox" <?php if($checked) {echo "checked='checked'"; } ?>  />        
-        </div>
-    </div>
-</div>
-        
-        
-<div class="field">
-    <div class="two columns alpha">
-        <label>Allow instant access?</label>    
-    </div>
-    <div class="inputs five columns omega">
-        <p class="explanation">Allow instant access for 20 minutes for new users</p>
-        <div class="input-block">        
-            <?php
-                $checked = ( get_option('guest_user_instant_access') == 'on') ? true : false;
-            ?>
-            <input name="guest_user_instant_access" type="checkbox" <?php if($checked) {echo "checked='checked'"; } ?>  />        
-        </div>
-    </div>
-</div>
-
-<div class="field">
-    <div class="two columns alpha">
         <label>Dashboard Label</label>    
     </div>    
     <div class="inputs five columns omega">
@@ -91,6 +60,54 @@
         <p class='explanation'>The text to use for the 'Register' link in the user bar.
         <div class="input-block">        
             <input name="guest_user_register_text" type="text" value="<?php echo get_option('guest_user_register_text'); ?>" />        
+        </div>
+    </div>
+</div>
+
+
+<div class="field">
+    <div class="two columns alpha">
+        <label>Allow open registration?</label>    
+    </div>
+    <div class="inputs five columns omega">
+        <p class="explanation">Allow guest user registration without administrator approval?</p>
+        <div class="input-block">        
+            <?php
+                $checked = ( get_option('guest_user_open') == 'on') ? true : false;
+            ?>
+            <input name="guest_user_open" type="checkbox" <?php if($checked) {echo "checked='checked'"; } ?>  />        
+        </div>
+    </div>
+</div>
+        
+        
+<div class="field">
+    <div class="two columns alpha">
+        <label>Allow instant access?</label>    
+    </div>
+    <div class="inputs five columns omega">
+        <p class="explanation">Allow instant access for 20 minutes for new users</p>
+        <div class="input-block">        
+            <?php
+                $checked = ( get_option('guest_user_instant_access') == 'on') ? true : false;
+            ?>
+            <input name="guest_user_instant_access" type="checkbox" <?php if($checked) {echo "checked='checked'"; } ?>  />        
+        </div>
+    </div>
+</div>
+
+
+<div class="field">
+    <div class="two columns alpha">
+        <label>Require ReCaptcha?</label>    
+    </div>
+    <div class="inputs five columns omega">
+        <p class="explanation">Check this to require passing a ReCaptcha test when registering</p>
+        <div class="input-block">        
+            <?php
+                $checked = ( get_option('guest_user_recaptcha') == 'on') ? true : false;
+            ?>
+            <input name="guest_user_recaptcha" type="checkbox" <?php if($checked) {echo "checked='checked'"; } ?>  />
         </div>
     </div>
 </div>

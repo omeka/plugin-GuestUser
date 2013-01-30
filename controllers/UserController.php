@@ -183,6 +183,13 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
                                 'errorMessages' => array(__('New password must be typed correctly twice.'))
                         )
         );
+        if(Omeka_Captcha::isConfigured() && (get_option('guest_user_recaptcha') == 'on')) {
+            $form->addElement('captcha', 'captcha',  array(
+                'class' => 'hidden',
+                'label' => "Please verify you're a human",
+                'captcha' => Omeka_Captcha::getCaptcha()
+            ));
+        }
         $form->addElement('submit', 'submit', array('label' => 'Register'));
         return $form;        
     }
