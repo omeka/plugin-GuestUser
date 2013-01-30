@@ -20,6 +20,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
             $this->redirect($_SERVER['HTTP_REFERER']);
         }
         $openRegistration = (get_option('guest_user_open') == 'on');
+        $instantAccess = (get_option('guest_user_instant_access') == 'on');
         $user = new User();
 
         $form = $this->_getForm(array('user'=>$user));
@@ -30,7 +31,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
             return;
         }
         $user->role = 'guest';
-        if($openRegistration) {
+        if($openRegistration || $instantAccess) {
             $user->active = true;
         }
         $user->setPassword($_POST['new_password']);
@@ -39,6 +40,23 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
             if ($user->save($_POST)) {
                 $token = $this->_createToken($user);
                 $this->_sendConfirmationEmail($user, $token); //confirms that they registration request is legit
+                if($instantAccess) {
+                    //log them right in, and return them to the previous page
+                    $authAdapter = new Omeka_Auth_Adapter_UserTable($this->_helper->db->getDb());
+                    $authAdapter->setIdentity($user->username)->setCredential($_POST['new_password']);                    
+                    $authResult = $this->_auth->authenticate($authAdapter);
+                    if (!$authResult->isValid()) {
+                        if ($log = $this->_getLog()) {
+                            $ip = $this->getRequest()->getClientIp();
+                            $log->info("Failed login attempt from '$ip'.");
+                        }
+                        $this->_helper->flashMessenger($this->getLoginErrorMessages($authResult), 'error');
+                        return;
+                    }                    
+                    $this->_helper->flashMessenger(__("You are logged in temporarily. Please check your email for a confirmation message. Omce you have confirmed your request, you can log in."));
+                    $this->redirect($_SERVER['HTTP_REFERER']);
+                    return;
+                }
                 if($openRegistration) {
                     $message = "Thank you for registering. Please check your email for a confirmation message. Once you have confirmed your request, you will be able to log in.";
                     $this->_helper->flashMessenger($message, 'success');
@@ -186,7 +204,9 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         if(Omeka_Captcha::isConfigured() && (get_option('guest_user_recaptcha') == 'on')) {
             $form->addElement('captcha', 'captcha',  array(
                 'class' => 'hidden',
+                'style' => 'display: none;',
                 'label' => "Please verify you're a human",
+                'type' => 'hidden',
                 'captcha' => Omeka_Captcha::getCaptcha()
             ));
         }
