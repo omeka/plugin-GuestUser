@@ -135,15 +135,15 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
         if($user) {
             if($user->role == 'guest') {
                 unset($navLinks[1]);
-            } else {
-                $navLinks[0]['id'] = 'admin-bar-welcome';
-                $meLink = array('id'=>'guest-user-me',
-                        'uri'=>url('guest-user/user/me'),
-                        'label' => get_option('guest_user_dashboard_label')
-                );
-                $filteredLinks = apply_filters('guest_user_links' , array('guest-user-me'=>$meLink) );
-                $navLinks[0]['pages'] = $filteredLinks; 
-            }
+            } 
+            $navLinks[0]['id'] = 'admin-bar-welcome';
+            $meLink = array('id'=>'guest-user-me',
+                    'uri'=>url('guest-user/user/me'),
+                    'label' => get_option('guest_user_dashboard_label')
+            );
+            $filteredLinks = apply_filters('guest_user_links' , array('guest-user-me'=>$meLink) );
+            $navLinks[0]['pages'] = $filteredLinks; 
+        
             return $navLinks;
         }
         
