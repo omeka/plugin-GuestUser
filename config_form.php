@@ -43,6 +43,22 @@
     </div>
 </div>
         
+        
+<div class="field">
+    <div class="two columns alpha">
+        <label>Allow instant access?</label>    
+    </div>
+    <div class="inputs five columns omega">
+        <p class="explanation">Allow instant access for 20 minutes for new users</p>
+        <div class="input-block">        
+            <?php
+                $checked = ( get_option('guest_user_instant_access') == 'on') ? true : false;
+            ?>
+            <input name="guest_user_instant_access" type="checkbox" <?php if($checked) {echo "checked='checked'"; } ?>  />        
+        </div>
+    </div>
+</div>
+
 <div class="field">
     <div class="two columns alpha">
         <label>Dashboard Label</label>    
