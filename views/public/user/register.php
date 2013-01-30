@@ -1,5 +1,8 @@
 <?php
 queue_js_file('guest-user-password');
+queue_css_file('skeleton');
+$css = "form > div { clear: both; padding-top: 10px;} .two.columns {width: 30%;}";
+queue_css_string($css);
 $pageTitle = 'Register';
 echo head(array('bodyclass' => 'register', 'title' => $pageTitle));
 ?>

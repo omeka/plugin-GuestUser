@@ -160,35 +160,35 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         $form->removeElement('submit');
         $form->addElement('password', 'new_password',
             array(
-                    'label'         => 'Password',
+                    'label'         => __('Password'),
                     'required'      => true,
                     'class'         => 'textinput',
                     'validators'    => array(
-                            array('validator' => 'NotEmpty', 'breakChainOnFailure' => true, 'options' =>
-                                    array(
-                                        'messages' => array(
-                                        'isEmpty' => Omeka_Form_ChangePassword::ERROR_NEW_PASSWORD_REQUIRED
-                                        )
-                                    )
-                            ),
+                        array('validator' => 'NotEmpty', 'breakChainOnFailure' => true, 'options' => 
                             array(
-                                    'validator' => 'Confirmation',
-                                    'options'   => array(
-                                        'field'     => 'new_password_confirm',
-                                        'messages'  => array(
-                                                Omeka_Validate_Confirmation::NOT_MATCH => Omeka_Form_ChangePassword::ERROR_NEW_PASSWORD_CONFIRM_REQUIRED
-                                        )
-                                    )
-                            ),
-                            array(
-                                    'validator' => 'StringLength',
-                                    'options'   => array(
-                                        'min' => User::PASSWORD_MIN_LENGTH,
-                                        'messages' => array(
-                                                Zend_Validate_StringLength::TOO_SHORT => Omeka_Form_ChangePassword::ERROR_NEW_PASSWORD_TOO_SHORT
-                                        )
-                                    )
+                                'messages' => array(
+                                    'isEmpty' => __("New password must be entered.")
+                                )
                             )
+                        ),
+                        array(
+                            'validator' => 'Confirmation', 
+                            'options'   => array(
+                                'field'     => 'new_password_confirm',
+                                'messages'  => array(
+                                    Omeka_Validate_Confirmation::NOT_MATCH => __('New password must be typed correctly twice.')
+                                )
+                             )
+                        ),
+                        array(
+                            'validator' => 'StringLength',
+                            'options'   => array(
+                                'min' => User::PASSWORD_MIN_LENGTH,
+                                'messages' => array(
+                                    Zend_Validate_StringLength::TOO_SHORT => __("New password must be at least %min% characters long.")
+                                )
+                            )
+                        )
                     )
             )
         );
@@ -197,7 +197,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
                                 'label'         => 'Password again for match',
                                 'required'      => true,
                                 'class'         => 'textinput',
-                                'errorMessages' => array(Omeka_Form_ChangePassword::ERROR_NEW_PASSWORD_CONFIRM_REQUIRED)
+                                'errorMessages' => array(__('New password must be typed correctly twice.'))
                         )
         );
         $form->addElement('submit', 'submit', array('label' => 'Register'));

@@ -3,9 +3,13 @@ jQuery('document').ready(function() {
     var adminBarHeight = jQuery('#admin-bar');
     jQuery('#guest-user-register-info').css('top', adminBarHeight + 'px');
     
-    var welcomeTextLeft = jQuery('#menu-admin-bar-welcome').offset().left;
-    var guMenu = jQuery('#menu-guest-user-me').closest('ul');
-    guMenu.offset({left:welcomeTextLeft, top:31});
+    var welcome = jQuery('#menu-admin-bar-welcome');
+    if(welcome.length != 0) {
+        var welcomeTextLeft = jQuery('#menu-admin-bar-welcome').offset().left;
+        var guMenu = jQuery('#menu-guest-user-me').closest('ul');
+        guMenu.offset({left:welcomeTextLeft, top:31});        
+    }
+
     jQuery('a#menu-admin-bar-welcome').closest('li').hover(
             function() {jQuery('#menu-guest-user-me').closest('ul').show();},
             function() {jQuery('#menu-guest-user-me').closest('ul').hide();}
