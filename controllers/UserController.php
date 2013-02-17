@@ -52,7 +52,9 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
                         }
                         $this->_helper->flashMessenger($this->getLoginErrorMessages($authResult), 'error');
                         return;
-                    }                    
+                    }             
+                    $activation = UsersActivations::factory($user);
+                    $activation->save();
                     $this->_helper->flashMessenger(__("You are logged in temporarily. Please check your email for a confirmation message. Omce you have confirmed your request, you can log in."));
                     $this->redirect($_SERVER['HTTP_REFERER']);
                     return;
@@ -60,6 +62,9 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
                 if($openRegistration) {
                     $message = "Thank you for registering. Please check your email for a confirmation message. Once you have confirmed your request, you will be able to log in.";
                     $this->_helper->flashMessenger($message, 'success');
+                    $activation = UsersActivations::factory($user);
+                    $activation->save();
+                    
                 } else {
                     $message = "Thank you for registering. Please check your email for a confirmation message. Once you have confirmed your request and an administrator activates your account, you will be able to log in.";
                     $this->_helper->flashMessenger($message, 'success');

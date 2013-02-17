@@ -86,14 +86,8 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
     }
     public function hookPublicHead($args)
     {
-        //$request = $args['request'];
-        
         queue_css_file('guest-user');        
         queue_js_file('guest-user');
-        //if($request->getModuleName() == 'guest-user') {
-        //    queue_js_file('guest-user-password');
-        //}
-
     }
 
     public function hookPublicHeader($args)
