@@ -16,7 +16,7 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
         'admin_theme_header',
         'config',
         'config_form',
-        'before_save_form_user'
+        'before_save_user'
     );
 
     protected $_filters = array(
@@ -104,11 +104,13 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
         echo $html;
     }
 
-    public function hookBeforeSaveFormUser($args)
+    public function hookBeforeSaveUser($args)
     {
         $post = $args['post'];
-        $request = $args['request'];
-        if (! $record->active && ($record->role == 'guest') && ($post['active'] == 1)) {
+        $record = $args['record'];
+        //compare the active status being set with what's actually in the database
+        $dbUser = get_db()->getTable('User')->find($record->id);
+        if($record->role == 'guest' && $record->active && !$dbUser->active) {
             try {
                 $this->_sendMadeActiveEmail($record);
             } catch (Exception $e) {

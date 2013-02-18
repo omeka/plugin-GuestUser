@@ -1,3 +1,5 @@
+<?php $view = get_view(); ?>
+
 <div class="field">
     <div class="two columns alpha">
         <label>Registration Features</label>    
@@ -74,8 +76,13 @@
         <div class="input-block">        
             <?php
                 $checked = ( get_option('guest_user_open') == 'on') ? true : false;
+                if($checked) {
+                    $options = array('checked'=>'checked');
+                } else {
+                    $options = array();
+                }
+                echo $view->formCheckbox('guest_user_open', null, $options);                
             ?>
-            <input name="guest_user_open" type="checkbox" <?php if($checked) {echo "checked='checked'"; } ?>  />        
         </div>
     </div>
 </div>
@@ -90,8 +97,13 @@
         <div class="input-block">        
             <?php
                 $checked = ( get_option('guest_user_instant_access') == 'on') ? true : false;
+                if($checked) {
+                    $options = array('checked'=>'checked');
+                } else {
+                    $options = array();
+                }            
+                echo $view->formCheckbox('guest_user_instant_access', null, $options);
             ?>
-            <input name="guest_user_instant_access" type="checkbox" <?php if($checked) {echo "checked='checked'"; } ?>  />        
         </div>
     </div>
 </div>
@@ -106,8 +118,13 @@
         <div class="input-block">        
             <?php
                 $checked = ( get_option('guest_user_recaptcha') == 'on') ? true : false;
-            ?>
-            <input name="guest_user_recaptcha" type="checkbox" <?php if($checked) {echo "checked='checked'"; } ?>  />
+                if($checked) {
+                    $options = array('checked'=>'checked');
+                } else {
+                    $options = array();
+                }
+                echo $view->formCheckbox('guest_user_recaptcha', null, $options);
+            ?>           
         </div>
     </div>
 </div>

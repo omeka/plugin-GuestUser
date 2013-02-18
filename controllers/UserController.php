@@ -2,6 +2,10 @@
 
 class GuestUser_UserController extends Omeka_Controller_AbstractActionController
 {
+    public function init()
+    {
+        $this->_auth = $this->getInvokeArg('bootstrap')->getResource('Auth');
+    }
 
     public function loginAction()
     {
@@ -37,7 +41,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         $user->setPassword($_POST['new_password']);
         $user->setPostData($_POST);
         try {
-            if ($user->save($_POST)) {
+            if ($user->save()) {
                 $token = $this->_createToken($user);
                 $this->_sendConfirmationEmail($user, $token); //confirms that they registration request is legit
                 if($instantAccess) {
@@ -55,8 +59,11 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
                     }             
                     $activation = UsersActivations::factory($user);
                     $activation->save();
-                    $this->_helper->flashMessenger(__("You are logged in temporarily. Please check your email for a confirmation message. Omce you have confirmed your request, you can log in."));
-                    $this->redirect($_SERVER['HTTP_REFERER']);
+                    $this->_helper->flashMessenger(__("You are logged in temporarily. Please check your email for a confirmation message. Once you have confirmed your request, you can log in without time limits."));
+                    $session = new Zend_Session_Namespace;
+                    if ($session->redirect) {
+                        $this->_helper->redirector->gotoUrl($session->redirect);
+                    }
                     return;
                 }
                 if($openRegistration) {
@@ -244,8 +251,9 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
     {
         $siteTitle = get_option('site_title');
         $url = WEB_ROOT . '/guest-user/user/confirm/token/' . $token->token;
+        $siteUrl = absolute_url('/');
         $subject = "Your request to join $siteTitle";
-        $body = "You have registered for an account on $siteTitle. Please confirm your registration by following this link: $url If you did not request to join $siteTitle please disregard this email.";
+        $body = "You have registered for an account on <a href='$siteUrl'>$siteTitle</a>. Please confirm your registration by following <a href='$url'>this link</a>.  If you did not request to join $siteTitle please disregard this email.";
         $mail = $this->_getMail($user, $body, $subject);
         try {
             $mail->send();
@@ -277,7 +285,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         $siteTitle  = get_option('site_title');
         $from = get_option('administrator_email');
         $mail = new Zend_Mail();
-        $mail->setBodyText($body);
+        $mail->setBodyHtml($body);
         $mail->setFrom($from, "$siteTitle Administrator");
         $mail->addTo($user->email, $user->name);
         $mail->setSubject($subject);
