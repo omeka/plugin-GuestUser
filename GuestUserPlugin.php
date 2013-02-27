@@ -109,13 +109,15 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
         $post = $args['post'];
         $record = $args['record'];
         //compare the active status being set with what's actually in the database
-        $dbUser = get_db()->getTable('User')->find($record->id);
-        if($record->role == 'guest' && $record->active && !$dbUser->active) {
-            try {
-                $this->_sendMadeActiveEmail($record);
-            } catch (Exception $e) {
-                _log($e);
-            }
+        if($record->exists()) {
+            $dbUser = get_db()->getTable('User')->find($record->id);
+            if($record->role == 'guest' && $record->active && !$dbUser->active) {
+                try {
+                    $this->_sendMadeActiveEmail($record);
+                } catch (Exception $e) {
+                    _log($e);
+                }
+            }            
         }
     }
 
