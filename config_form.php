@@ -75,7 +75,7 @@
         <p class="explanation">Allow guest user registration without administrator approval?</p>
         <div class="input-block">        
             <?php
-                $checked = ( get_option('guest_user_open') == 'on') ? true : false;
+                $checked = ( get_option('guest_user_open') == 1) ;
                 if($checked) {
                     $options = array('checked'=>'checked');
                 } else {
@@ -96,7 +96,7 @@
         <p class="explanation">Allow instant access for 20 minutes for new users</p>
         <div class="input-block">        
             <?php
-                $checked = ( get_option('guest_user_instant_access') == 'on') ? true : false;
+                $checked = ( get_option('guest_user_instant_access') == 1 );
                 if($checked) {
                     $options = array('checked'=>'checked');
                 } else {
@@ -117,7 +117,7 @@
         <p class="explanation">Check this to require passing a ReCaptcha test when registering</p>
         <div class="input-block">        
             <?php
-                $checked = ( get_option('guest_user_recaptcha') == 'on') ? true : false;
+                $checked = ( get_option('guest_user_recaptcha') == 1);
                 if($checked) {
                     $options = array('checked'=>'checked');
                 } else {
