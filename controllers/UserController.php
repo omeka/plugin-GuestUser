@@ -23,8 +23,8 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         if(current_user()) {
             $this->redirect($_SERVER['HTTP_REFERER']);
         }
-        $openRegistration = (get_option('guest_user_open') == 'on');
-        $instantAccess = (get_option('guest_user_instant_access') == 'on');
+        $openRegistration = (get_option('guest_user_open') == 1);
+        $instantAccess = (get_option('guest_user_instant_access') == 1);
         $user = new User();
 
         $form = $this->_getForm(array('user'=>$user));
@@ -213,7 +213,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
                                 'errorMessages' => array(__('New password must be typed correctly twice.'))
                         )
         );
-        if(Omeka_Captcha::isConfigured() && (get_option('guest_user_recaptcha') == 'on')) {
+        if(Omeka_Captcha::isConfigured() && (get_option('guest_user_recaptcha') == 1)) {
             $form->addElement('captcha', 'captcha',  array(
                 'class' => 'hidden',
                 'style' => 'display: none;',
@@ -259,7 +259,6 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
             $mail->send();
         } catch (Exception $e) {
             _log($e);
-            _log($body);
         }
     }
 
