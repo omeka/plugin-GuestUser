@@ -37,7 +37,6 @@ class GuestUser_ControllerPlugin extends Zend_Controller_Plugin_Abstract
                     $token = $tokens[0];
                     $tokenCreated = new DateTime($token->created);
                     $diff = time() - $tokenCreated->format('U');
-                    debug($diff);
                     if(!$token->confirmed && $user->active && $diff > 1200) {
                         $this->_getRedirect()->gotoUrl(WEB_ROOT . '/guest-user/user/stale-token');
                     }
