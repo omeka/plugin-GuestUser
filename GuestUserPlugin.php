@@ -144,17 +144,18 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
         
             return $navLinks;
         }
-        
+        $loginLabel = get_option('guest_user_login_text') ? get_option('guest_user_login_text') : __('Login');
+        $registerLabel = get_option('guest_user_register_text') ? get_option('guest_user_register_text') : __('Register'); 
         $navLinks = array(
                 'guest-user-login' => array(
                     'id' => 'guest-user-login',
-                    'label' => __('Login'),
+                    'label' => $loginLabel,
                     'uri' => url('guest-user/user/login')
                 ),
                 
                 'guest-user-register' => array(
                     'id' => 'guest-user-register', 
-                    'label' => __('Register'),
+                    'label' => $registerLabel,
                     'uri' => url('guest-user/user/register'),
                     )
                 

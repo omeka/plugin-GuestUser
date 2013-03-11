@@ -273,7 +273,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
          try {
             $mail->send();
         } catch (Exception $e) {
-            _log($body);
+            _log($e);
         }
     }
 
