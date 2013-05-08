@@ -11,5 +11,5 @@ echo head(array('bodyclass' => 'update-account', 'title' => $pageTitle));
 <div id='primary'>
 <?php echo flash(); ?>
 <?php echo $this->form; ?>
-<?php echo foot(); ?>
 </div>
+<?php echo foot(); ?>

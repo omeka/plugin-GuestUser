@@ -16,5 +16,5 @@ echo head(array('bodyclass' => 'register', 'title' => $pageTitle));
 <?php echo flash(); ?>
 <?php echo $this->form; ?>
 <p id='confirm'></p>
-<?php echo foot(); ?>
 </div>
+<?php echo foot(); ?>
