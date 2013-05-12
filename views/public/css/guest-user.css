@@ -35,7 +35,7 @@ a#menu-admin-bar-welcome + ul {
     display: none;
     position: absolute;
     background: #404040;
-    z-index: 1000;
+    z-index: 10000;
 }
 
 a#menu-admin-bar-welcome + ul li {
