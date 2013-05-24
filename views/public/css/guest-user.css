@@ -76,6 +76,7 @@ div.guest-user-widget-odd {
     clear:right;
 }
 
-div.guest-user-widget-even {
-
+p.explanation {
+	margin-top: 0px;
+	
 }
