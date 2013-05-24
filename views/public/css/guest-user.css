@@ -13,7 +13,6 @@
             }
             
             #content #flash li, ul.error li {
-                background-color: rgba(255, 255, 255, .5);
                 border: 1px solid #E7E7E7;
                 border-radius: 3px;
                 font-size: 14px;
