@@ -160,7 +160,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
             $this->_sendConfirmedEmail($user);
             $message = "Please check the email we just sent you for the next steps! You're almost there!";
             $this->_helper->flashMessenger($message, 'success');
-            $this->redirect('users/login');
+            //$this->redirect('users/login');
         } else {
             $this->_helper->flashMessenger('Invalid token', 'error');
         }
@@ -234,7 +234,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
             $body .= "\n\n You can now log in using the password you chose.";
         } else {
             $body .= "\n\n When an administrator approves your account, you will receive another message that you" .
-                    "can log in with the password you chose.";
+                    " can log in with the password you chose.";
         }
         $subject = "Registration for $siteTitle";
         $mail = $this->_getMail($user, $body, $subject);
