@@ -52,7 +52,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
                     if (!$authResult->isValid()) {
                         if ($log = $this->_getLog()) {
                             $ip = $this->getRequest()->getClientIp();
-                            $log->info("Failed login attempt from '$ip'.");
+                            $log->info(__("Failed login attempt from %s", $ip));
                         }
                         $this->_helper->flashMessenger($this->getLoginErrorMessages($authResult), 'error');
                         return;
@@ -67,13 +67,13 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
                     return;
                 }
                 if($openRegistration) {
-                    $message = "Thank you for registering. Please check your email for a confirmation message. Once you have confirmed your request, you will be able to log in.";
+                    $message = __("Thank you for registering. Please check your email for a confirmation message. Once you have confirmed your request, you will be able to log in.");
                     $this->_helper->flashMessenger($message, 'success');
                     $activation = UsersActivations::factory($user);
                     $activation->save();
                     
                 } else {
-                    $message = "Thank you for registering. Please check your email for a confirmation message. Once you have confirmed your request and an administrator activates your account, you will be able to log in.";
+                    $message = __("Thank you for registering. Please check your email for a confirmation message. Once you have confirmed your request and an administrator activates your account, you will be able to log in.");
                     $this->_helper->flashMessenger($message, 'success');
                 }
             }
@@ -158,11 +158,11 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
             $user = $db->getTable('User')->find($record->user_id);
             $this->_sendAdminNewConfirmedUserEmail($user);
             $this->_sendConfirmedEmail($user);
-            $message = "Please check the email we just sent you for the next steps! You're almost there!";
+            $message = __("Please check the email we just sent you for the next steps! You're almost there!");
             $this->_helper->flashMessenger($message, 'success');
-            //$this->redirect('users/login');
+            $this->redirect('users/login');
         } else {
-            $this->_helper->flashMessenger('Invalid token', 'error');
+            $this->_helper->flashMessenger(__('Invalid token'), 'error');
         }
     }
 
@@ -207,7 +207,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         );
         $form->addElement('password', 'new_password_confirm',
                         array(
-                                'label'         => 'Password again for match',
+                                'label'         => __('Password again for match'),
                                 'required'      => true,
                                 'class'         => 'textinput',
                                 'errorMessages' => array(__('New password must be typed correctly twice.'))
@@ -217,26 +217,25 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
             $form->addElement('captcha', 'captcha',  array(
                 'class' => 'hidden',
                 'style' => 'display: none;',
-                'label' => "Please verify you're a human",
+                'label' => __("Please verify you're a human"),
                 'type' => 'hidden',
                 'captcha' => Omeka_Captcha::getCaptcha()
             ));
         }
-        $form->addElement('submit', 'submit', array('label' => 'Register'));
+        $form->addElement('submit', 'submit', array('label' => __('Register')));
         return $form;        
     }
     
     protected function _sendConfirmedEmail($user)
     {
         $siteTitle = get_option('site_title');
-        $body = "Thanks for joining $siteTitle!";
+        $body = __("Thanks for joining %s!", $siteTitle);
         if(get_option('guest_user_open') == 1) {
-            $body .= "\n\n You can now log in using the password you chose.";
+            $body .= "\n\n" . __("You can now log in using the password you chose.");
         } else {
-            $body .= "\n\n When an administrator approves your account, you will receive another message that you" .
-                    " can log in with the password you chose.";
+            $body .= "\n\n" . __("When an administrator approves your account, you will receive another message that you can use to log in with the password you chose.");
         }
-        $subject = "Registration for $siteTitle";
+        $subject = __("Registration for %s", $siteTitle);
         $mail = $this->_getMail($user, $body, $subject);
         try {
             $mail->send();
@@ -250,8 +249,8 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         $siteTitle = get_option('site_title');
         $url = WEB_ROOT . '/guest-user/user/confirm/token/' . $token->token;
         $siteUrl = absolute_url('/');
-        $subject = "Your request to join $siteTitle";
-        $body = "You have registered for an account on <a href='$siteUrl'>$siteTitle</a>. Please confirm your registration by following <a href='$url'>this link</a>.  If you did not request to join $siteTitle please disregard this email.";
+        $subject = __("Your request to join %s", $siteTitle);
+        $body = __("You have registered for an account on %s. Please confirm your registration by following %s.  If you did not request to join %s please disregard this email.", "<a href='$siteUrl'>$siteTitle</a>", "<a href='$url'>" . __('this link') . "</a>", $siteTitle);
         $mail = $this->_getMail($user, $body, $subject);
         try {
             $mail->send();
@@ -264,9 +263,8 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
     {
         $siteTitle = get_option('site_title');
         $url = WEB_ROOT . "/admin/users/edit/" . $user->id;
-        $subject = "New request to join $siteTitle";
-        $body = "A new user has confirmed that they want to join $siteTitle.  ";
-        $body .= "\n\n<a href='$url'>" . $user->username . "</a>";
+        $subject = __("New request to join %s", $siteTitle);
+        $body = __("A new user has confirmed that they want to join %s : %s" , $siteTitle, "<a href='$url'>" . $user->username . "</a>");
         $mail = $this->_getMail($user, $body, $subject);
         $mail->clearRecipients();
         $mail->addTo(get_option('administrator_email'), "$siteTitle Administrator");
@@ -283,7 +281,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         $from = get_option('administrator_email');
         $mail = new Zend_Mail();
         $mail->setBodyHtml($body);
-        $mail->setFrom($from, "$siteTitle Administrator");
+        $mail->setFrom($from, __("%s Administrator", $siteTitle));
         $mail->addTo($user->email, $user->name);
         $mail->setSubject($subject);
         $mail->addHeader('X-Mailer', 'PHP/' . phpversion());

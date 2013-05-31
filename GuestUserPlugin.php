@@ -17,7 +17,8 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
         'admin_theme_header',
         'config',
         'config_form',
-        'before_save_user'
+        'before_save_user',
+        'initialize'
     );
 
     protected $_filters = array(
@@ -26,6 +27,15 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
         'guest_user_widgets'       
     );
 
+    
+    /**
+     * Add the translations.
+     */
+    public function hookInitialize()
+    {
+        add_translation_source(dirname(__FILE__) . '/languages');
+    }    
+    
     public function setUp()
     {
        
@@ -62,8 +72,8 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
             set_option('guest_user_skip_activation_email', false);
         }     
         
-        set_option('guest_user_login_text', 'Login');
-        set_option('guest_user_register_text', 'Register');
+        set_option('guest_user_login_text', __('Login'));
+        set_option('guest_user_register_text', __('Register'));
     }
 
     public function hookUninstall($args)
@@ -195,12 +205,12 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
 
     public function filterGuestUserWidgets($widgets)
     {
-        $widget = array('label'=>'My Account');
+        $widget = array('label'=> __('My Account'));
         $passwordUrl = url('guest-user/user/change-password');
         $accountUrl = url('guest-user/user/update-account');
         $html = "<ul>";
-        $html .= "<li><a href='$passwordUrl'>Change Password</a></li>";
-        $html .= "<li><a href='$accountUrl'>Update Account Info</a></li>";
+        $html .= "<li><a href='$passwordUrl'>" . __("Change Password") . "</a></li>";
+        $html .= "<li><a href='$accountUrl'>" . __("Update Account Info") . "</a></li>";
         $html .= "</ul>";
         $widget['content'] = $html;
         $widgets[] = $widget;
@@ -213,8 +223,8 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
         $name = $record->name;
  
         $siteTitle  = get_option('site_title');
-        $subject = "Your $siteTitle account";
-        $body = "An admin has made your account active. You can now log in with your password";
+        $subject = __("Your %s account", $siteTitle);
+        $body = __("An admin has made your account active. You can now log in with your password");
         $from = get_option('administrator_email');
         $mail = new Zend_Mail();
         $mail->setBodyText($body);

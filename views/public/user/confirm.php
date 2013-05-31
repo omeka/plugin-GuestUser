@@ -1,8 +1,8 @@
 <?php
-
-echo head(array('title' => 'Confirmation Error'));
+$head = array('title' => __('Confirmation Error'));
+echo head($head);
 ?>
-<h1>Confirmation Error</h1>
+<h1><?php echo $head['title']?></h1>
 
 <div id='primary'>
 <?php echo flash(); ?>

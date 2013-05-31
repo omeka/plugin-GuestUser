@@ -7,7 +7,7 @@ echo head(array('title' => $pageTitle));
 
 <div id='primary'>
 <?php echo flash(); ?>
-<p>Browse and manage your work here.</p>
+<p><?php echo __("Browse and manage your work here."); ?></p>
 
 <?php foreach($widgets as $index=>$widget): ?>
 <div class='guest-user-widget <?php if($index & 1): ?>guest-user-widget-odd <?php else:?>guest-user-widget-even<?php endif;?>'>
