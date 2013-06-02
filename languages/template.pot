@@ -30,16 +30,16 @@ msgstr ""
 msgid "My Account"
 msgstr ""
 
-#: GuestUserPlugin.php:213
-msgid "Update Account Info"
+#: GuestUserPlugin.php:212
+msgid "Update account info and password"
 msgstr ""
 
-#: GuestUserPlugin.php:226
+#: GuestUserPlugin.php:225
 #, php-format
 msgid "Your %s account"
 msgstr ""
 
-#: GuestUserPlugin.php:227
+#: GuestUserPlugin.php:226
 msgid ""
 "An admin has made your account active. You can now log in with your password"
 msgstr ""
