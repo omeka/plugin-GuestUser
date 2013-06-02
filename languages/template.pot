@@ -17,6 +17,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "Guest"
+msgstr ""
+
 #: GuestUserPlugin.php:75 GuestUserPlugin.php:184
 msgid "Login"
 msgstr ""
