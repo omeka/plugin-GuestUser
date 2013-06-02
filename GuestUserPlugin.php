@@ -209,8 +209,7 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
         $passwordUrl = url('guest-user/user/change-password');
         $accountUrl = url('guest-user/user/update-account');
         $html = "<ul>";
-        $html .= "<li><a href='$passwordUrl'>" . __("Change Password") . "</a></li>";
-        $html .= "<li><a href='$accountUrl'>" . __("Update Account Info") . "</a></li>";
+        $html .= "<li><a href='$accountUrl'>" . __("Update account info and password") . "</a></li>";
         $html .= "</ul>";
         $widget['content'] = $html;
         $widgets[] = $widget;
