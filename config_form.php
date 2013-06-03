@@ -107,7 +107,7 @@
     </div>
 </div>
 
-
+<?php if(get_option('recaptcha_public_key') && get_option('recaptcha_private_key')): ?>
 <div class="field">
     <div class="two columns alpha">
         <label><?php echo __("Require ReCaptcha?"); ?></label>    
@@ -127,4 +127,7 @@
         </div>
     </div>
 </div>
+<?php else:?>
+<p><?php echo __("You have not set up ReCaptcha keys in the security settings. We strongly recommend using ReCaptcha to prevent spam account creation."); ?>
 
+<?php endif;?>
