@@ -1,14 +1,14 @@
-Guest User
-----------
+# Guest User
 
-About
-=====
+
+## About
+
 
 The Guest User plugin creates a role called 'guest', and provides configuration options for a login and registration screen. Guest users become registered users in Omeka, but have no other privileges to the admin side of your Omeka installation. GuestUser is thus intended to be a common plugin that other plugins needing a guest user use as a dependency.
 
 
-Configuration
-=============
+## Configuration
+
 
 ### Long about message 
 Use this to provide text explaining what Guest Users can or cannot do. This should be updated as you enable additional plugins that make use of the Guest Users. It will display on the guest user registration page.
@@ -33,8 +33,8 @@ The text that replaces the login/register links. Leave empty to show the user's 
 
 
 
-Using as a dependency 
-=====================
+## Using as a dependency 
+
 
 Guest User provides two filters for plugins to add additional context and information to the user.
 
@@ -43,6 +43,7 @@ Guest User provides two filters for plugins to add additional context and inform
 The guest_user_links filter allows you to programmatically add links to the hover-over links that a logged in user will see. By default, GuestUser provides a logout link, and a link to the user's dashboard. If your plugin provides pages that display more information, you should use this filter to create a new link.
 
 ```php
+
     public function filterGuestUserLinks($links)
     {
         $url = uri('guest-user/user/me');
@@ -63,6 +64,7 @@ Widgets should be an array with two keys: the label of the widget, and the conte
 
 
 ```php
+
     public function filterGuestUserWidgets($widgets)
     {
         $widget = array('label'=>'My Account');
