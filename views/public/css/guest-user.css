@@ -41,6 +41,7 @@ a#menu-admin-bar-welcome + ul li {
     display: block;
     text-align: left;
     padding: 3px;
+    float: none;
 }
 
 h2.guest-user-widget-label {
