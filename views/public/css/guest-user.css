@@ -35,6 +35,7 @@ a#menu-admin-bar-welcome + ul {
     position: absolute;
     background: #404040;
     z-index: 10000;
+    padding-left: 3px;
 }
 
 a#menu-admin-bar-welcome + ul li {
