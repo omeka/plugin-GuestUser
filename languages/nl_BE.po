@@ -1,0 +1,246 @@
+# Translation for the Simple Pages plugin for Omeka.
+# Copyright (C) 2011 Roy Rosenzweig Center for History and New Media
+# This file is distributed under the same license as the Omeka package.
+# 
+# Translators:
+# dewulfevy <evy.dewulf@libis.kuleuven.be>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Omeka\n"
+"Report-Msgid-Bugs-To: https://github.com/omeka/Omeka/issues\n"
+"POT-Creation-Date: 2012-01-09 21:49-0500\n"
+"PO-Revision-Date: 2013-06-23 16:20+0000\n"
+"Last-Translator: Sam Alloing <sam.alloing@gmail.com>\n"
+"Language-Team: Dutch (Belgium) (http://www.transifex.com/projects/p/omeka/language/nl_BE/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl_BE\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Guest"
+msgstr "Gast"
+
+#: GuestUserPlugin.php:75 GuestUserPlugin.php:184
+msgid "Login"
+msgstr "Login"
+
+#: GuestUserPlugin.php:76 GuestUserPlugin.php:185
+#: controllers/UserController.php:225 views/public/user/register.php:6
+msgid "Register"
+msgstr "Registreer"
+
+#: GuestUserPlugin.php:208
+msgid "My Account"
+msgstr "Mijn account"
+
+#: GuestUserPlugin.php:212
+msgid "Update account info and password"
+msgstr "Werk accountinformatie en wachtwoord bij"
+
+#: GuestUserPlugin.php:225
+#, php-format
+msgid "Your %s account"
+msgstr "Uw %s account"
+
+#: GuestUserPlugin.php:226
+msgid ""
+"An admin has made your account active. You can now log in with your password"
+msgstr "Een administrator heeft uw account actief gemaakt. U kan nu inloggen met uw wachtwoord"
+
+#: config_form.php:5
+msgid "Registration Features"
+msgstr "Registratiefuncties"
+
+#: config_form.php:8
+msgid ""
+"Add some text to the registration screen so people will know what they get for registering.\n"
+"        As you enable and configure plugins that make use of the guest user, please give them guidance\n"
+"        about what they can and cannot do."
+msgstr "Voeg tekst toe aan het registratiescherm zodat mensen weten wat ze krijgen voor het registreren.⏎\nAls u plugins die gebruik maken van de gastgebruiker inschakelt en configureert, geef ze begeleiding⏎\nover wat ze kunnen doen en niet kunnen doen."
+
+#: config_form.php:21
+msgid "Short Registration Features"
+msgstr "Korte registratiefuncties"
+
+#: config_form.php:24
+msgid ""
+"Add a shorter version to use as a dropdown from the user bar. If empty, no "
+"dropdown will appear."
+msgstr "Voeg een kortere versie toe om te gebruiken als dropdown van het gebruikersmenu. Als dit leeg is, zal geen dropdown verschijnen."
+
+#: config_form.php:34
+msgid "Dashboard Label"
+msgstr "Dashboard label"
+
+#: config_form.php:37
+msgid "The text to use for the label on the user's dashboard"
+msgstr "De tekst die gebruikt wordt voor het label op het dashboard van de gebruiker"
+
+#: config_form.php:46
+msgid "Login Text"
+msgstr "Login tekst"
+
+#: config_form.php:49
+msgid "The text to use for the 'Login' link in the user bar"
+msgstr "De tekst die gebruikt wordt voor de 'Login' link in het gebruikersmenu"
+
+#: config_form.php:58
+msgid "Register Text"
+msgstr "Registreer tekst"
+
+#: config_form.php:61
+msgid "The text to use for the 'Register' link in the user bar."
+msgstr "De tekst die gebruikt wordt voor de 'Registreer' link in het gebruikersmenu."
+
+#: config_form.php:71
+msgid "Allow open registration?"
+msgstr "Sta open registratie toe?"
+
+#: config_form.php:74
+msgid "Allow guest user registration without administrator approval?"
+msgstr "Sta gastgebruikers toe om te registreren zonder de toestemming van een administrator?"
+
+#: config_form.php:92
+msgid "Allow instant access?"
+msgstr "Sta onmiddellijke toegang toe?"
+
+#: config_form.php:95
+msgid "Allow instant access for 20 minutes for new users"
+msgstr "Sta onmiddellijke toegang voor 20 minuten toe voor nieuwe gebruikers"
+
+#: config_form.php:113
+msgid "Require ReCaptcha?"
+msgstr "Vereis ReCaptcha?"
+
+#: config_form.php:116
+msgid "Check this to require passing a ReCaptcha test when registering"
+msgstr "Vink dit aan om te eisen een Recaptcha-test te doorlopen bij het registreren"
+
+#: controllers/UserController.php:55
+#, php-format
+msgid "Failed login attempt from %s"
+msgstr "Mislukte login poging van %s"
+
+#: controllers/UserController.php:62
+msgid ""
+"You are logged in temporarily. Please check your email for a confirmation "
+"message. Once you have confirmed your request, you can log in without time "
+"limits."
+msgstr "U bent tijdelijk ingelogd. Controleer uw e-mail voor een bevestigingsbericht. Zodra u uw aanvraag hebt bevestigd, kan u inloggen zonder tijdsbeperkingen."
+
+#: controllers/UserController.php:70
+msgid ""
+"Thank you for registering. Please check your email for a confirmation "
+"message. Once you have confirmed your request, you will be able to log in."
+msgstr "Bedankt voor het registreren. Controleer uw e-mail voor een bevestigingsbericht. Zodra uw aanvraag bevestigd is, zal u kunnen inloggen."
+
+#: controllers/UserController.php:76
+msgid ""
+"Thank you for registering. Please check your email for a confirmation "
+"message. Once you have confirmed your request and an administrator activates"
+" your account, you will be able to log in."
+msgstr "Bedankt voor het registreren. Controleer uw e-mail voor een bevestigingsbericht. Zodra uw aanvraag bevestigd is en een administrator uw account activeert, zal u kunnen inloggen."
+
+#: controllers/UserController.php:115
+msgid "Incorrect password"
+msgstr "Foutief wachtwoord"
+
+#: controllers/UserController.php:161
+msgid ""
+"Please check the email we just sent you for the next steps! You're almost "
+"there!"
+msgstr "Controleer de e-mail die we u gestuurd hebben voor de volgende stappen. U bent er bijna!"
+
+#: controllers/UserController.php:165
+msgid "Invalid token"
+msgstr "Ongeldige token"
+
+#: controllers/UserController.php:210 views/public/user/update-account.php:4
+msgid "Password again for match"
+msgstr "Opnieuw wachtwoord voor overeenkomst"
+
+#: controllers/UserController.php:220
+msgid "Please verify you're a human"
+msgstr "Controleer of u een mens bent, aub"
+
+#: controllers/UserController.php:232
+#, php-format
+msgid "Thanks for joining %s!"
+msgstr "Bedankt voor het aansluiten bij %s!"
+
+#: controllers/UserController.php:234
+msgid "You can now log in using the password you chose."
+msgstr "U kan nu inloggen met het wachtwoord dat u gekozen hebt."
+
+#: controllers/UserController.php:236
+msgid ""
+"When an administrator approves your account, you will receive another "
+"message that you can use to log in with the password you chose."
+msgstr "Zodra een administrator uw account goedkeurt, zal u een boodschap ontvangen waarin staat dat u kan inloggen met het wachtwoord dat u koos."
+
+#: controllers/UserController.php:238
+#, php-format
+msgid "Registration for %s"
+msgstr "Registratie voor %s"
+
+#: controllers/UserController.php:252
+#, php-format
+msgid "Your request to join %s"
+msgstr "Uw aanvraag voor het aansluiten bij %s"
+
+#: controllers/UserController.php:253
+msgid "this link"
+msgstr "deze link"
+
+#: controllers/UserController.php:253
+#, php-format
+msgid ""
+"You have registered for an account on %s. Please confirm your registration "
+"by following %s.  If you did not request to join %s please disregard this "
+"email."
+msgstr "U hebt u geregistreerd voor een account op %s. Bevestig uw registratie door %s te volgen. Als u geen aanvraag voor aansluiting bij %s deed, negeer deze e-mail dan."
+
+#: controllers/UserController.php:266
+#, php-format
+msgid "New request to join %s"
+msgstr "Nieuwe aanvraag om aan te sluiten bij %s"
+
+#: controllers/UserController.php:267
+#, php-format
+msgid "A new user has confirmed that they want to join %s : %s"
+msgstr "Een nieuwe gebruiker heeft bevestigd dat ze willen aansluiten bij %s: %s"
+
+#: views/public/user/confirm.php:2
+msgid "Confirmation Error"
+msgstr "Fout bij bevestiging"
+
+#: views/public/user/me.php:10
+msgid "Browse and manage your work here."
+msgstr "Verken en beheer uw werk hier."
+
+#: views/public/user/stale-token.php:2
+msgid "Stale Token"
+msgstr "Oude token"
+
+#: views/public/user/stale-token.php:9
+msgid ""
+"Your temporary access to the site has expired. Please check your email for "
+"the link to follow to confirm your registration."
+msgstr "Uw tijdelijke toegang tot de site is vervallen. Controleer uw e-mail voor de link te volgen om uw registratie te bevestigen."
+
+#: views/public/user/stale-token.php:11
+msgid "You have been logged out, but can continue browsing the site."
+msgstr "U bent uitgelogd, maar kan de site verder verkennen."
+
+#: views/public/user/update-account.php:5
+msgid "Passwords match!"
+msgstr "Wachtwoorden komen overeen!"
+
+#: views/public/user/update-account.php:6
+msgid "Passwords do not match!"
+msgstr "Wachtwoorden komen niet overeen!"
+
+#: views/public/user/update-account.php:13
+msgid "Update Account"
+msgstr "Werk account bij"
