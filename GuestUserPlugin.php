@@ -80,7 +80,6 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
     {
         //deactivate the guest users
         $guestUsers = $this->_db->getTable('User')->findBy(array('role'=>'guest'));
-        debug(count($guestUsers));
         foreach($guestUsers as $user) {
             $user->active = false;
             $user->save();
@@ -223,7 +222,7 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
  
         $siteTitle  = get_option('site_title');
         $subject = __("Your %s account", $siteTitle);
-        $body = __("An admin has made your account active. You can now log in to %s with your password", "<a href='WEB_ROOT'>$siteTitle</a>");
+        $body = __("An admin has made your account active. You can now log in to %s with your password", "<a href='" . WEB_ROOT . "'>$siteTitle</a>");
         $from = get_option('administrator_email');
         $mail = new Zend_Mail();
         $mail->setBodyText($body);
