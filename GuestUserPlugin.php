@@ -228,7 +228,7 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
         $body .= "<p><a href='" . WEB_ROOT . "/users/login'>$siteTitle</a></p>";
         $from = get_option('administrator_email');
         $mail = new Zend_Mail();
-        $mail->setBodyText($body);
+        $mail->setBodyHtml($body);
         $mail->setFrom($from, "$siteTitle Administrator");
         $mail->addTo($email, $name);
         $mail->setSubject($subject);
