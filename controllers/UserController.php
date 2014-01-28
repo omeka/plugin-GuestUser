@@ -4,6 +4,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
 {
     public function init()
     {
+        $this->_helper->db->setDefaultModelName('User');
         $this->_auth = $this->getInvokeArg('bootstrap')->getResource('Auth');
     }
 
@@ -13,13 +14,13 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         if(!$session->redirect) {
             $session->redirect = $_SERVER['HTTP_REFERER'];
         }
-        
+
         $this->redirect('users/login');
     }
 
     public function registerAction()
     {
-        
+
         if(current_user()) {
             $this->redirect($_SERVER['HTTP_REFERER']);
         }
@@ -47,7 +48,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
                 if($instantAccess) {
                     //log them right in, and return them to the previous page
                     $authAdapter = new Omeka_Auth_Adapter_UserTable($this->_helper->db->getDb());
-                    $authAdapter->setIdentity($user->username)->setCredential($_POST['new_password']);                    
+                    $authAdapter->setIdentity($user->username)->setCredential($_POST['new_password']);
                     $authResult = $this->_auth->authenticate($authAdapter);
                     if (!$authResult->isValid()) {
                         if ($log = $this->_getLog()) {
@@ -56,7 +57,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
                         }
                         $this->_helper->flashMessenger($this->getLoginErrorMessages($authResult), 'error');
                         return;
-                    }             
+                    }
                     $activation = UsersActivations::factory($user);
                     $activation->save();
                     $this->_helper->flashMessenger(__("You are logged in temporarily. Please check your email for a confirmation message. Once you have confirmed your request, you can log in without time limits."));
@@ -71,7 +72,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
                     $this->_helper->flashMessenger($message, 'success');
                     $activation = UsersActivations::factory($user);
                     $activation->save();
-                    
+
                 } else {
                     $message = __("Thank you for registering. Please check your email for a confirmation message. Once you have confirmed your request and an administrator activates your account, you will be able to log in.");
                     $this->_helper->flashMessenger($message, 'success');
@@ -85,7 +86,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
     public function updateAccountAction()
     {
         $user = current_user();
-        
+
         $form = $this->_getForm(array('user'=>$user));
         $form->getElement('new_password')->setLabel(__("New Password"));
         $form->getElement('new_password')->setRequired(false);
@@ -96,35 +97,35 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
                                 'required'      => true,
                                 'class'         => 'textinput',
                         )
-        );        
-        
+        );
+
         $oldPassword = $form->getElement('current_password');
         $oldPassword->setOrder(0);
         $form->addElement($oldPassword);
-        
+
         //$form->removeElement('new_password_confirm');
         $form->setSubmitButtonText('Update');
         $form->setDefaults($user->toArray());
         $this->view->form = $form;
-        
+
         if (!$this->getRequest()->isPost() || !$form->isValid($_POST)) {
             return;
-        }  
-        
+        }
+
         if($user->password != $user->hashPassword($_POST['current_password'])) {
             $this->_helper->flashMessenger(__("Incorrect password"), 'error');
             return;
         }
-        
+
         $user->setPassword($_POST['new_password']);
         $user->setPostData($_POST);
         try {
             $user->save($_POST);
         } catch (Omeka_Validator_Exception $e) {
             $this->flashValidationErrors($e);
-        }              
+        }
     }
-    
+
     public function meAction()
     {
         $user = current_user();
@@ -136,16 +137,16 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         $this->view->widgets = $widgets;
     }
 
-    public function staleTokenAction() 
+    public function staleTokenAction()
     {
         $auth = $this->getInvokeArg('bootstrap')->getResource('Auth');
         //http://framework.zend.com/manual/en/zend.auth.html
         $auth->clearIdentity();
         //$_SESSION = array();
         //Zend_Session::destroy();
-        
+
     }
-    
+
     public function confirmAction()
     {
         $db = get_db();
@@ -177,7 +178,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
                     'required'      => true,
                     'class'         => 'textinput',
                     'validators'    => array(
-                        array('validator' => 'NotEmpty', 'breakChainOnFailure' => true, 'options' => 
+                        array('validator' => 'NotEmpty', 'breakChainOnFailure' => true, 'options' =>
                             array(
                                 'messages' => array(
                                     'isEmpty' => __("New password must be entered.")
@@ -185,7 +186,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
                             )
                         ),
                         array(
-                            'validator' => 'Confirmation', 
+                            'validator' => 'Confirmation',
                             'options'   => array(
                                 'field'     => 'new_password_confirm',
                                 'messages'  => array(
@@ -223,19 +224,19 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
             ));
         }
         $form->addElement('submit', 'submit', array('label' => __('Register')));
-        return $form;        
+        return $form;
     }
-    
+
     protected function _sendConfirmedEmail($user)
     {
         $siteTitle = get_option('site_title');
         $body = __("Thanks for joining %s!", $siteTitle);
-        
+
         if(get_option('guest_user_open') == 1) {
             $body .= "<p>" . __("You can now log into %s using the password you chose.", "<a href='WEB_ROOT'>$siteTitle</a>") . "</p>";
         } else {
             $body .= "<p>" . __("When an administrator approves your account, you will receive another message that you can use to log in with the password you chose.") . "</p>";
-        }            
+        }
 
         $subject = __("Registration for %s", $siteTitle);
         $mail = $this->_getMail($user, $body, $subject);
@@ -253,11 +254,11 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         $siteUrl = absolute_url('/');
         $subject = __("Your request to join %s", $siteTitle);
         $body = __("You have registered for an account on %s. Please confirm your registration by following %s.  If you did not request to join %s please disregard this email.", "<a href='$siteUrl'>$siteTitle</a>", "<a href='$url'>" . __('this link') . "</a>", $siteTitle);
-        
+
         if(get_option('guest_user_instant_access') == 1) {
             $body .= "<p>" . __("You have temporary access to %s for twenty minutes. You will need to confirm your request to join after that time.", $siteTitle) . "</p>";
         }
-        
+
         $mail = $this->_getMail($user, $body, $subject);
         try {
             $mail->send();
@@ -278,7 +279,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
             }
             $body .= "<p>" . __("You will need to make the user active and save the changes to complete registration for %s.", $user->username) . "</p>";
         }
-        
+
         $mail = $this->_getMail($user, $body, $subject);
         $mail->clearRecipients();
         $mail->addTo(get_option('administrator_email'), "$siteTitle Administrator");
@@ -290,7 +291,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
     }
 
     protected function _getMail($user, $body, $subject)
-    {    
+    {
         $siteTitle  = get_option('site_title');
         $from = get_option('administrator_email');
         $mail = new Zend_Mail();
