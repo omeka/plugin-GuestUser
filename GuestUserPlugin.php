@@ -188,19 +188,14 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
                     'label' => $loginLabel,
                     'uri' => url('guest-user/user/login')
                 ),
-
                 'guest-user-register' => array(
                     'id' => 'guest-user-register',
                     'label' => $registerLabel,
                     'uri' => url('guest-user/user/register'),
                     )
-
                 );
         return $navLinks;
-
-
     }
-
 
     public function filterGuestUserWidgets($widgets)
     {
