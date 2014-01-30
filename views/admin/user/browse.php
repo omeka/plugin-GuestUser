@@ -33,7 +33,33 @@ echo flash();
 <input type='radio' name='search-type' value='name' /><span><?php echo __('Real names'); ?></span>
 <input type='radio' name='search-type' value='email' /><span><?php echo __('Email addresses'); ?></span>
 
+
+
+<select name='role'>
+<?php foreach(get_user_roles() as $key=>$value): ?>
+<option value='<?php echo $key; ?>'><?php echo $value?></option>
+<?php endforeach; ?>
+</select>
 </form>
+
+<ul class='quick-filter-wrapper'>
+    <li>
+        <a tabindex="0" href="#"><?php echo __("Role Filter"); ?></a>
+        <ul class="dropdown">
+            <li>
+                <span class="quick-filter-heading"><?php echo __("Role Filter"); ?></span>
+            </li>
+            <li>
+                <a href="<?php echo url('guest-user/user/browse'); ?>"><?php echo __("View All"); ?></a>
+            </li>
+            <?php foreach(get_user_roles() as $value => $name): ?>
+            <li>
+                <a href="<?php echo url('guest-user/user/browse', array('role' => $value)); ?>"><?php echo __("%s", $name); ?></a>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </li>
+</ul>
 
 <?php echo pagination_links(); ?>
 <table id="users">
