@@ -16,12 +16,12 @@ function guest_user_user_added($user)
     $activationTable = get_db()->getTable('UsersActivations');
     $select = $activationTable->getSelect();
     if($user->id == 1) {
-        return "Since the beginning...";
+        return __("User 1");
     }
     $select->where('user_id = ?', $user->id);
     $activation = $activationTable->fetchObject($select);
     if(empty($activation)) {
-        return "Never activated";
+        return __("Never activated");
     }
     return $activation->added;
 }
