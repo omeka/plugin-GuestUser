@@ -18,13 +18,15 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
         'config',
         'config_form',
         'before_save_user',
-        'initialize'
+        'initialize',
+        'users_browse_sql'
     );
 
     protected $_filters = array(
         'public_navigation_admin_bar',
         'public_show_admin_bar',
-        'guest_user_widgets'
+        'guest_user_widgets',
+        'admin_navigation_main'
     );
 
 
@@ -157,9 +159,42 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
         }
     }
 
+    public function hookUsersBrowseSql($args)
+    {
+        $select = $args['select'];
+        $params = $args['params'];
+
+        if(isset($params['sort_field']) && $params['sort_field'] == 'added') {
+            $db = get_db();
+            $sortDir = 'ASC';
+            if (array_key_exists('sort_dir', $params)) {
+                $sortDir = trim($params['sort_dir']);
+
+                if ($sortDir === 'a') {
+                    $dir = 'ASC';
+                } else if ($sortDir === 'd') {
+                    $dir = 'DESC';
+                }
+            } else {
+                $dir = 'ASC';
+            }
+            $uaAlias = $db->getTable('UsersActivations')->getTableAlias();
+            $select->join(array($uaAlias => $db->UsersActivations),
+                            "$uaAlias.user_id = users.id");
+            $select->order("$uaAlias.added $dir");
+        }
+    }
+
     public function filterPublicShowAdminBar($show)
     {
         return true;
+    }
+
+    public function filterAdminNavigationMain($navLinks)
+    {
+        $navLinks['Guest User'] = array('label' => __("Guest Users"),
+                                        'uri' => url("guest-user/user/browse?role=guest"));
+        return $navLinks;
     }
 
     public function filterPublicNavigationAdminBar($navLinks)
