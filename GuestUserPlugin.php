@@ -168,15 +168,19 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
             $sortDir = 'ASC';
             if (array_key_exists('sort_dir', $params)) {
                 $sortDir = trim($params['sort_dir']);
+
                 if ($sortDir === 'a') {
                     $dir = 'ASC';
                 } else if ($sortDir === 'd') {
                     $dir = 'DESC';
                 }
+            } else {
+                $dir = 'ASC';
             }
-            $select->join(array('users_activations' => $db->UsersActivations),
-                            "users_activations.user_id = users.id", array());
-            $select->order("users_activations.added $dir");
+            $uaAlias = $db->getTable('UsersActivations')->getTableAlias();
+            $select->join(array($uaAlias => $db->UsersActivations),
+                            "$uaAlias.user_id = users.id");
+            $select->order("$uaAlias.added $dir");
         }
     }
 
