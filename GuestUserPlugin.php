@@ -25,7 +25,8 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
     protected $_filters = array(
         'public_navigation_admin_bar',
         'public_show_admin_bar',
-        'guest_user_widgets'
+        'guest_user_widgets',
+        'admin_navigation_main'
     );
 
 
@@ -187,6 +188,13 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
     public function filterPublicShowAdminBar($show)
     {
         return true;
+    }
+
+    public function filterAdminNavigationMain($navLinks)
+    {
+        $navLinks['Guest User'] = array('label' => __("Guest Users"),
+                                        'uri' => url("guest-user/user/browse?role=guest"));
+        return $navLinks;
     }
 
     public function filterPublicNavigationAdminBar($navLinks)

@@ -23,9 +23,22 @@ echo flash();
         <?php echo html_escape($_GET['search']); ?>
         </li>
     </ul>
+</div>
+<?php endif; ?>
+
+
+<?php if(isset($_GET['role'])):?>
+<div id='search-filters'>
+    <ul>
+        <li>
+        <?php echo html_escape(__($_GET['role'])); ?>
+        </li>
+    </ul>
 
 </div>
 <?php endif; ?>
+
+
 
 <form id='search-users' method='GET'>
 <button><?php echo __('Search users'); ?></button><input type='text' name='search'/>
