@@ -180,7 +180,7 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
             }
             $uaAlias = $db->getTable('UsersActivations')->getTableAlias();
             $select->join(array($uaAlias => $db->UsersActivations),
-                            "$uaAlias.user_id = users.id");
+                            "$uaAlias.user_id = users.id", array());
             $select->order("$uaAlias.added $dir");
         }
     }
