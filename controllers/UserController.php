@@ -57,7 +57,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
                         }
                         $this->_helper->flashMessenger($this->getLoginErrorMessages($authResult), 'error');
                         return;
-                    }
+                                        }
                     $activation = UsersActivations::factory($user);
                     $activation->save();
                     $this->_helper->flashMessenger(__("You are logged in temporarily. Please check your email for a confirmation message. Once you have confirmed your request, you can log in without time limits."));
@@ -103,7 +103,6 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         $oldPassword->setOrder(0);
         $form->addElement($oldPassword);
 
-        //$form->removeElement('new_password_confirm');
         $form->setSubmitButtonText('Update');
         $form->setDefaults($user->toArray());
         $this->view->form = $form;
@@ -140,11 +139,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
     public function staleTokenAction()
     {
         $auth = $this->getInvokeArg('bootstrap')->getResource('Auth');
-        //http://framework.zend.com/manual/en/zend.auth.html
         $auth->clearIdentity();
-        //$_SESSION = array();
-        //Zend_Session::destroy();
-
     }
 
     public function confirmAction()
@@ -231,9 +226,9 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
     {
         $siteTitle = get_option('site_title');
         $body = __("Thanks for joining %s!", $siteTitle);
-
+        $siteUrl = absolute_url('/');
         if(get_option('guest_user_open') == 1) {
-            $body .= "<p>" . __("You can now log into %s using the password you chose.", "<a href='WEB_ROOT'>$siteTitle</a>") . "</p>";
+            $body .= "<p>" . __("You can now log into %s using the password you chose.", "<a href='$siteUrl'>$siteTitle</a>") . "</p>";
         } else {
             $body .= "<p>" . __("When an administrator approves your account, you will receive another message that you can use to log in with the password you chose.") . "</p>";
         }
@@ -258,7 +253,6 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         if(get_option('guest_user_instant_access') == 1) {
             $body .= "<p>" . __("You have temporary access to %s for twenty minutes. You will need to confirm your request to join after that time.", $siteTitle) . "</p>";
         }
-
         $mail = $this->_getMail($user, $body, $subject);
         try {
             $mail->send();
@@ -313,7 +307,6 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         } else {
             $token->email = $user->email;
         }
-
         $token->save();
         return $token;
     }
