@@ -265,6 +265,17 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
         $mail->addHeader('X-Mailer', 'PHP/' . phpversion());
         $mail->send();
     }
+    
+    public static function guestUserWidget($widget)
+    {
+        if(is_array($widget)) {
+        $html = "<h2 class='guest-user-widget-label'>" . $widget['label'] . "</h2>";
+        $html .= $widget['content'];
+        return $html;
+    } else {
+        return $widget;
+    }
+    }
 }
 
 ?>

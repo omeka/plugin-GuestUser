@@ -77,12 +77,11 @@ echo flash();
     <thead>
         <tr>
         <?php $sortLinks = array(
+                __('ID') => 'id',
                 __('Username') => 'username',
                 __('Real Name') => 'name',
                 __('Email') => 'email',
                 __('Role') => 'role',
-                __('Added') => 'added'
-
                 );
         ?>
         <?php echo browse_sort_links($sortLinks,  array('link_tag' => 'th scope="col"', 'list_tag' => '')); ?>
@@ -91,6 +90,9 @@ echo flash();
     <tbody>
     <?php foreach( $users as $key => $user ): ?>
         <tr class="<?php if (current_user()->id == $user->id) echo 'current-user '; ?><?php if($key%2==1) echo 'even'; else echo 'odd'; ?><?php if(!$user->active): ?> inactive<?php endif; ?>">
+            <td>
+            <?php echo metadata($user, 'id'); ?>
+            </td>
             <td>
             <?php echo html_escape($user->username); ?> <?php if(!$user->active): ?>(<?php echo __('inactive'); ?>)<?php endif; ?>
             <ul class="action-links group">
@@ -106,7 +108,6 @@ echo flash();
             <td><?php echo html_escape($user->name); ?></td>
             <td><?php echo html_escape($user->email); ?></td>
             <td><span class="<?php echo html_escape($user->role); ?>"><?php echo html_escape(__(Inflector::humanize($user->role))); ?></span></td>
-            <td><?php echo guest_user_user_added($user); ?></td>
         </tr>
     <?php endforeach; ?>
     </tbody>

@@ -11,7 +11,7 @@ echo head(array('title' => $pageTitle));
 
 <?php foreach($widgets as $index=>$widget): ?>
 <div class='guest-user-widget <?php if($index & 1): ?>guest-user-widget-odd <?php else:?>guest-user-widget-even<?php endif;?>'>
-<?php echo guest_user_widget($widget); ?>
+<?php echo GuestUserPlugin::guestUserWidget($widget); ?>
 </div>
 <?php endforeach; ?>
 
