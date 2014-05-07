@@ -1,9 +1,7 @@
 <?php
 
 define('GUEST_USER_PLUGIN_DIR', PLUGIN_DIR . '/GuestUser');
-require_once(GUEST_USER_PLUGIN_DIR . '/helpers/functions.php');
 include(FORM_DIR . '/User.php');
-//require_once(GUEST_USER_PLUGIN_DIR . '/libraries/GuestUserForm.php');
 
 
 class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
@@ -40,7 +38,6 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
 
     public function setUp()
     {
-
         parent::setUp();
         require_once(GUEST_USER_PLUGIN_DIR . '/libraries/GuestUser_ControllerPlugin.php');
         Zend_Controller_Front::getInstance()->registerPlugin(new GuestUser_ControllerPlugin);
@@ -76,6 +73,7 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
 
         set_option('guest_user_login_text', __('Login'));
         set_option('guest_user_register_text', __('Register'));
+        set_option('guest_user_dashboard_label', __('My Account'));
     }
 
     public function hookUninstall($args)
