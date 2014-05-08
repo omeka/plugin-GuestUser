@@ -288,7 +288,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
     {
         $siteTitle  = get_option('site_title');
         $from = get_option('administrator_email');
-        $mail = new Zend_Mail();
+        $mail = new Zend_Mail('UTF-8');
         $mail->setBodyHtml($body);
         $mail->setFrom($from, __("%s Administrator", $siteTitle));
         $mail->addTo($user->email, $user->name);
