@@ -1,41 +1,48 @@
 /* copied from admin theme. alerts */
 
-        #content #flash ul {
-            list-style-type: none;
-            margin-top: 0;
-            padding: 0;
-        }
-        
-            ul.error {
-                list-style-type: none;
-                margin-top: 20px;
-                padding: 0;
-            }
-            
-            #content #flash li, ul.error li {
-                border: 1px solid #E7E7E7;
-                border-radius: 3px;
-                font-size: 14px;
-                margin-bottom: 20px;
-                padding: .5em;            
-            }
-        
-        .success {
-            color: #729108;
-        }
-            
-        .error, .alert {
-            color: #914E33;
-        }
+#content #flash ul {
+    list-style-type: none;
+    margin-top: 0;
+    padding: 0;
+}
 
+    ul.error {
+        list-style-type: none;
+        margin-top: 20px;
+        padding: 0;
+    }
+    
+    #content #flash li, ul.error li {
+        border: 1px solid #E7E7E7;
+        border-radius: 3px;
+        font-size: 14px;
+        margin-bottom: 20px;
+        padding: .5em;            
+    }
 
+.success {
+    color: #729108;
+}
+    
+.error, .alert {
+    color: #914E33;
+}
 
-a#menu-admin-bar-welcome + ul {
-    display: none;
+#admin-bar li {
+    position: relative;
+}
+
+#admin-bar .navigation li:first-of-type > ul {
     position: absolute;
     background: #404040;
     z-index: 10000;
     padding-left: 3px;
+    left: -9999px;
+    width: 125%;
+}
+
+#admin-bar .navigation li:first-of-type:hover > ul {
+    left: -6px;
 }
 
 a#menu-admin-bar-welcome + ul li {
@@ -78,6 +85,6 @@ div.guest-user-widget-odd {
 }
 
 p.explanation {
-	margin-top: 0px;
-	
+    margin-top: 0px;
+    
 }
