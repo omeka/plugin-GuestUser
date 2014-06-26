@@ -29,7 +29,6 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         $user = new User();
 
         $form = $this->_getForm(array('user'=>$user));
-        $form->setSubmitButtonText('Register');
         $this->view->form = $form;
 
         if (!$this->getRequest()->isPost() || !$form->isValid($_POST)) {
