@@ -3,7 +3,7 @@ queue_js_file('guest-user-password');
 queue_css_file('skeleton');
 $css = "form > div { clear: both; padding-top: 10px;} .two.columns {width: 30%;} ";
 queue_css_string($css);
-$pageTitle = __('Register');
+$pageTitle = get_option('guest_user_register_text') ? get_option('guest_user_register_text') : __('Register');
 echo head(array('bodyclass' => 'register', 'title' => $pageTitle));
 ?>
 <h1><?php echo $pageTitle; ?></h1>
