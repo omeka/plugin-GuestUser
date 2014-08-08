@@ -3,195 +3,195 @@
 # This file is distributed under the same license as the Omeka package.
 # 
 # Translators:
-# Matti Lassila <matti.lassila@gmail.com>, 2013
+# yennylin <yennylin1234@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Omeka\n"
 "Report-Msgid-Bugs-To: http://github.com/omeka/plugin-GuestUser/issues\n"
 "POT-Creation-Date: 2012-01-09 21:49-0500\n"
-"PO-Revision-Date: 2013-10-13 19:11+0000\n"
-"Last-Translator: Matti Lassila <matti.lassila@gmail.com>\n"
-"Language-Team: Finnish (Finland) (http://www.transifex.com/projects/p/omeka/language/fi_FI/)\n"
+"PO-Revision-Date: 2014-01-12 06:18+0000\n"
+"Last-Translator: yennylin <yennylin1234@gmail.com>\n"
+"Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/omeka/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fi_FI\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Guest"
-msgstr "Vieras"
+msgstr "訪客"
 
 #: GuestUserPlugin.php:75 GuestUserPlugin.php:184
 msgid "Login"
-msgstr "Kirjaudu"
+msgstr "登錄"
 
 #: GuestUserPlugin.php:76 GuestUserPlugin.php:185
 #: controllers/UserController.php:225 views/public/user/register.php:6
 msgid "Register"
-msgstr "Rekistöröidy"
+msgstr "註冊"
 
 #: GuestUserPlugin.php:208
 msgid "My Account"
-msgstr "Käyttäjätili"
+msgstr "我的帳戶"
 
 #: GuestUserPlugin.php:212
 msgid "Update account info and password"
-msgstr "Päivitä käyttäjätilin tiedot ja salasana"
+msgstr "更新帳戶資訊和密碼"
 
 #: GuestUserPlugin.php:225
 #, php-format
 msgid "Your %s account"
-msgstr "Käyttäjätilisi %s -sivustolla"
+msgstr "你的 %s 帳戶"
 
 #: GuestUserPlugin.php:226
 msgid ""
 "An admin has made your account active. You can now log in with your password"
-msgstr "Sivuston ylläpito on aktivoinut käyttäjätilisi. Voit nyt kirjautua salasanallasi."
+msgstr "管理者已經啟動你的帳戶。你現在可以以你的密碼登錄。"
 
 #: config_form.php:5
 msgid "Registration Features"
-msgstr "Rekisteröitymisen hyödyt"
+msgstr "註冊特徵"
 
 #: config_form.php:8
 msgid ""
 "Add some text to the registration screen so people will know what they get for registering.\n"
 "        As you enable and configure plugins that make use of the guest user, please give them guidance\n"
 "        about what they can and cannot do."
-msgstr ""
+msgstr "增加一些文本到註冊介面上，這樣使用者將會知道註冊時的狀態。\n當你啟動和設置外掛並使用訪客功能，請提供使用者可以做哪些事的指引。"
 
 #: config_form.php:21
 msgid "Short Registration Features"
-msgstr "Rekisteröitymisen hyödyt lyhyesti"
+msgstr "簡短的註冊功能"
 
 #: config_form.php:24
 msgid ""
 "Add a shorter version to use as a dropdown from the user bar. If empty, no "
 "dropdown will appear."
-msgstr ""
+msgstr "提供一個較簡短的版本，可用於使用者欄的下拉選項。如果空白，將不會出現下拉選項。"
 
 #: config_form.php:34
 msgid "Dashboard Label"
-msgstr "Käyttöliittymäteksti ohjausnäkymässä"
+msgstr "資訊總覽標籤"
 
 #: config_form.php:37
 msgid "The text to use for the label on the user's dashboard"
-msgstr ""
+msgstr "在使用者資訊總覽中的標籤文字"
 
 #: config_form.php:46
 msgid "Login Text"
-msgstr "Kirjautumislinkin käyttöliittymäteksti"
+msgstr "登錄文字"
 
 #: config_form.php:49
 msgid "The text to use for the 'Login' link in the user bar"
-msgstr ""
+msgstr "用於使用者欄「登錄」連結的文字"
 
 #: config_form.php:58
 msgid "Register Text"
-msgstr "Rekisteröitymislinkin käyttöliittymäteksti"
+msgstr "註冊文字"
 
 #: config_form.php:61
 msgid "The text to use for the 'Register' link in the user bar."
-msgstr ""
+msgstr "用於使用者欄「註冊」連結的文字"
 
 #: config_form.php:71
 msgid "Allow open registration?"
-msgstr "Vapaa rekisteröityminen"
+msgstr "允許公開註冊？"
 
 #: config_form.php:74
 msgid "Allow guest user registration without administrator approval?"
-msgstr ""
+msgstr "允許訪客註冊可以不經管理者核准。"
 
 #: config_form.php:92
 msgid "Allow instant access?"
-msgstr "Myönnä välitön pääsy"
+msgstr "允許即刻存取？"
 
 #: config_form.php:95
 msgid "Allow instant access for 20 minutes for new users"
-msgstr ""
+msgstr "允許新的使用者立即存取20分鐘"
 
 #: config_form.php:113
 msgid "Require ReCaptcha?"
-msgstr "Vaadi ReCaptcha"
+msgstr "需要驗證碼？"
 
 #: config_form.php:116
 msgid "Check this to require passing a ReCaptcha test when registering"
-msgstr "Vaadi ReCaptcha rekisteröitymislomakkeella"
+msgstr "若註冊時需要輸入驗證碼，勾選這個。"
 
 #: controllers/UserController.php:55
 #, php-format
 msgid "Failed login attempt from %s"
-msgstr "Epäonnistunut kirjautumisyritys %s -sivustolla"
+msgstr "從 %s 登錄失敗"
 
 #: controllers/UserController.php:62
 msgid ""
 "You are logged in temporarily. Please check your email for a confirmation "
 "message. Once you have confirmed your request, you can log in without time "
 "limits."
-msgstr ""
+msgstr "你已經暫時登錄。請檢查你的電子郵件的確認資訊。一旦確認你的申請，你將可以登錄並且沒有時間限制。"
 
 #: controllers/UserController.php:70
 msgid ""
 "Thank you for registering. Please check your email for a confirmation "
 "message. Once you have confirmed your request, you will be able to log in."
-msgstr ""
+msgstr "感謝你的註冊。請檢查你的電子郵件的確認資訊。一旦確認你的申請，你便可以登錄。"
 
 #: controllers/UserController.php:76
 msgid ""
 "Thank you for registering. Please check your email for a confirmation "
 "message. Once you have confirmed your request and an administrator activates"
 " your account, you will be able to log in."
-msgstr ""
+msgstr "感謝你的註冊。請檢查你的電子郵件的確認資訊。一旦確認你的申請並且經過管理者啟動你的帳戶，你便可以登錄。"
 
 #: controllers/UserController.php:115
 msgid "Incorrect password"
-msgstr "Virheellinen salasana"
+msgstr "密碼不正確"
 
 #: controllers/UserController.php:161
 msgid ""
 "Please check the email we just sent you for the next steps! You're almost "
 "there!"
-msgstr ""
+msgstr "為了下一步，請確認我們剛寄給你的電子郵件！你需要的幾乎都在那裡！"
 
 #: controllers/UserController.php:165
 msgid "Invalid token"
-msgstr "Virheellinen avain"
+msgstr "無效的符號"
 
 #: controllers/UserController.php:210 views/public/user/update-account.php:4
 msgid "Password again for match"
-msgstr "Salasana uudelleen"
+msgstr "再次輸入相同的密碼"
 
 #: controllers/UserController.php:220
 msgid "Please verify you're a human"
-msgstr "Roskapostituksen esto"
+msgstr "請證明你是一個人"
 
 #: controllers/UserController.php:232
 #, php-format
 msgid "Thanks for joining %s!"
-msgstr "Kiitos rekisteröitymisestä %s -sivustolle!"
+msgstr "感謝加入 %s！"
 
 #: controllers/UserController.php:234
 msgid "You can now log in using the password you chose."
-msgstr "Voit nyt kirjautua käyttäen valitsemaasi salasanaa."
+msgstr "你現在可以使用你選擇的密碼登錄。"
 
 #: controllers/UserController.php:236
 msgid ""
 "When an administrator approves your account, you will receive another "
 "message that you can use to log in with the password you chose."
-msgstr ""
+msgstr "當管理者核准你的帳戶，你將收到另一則訊息，並且可以使用你選擇的密碼登錄。"
 
 #: controllers/UserController.php:238
 #, php-format
 msgid "Registration for %s"
-msgstr "Rekisteröityminen %s -sivustolle"
+msgstr "註冊 %s"
 
 #: controllers/UserController.php:252
 #, php-format
 msgid "Your request to join %s"
-msgstr "Pyyntösi rekisteröityä %s sivustolle"
+msgstr "你申請加入 %s"
 
 #: controllers/UserController.php:253
 msgid "this link"
-msgstr "tätä linkkiä"
+msgstr "這個連結"
 
 #: controllers/UserController.php:253
 #, php-format
@@ -199,48 +199,48 @@ msgid ""
 "You have registered for an account on %s. Please confirm your registration "
 "by following %s.  If you did not request to join %s please disregard this "
 "email."
-msgstr "Olet lähettänyt rekisteröitymispyynnön %s -sivustolle. Vahvista rekisteröitymisesi seuraamalla %s.  Jos et mielestäsi ole lähettänyt rekisteröitymispyyntöä %s -sivustolle, voit poistaa tämän viestin."
+msgstr "你已經在 %s註冊一個帳戶。請依循 %s去確認你的註冊。如果你沒有申請加入 %s，請忽略這封電子郵件。 "
 
 #: controllers/UserController.php:266
 #, php-format
 msgid "New request to join %s"
-msgstr "Uusi sivuston %s rekisteröitymispyyntö"
+msgstr "新申請加入 %s"
 
 #: controllers/UserController.php:267
 #, php-format
 msgid "A new user has confirmed that they want to join %s : %s"
-msgstr "Uusi käyttäjä on vahvistanut rekisteröitymisen %s : %s"
+msgstr "一個新的使用者已經確認要加入 %s : %s"
 
 #: views/public/user/confirm.php:2
 msgid "Confirmation Error"
-msgstr "Vahvistusvirhe"
+msgstr "確認錯誤"
 
 #: views/public/user/me.php:10
 msgid "Browse and manage your work here."
-msgstr "Selaa"
+msgstr "在這裡瀏覽和管理你的作品。"
 
 #: views/public/user/stale-token.php:2
 msgid "Stale Token"
-msgstr "Käyttämätön avain"
+msgstr "舊符號"
 
 #: views/public/user/stale-token.php:9
 msgid ""
 "Your temporary access to the site has expired. Please check your email for "
 "the link to follow to confirm your registration."
-msgstr "Väliaikainen käyttöoikeutesi on päättynyt. Ole hyvä ja vie rekisteröityminen päätökseen klikkaamalla linkkiä sähköpostiosoitteeseesi lähetetyssä rekisteröintiviestissä."
+msgstr "你暫時存取網站的時間已經到了。請確認你的電子郵件並依照連結去確認你的註冊。"
 
 #: views/public/user/stale-token.php:11
 msgid "You have been logged out, but can continue browsing the site."
-msgstr "Sinut on kirjattu ulos. Voit kuitenkin jatkaa sivuston selailua."
+msgstr "你已經登出，但可以繼續瀏覽網站。"
 
 #: views/public/user/update-account.php:5
 msgid "Passwords match!"
-msgstr "Salasanat täsmäävät"
+msgstr "密碼符合！"
 
 #: views/public/user/update-account.php:6
 msgid "Passwords do not match!"
-msgstr "Salasanat eivät täsmää"
+msgstr "密碼不符合！"
 
 #: views/public/user/update-account.php:13
 msgid "Update Account"
-msgstr "Päivitä käyttäjätili"
+msgstr "更新帳戶"

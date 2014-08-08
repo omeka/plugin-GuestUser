@@ -1,0 +1,246 @@
+# Translation for the Simple Pages plugin for Omeka.
+# Copyright (C) 2011 Roy Rosenzweig Center for History and New Media
+# This file is distributed under the same license as the Omeka package.
+# 
+# Translators:
+# Predrag Djukic <djukic.predrag@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: Omeka\n"
+"Report-Msgid-Bugs-To: http://github.com/omeka/plugin-GuestUser/issues\n"
+"POT-Creation-Date: 2012-01-09 21:49-0500\n"
+"PO-Revision-Date: 2014-06-18 07:11+0000\n"
+"Last-Translator: Predrag Djukic <djukic.predrag@gmail.com>\n"
+"Language-Team: Serbian (Serbia) (http://www.transifex.com/projects/p/omeka/language/sr_RS/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sr_RS\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "Guest"
+msgstr "Гост"
+
+#: GuestUserPlugin.php:75 GuestUserPlugin.php:184
+msgid "Login"
+msgstr "Пријављивање"
+
+#: GuestUserPlugin.php:76 GuestUserPlugin.php:185
+#: controllers/UserController.php:225 views/public/user/register.php:6
+msgid "Register"
+msgstr "Регистрација"
+
+#: GuestUserPlugin.php:208
+msgid "My Account"
+msgstr "Мој налог"
+
+#: GuestUserPlugin.php:212
+msgid "Update account info and password"
+msgstr "Ажурирај налог и лозинку"
+
+#: GuestUserPlugin.php:225
+#, php-format
+msgid "Your %s account"
+msgstr "Твој %s налог"
+
+#: GuestUserPlugin.php:226
+msgid ""
+"An admin has made your account active. You can now log in with your password"
+msgstr "Администратор је активирао твој налог. Сада се можеш пријавити са својом лозинком."
+
+#: config_form.php:5
+msgid "Registration Features"
+msgstr "Детаљи регистрације"
+
+#: config_form.php:8
+msgid ""
+"Add some text to the registration screen so people will know what they get for registering.\n"
+"        As you enable and configure plugins that make use of the guest user, please give them guidance\n"
+"        about what they can and cannot do."
+msgstr "Додај текст на екран за регистрацију тако да људи могу да виде шта добијају приликом регистрације.\nКада омогућиш и подесиш додатак за коришћење гостујућих корисника, молим те да их упутиш\n у то шта могу а шта не могу да чине."
+
+#: config_form.php:21
+msgid "Short Registration Features"
+msgstr "Прикажи детаље регистрације"
+
+#: config_form.php:24
+msgid ""
+"Add a shorter version to use as a dropdown from the user bar. If empty, no "
+"dropdown will appear."
+msgstr "Додај краћу верзију за коришћење из падајућег менија са корисничке линије. Уколико је празна падајући мени се неће појавити."
+
+#: config_form.php:34
+msgid "Dashboard Label"
+msgstr "Ознака командне табле"
+
+#: config_form.php:37
+msgid "The text to use for the label on the user's dashboard"
+msgstr "Текст за означавање на контролној табли корисника"
+
+#: config_form.php:46
+msgid "Login Text"
+msgstr "Текст за пријављивање"
+
+#: config_form.php:49
+msgid "The text to use for the 'Login' link in the user bar"
+msgstr "Текст који се користи за линк 'Пријављивање' на корисничкој линији"
+
+#: config_form.php:58
+msgid "Register Text"
+msgstr "Текст регистрације"
+
+#: config_form.php:61
+msgid "The text to use for the 'Register' link in the user bar."
+msgstr "Текст који се користи за линк 'Регистрација' на корисничкој линији"
+
+#: config_form.php:71
+msgid "Allow open registration?"
+msgstr "Дозволи отворену регистрацију?"
+
+#: config_form.php:74
+msgid "Allow guest user registration without administrator approval?"
+msgstr "Дозволи гостујућим корисницима регистрацију без одобрења администратора?"
+
+#: config_form.php:92
+msgid "Allow instant access?"
+msgstr "Дозволи тренутни приступ?"
+
+#: config_form.php:95
+msgid "Allow instant access for 20 minutes for new users"
+msgstr "Дозволи тренутни приступ на 20 минута за нове кориснике"
+
+#: config_form.php:113
+msgid "Require ReCaptcha?"
+msgstr "Обавезна ReCaptcha?"
+
+#: config_form.php:116
+msgid "Check this to require passing a ReCaptcha test when registering"
+msgstr "Означи овде да би успешан ReCaptcha тест био неопходан при регистрацији"
+
+#: controllers/UserController.php:55
+#, php-format
+msgid "Failed login attempt from %s"
+msgstr "Неуспешно пријављивање са %s"
+
+#: controllers/UserController.php:62
+msgid ""
+"You are logged in temporarily. Please check your email for a confirmation "
+"message. Once you have confirmed your request, you can log in without time "
+"limits."
+msgstr "Пријављени сте привремено. Молимо вас да проверите ваш имејл налог и потражите потврду пријаве. Када будете потврдили пријаву, моћи ћете да се пријављујете без временског ограничења."
+
+#: controllers/UserController.php:70
+msgid ""
+"Thank you for registering. Please check your email for a confirmation "
+"message. Once you have confirmed your request, you will be able to log in."
+msgstr "Захваљујемо се на регистрацији. Молимо вас да проверите ваш имејл и потражите потврду пријаве. Када је будете потврдили моћи ћете да се пријавите."
+
+#: controllers/UserController.php:76
+msgid ""
+"Thank you for registering. Please check your email for a confirmation "
+"message. Once you have confirmed your request and an administrator activates"
+" your account, you will be able to log in."
+msgstr "Захваљујемо на регистрацији. Молимо вас да проверите ваш имејл и потражите потврду пријаве. Када је будете потврдили и када администатор изврши активацију, моћи ћете да се пријавите."
+
+#: controllers/UserController.php:115
+msgid "Incorrect password"
+msgstr "Погрешна лозинка"
+
+#: controllers/UserController.php:161
+msgid ""
+"Please check the email we just sent you for the next steps! You're almost "
+"there!"
+msgstr "Молимо вас да проверите ваш имејл и потражите потврду која вам је послата! Још мало и регистрација је завршена!"
+
+#: controllers/UserController.php:165
+msgid "Invalid token"
+msgstr "Погрешан токен"
+
+#: controllers/UserController.php:210 views/public/user/update-account.php:4
+msgid "Password again for match"
+msgstr "Унесите лозинку још једном"
+
+#: controllers/UserController.php:220
+msgid "Please verify you're a human"
+msgstr "Молимо да потврдите да нисте машина"
+
+#: controllers/UserController.php:232
+#, php-format
+msgid "Thanks for joining %s!"
+msgstr "Хвала вам што сте нам се придружили %s!"
+
+#: controllers/UserController.php:234
+msgid "You can now log in using the password you chose."
+msgstr "Сада се можете пријавити помоћу лозинке коју сте одабрали."
+
+#: controllers/UserController.php:236
+msgid ""
+"When an administrator approves your account, you will receive another "
+"message that you can use to log in with the password you chose."
+msgstr "Када администратор потврди ваш налог, примићете другу поруку са обавештењем да можете да се пријавите са лозинком коју сте изабрали."
+
+#: controllers/UserController.php:238
+#, php-format
+msgid "Registration for %s"
+msgstr "Регистрација за %s"
+
+#: controllers/UserController.php:252
+#, php-format
+msgid "Your request to join %s"
+msgstr "Ваш захтев за приступ %s"
+
+#: controllers/UserController.php:253
+msgid "this link"
+msgstr "овај линк"
+
+#: controllers/UserController.php:253
+#, php-format
+msgid ""
+"You have registered for an account on %s. Please confirm your registration "
+"by following %s.  If you did not request to join %s please disregard this "
+"email."
+msgstr "Регистровали сте налог на %s. Молимо вас извршите потврду на %s. Уколико нисте затражили приступ %s молимо вас да занемарите овај имејл."
+
+#: controllers/UserController.php:266
+#, php-format
+msgid "New request to join %s"
+msgstr "Нови захтев за приступ %s"
+
+#: controllers/UserController.php:267
+#, php-format
+msgid "A new user has confirmed that they want to join %s : %s"
+msgstr "Нови корисник је потврдио да жели да приступи %s : %s"
+
+#: views/public/user/confirm.php:2
+msgid "Confirmation Error"
+msgstr "Грешка приликом потврде"
+
+#: views/public/user/me.php:10
+msgid "Browse and manage your work here."
+msgstr "Прегледај у управљај својим радом овде."
+
+#: views/public/user/stale-token.php:2
+msgid "Stale Token"
+msgstr "Застарео токен"
+
+#: views/public/user/stale-token.php:9
+msgid ""
+"Your temporary access to the site has expired. Please check your email for "
+"the link to follow to confirm your registration."
+msgstr "Ваш привремени проступ сајту је истекао, Молимо вас да проверите ваш имејл и да кликнете на линк за потврду регистрације."
+
+#: views/public/user/stale-token.php:11
+msgid "You have been logged out, but can continue browsing the site."
+msgstr "Одјавили сте се, али можете наставити да прегледате сајт."
+
+#: views/public/user/update-account.php:5
+msgid "Passwords match!"
+msgstr "Подударање лозинке!"
+
+#: views/public/user/update-account.php:6
+msgid "Passwords do not match!"
+msgstr "Лозинка се не подудара!"
+
+#: views/public/user/update-account.php:13
+msgid "Update Account"
+msgstr "Ажурирај налог"

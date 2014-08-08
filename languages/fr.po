@@ -3,195 +3,196 @@
 # This file is distributed under the same license as the Omeka package.
 # 
 # Translators:
-# Matti Lassila <matti.lassila@gmail.com>, 2013
+# rcheno <remi.cheno@ideo-cairo.org>, 2014
+# Thierry Pasquier <thierry.pasquier@emf.ccsti.eu>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Omeka\n"
 "Report-Msgid-Bugs-To: http://github.com/omeka/plugin-GuestUser/issues\n"
 "POT-Creation-Date: 2012-01-09 21:49-0500\n"
-"PO-Revision-Date: 2013-10-13 19:11+0000\n"
-"Last-Translator: Matti Lassila <matti.lassila@gmail.com>\n"
-"Language-Team: Finnish (Finland) (http://www.transifex.com/projects/p/omeka/language/fi_FI/)\n"
+"PO-Revision-Date: 2014-07-27 21:28+0000\n"
+"Last-Translator: rcheno <remi.cheno@ideo-cairo.org>\n"
+"Language-Team: French (http://www.transifex.com/projects/p/omeka/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fi_FI\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "Guest"
-msgstr "Vieras"
+msgstr "Invité"
 
 #: GuestUserPlugin.php:75 GuestUserPlugin.php:184
 msgid "Login"
-msgstr "Kirjaudu"
+msgstr "Identifiez-vous"
 
 #: GuestUserPlugin.php:76 GuestUserPlugin.php:185
 #: controllers/UserController.php:225 views/public/user/register.php:6
 msgid "Register"
-msgstr "Rekistöröidy"
+msgstr "Enregistrez-vous"
 
 #: GuestUserPlugin.php:208
 msgid "My Account"
-msgstr "Käyttäjätili"
+msgstr "Mon compte"
 
 #: GuestUserPlugin.php:212
 msgid "Update account info and password"
-msgstr "Päivitä käyttäjätilin tiedot ja salasana"
+msgstr "Actualiser les infos et le mot de passe du compte"
 
 #: GuestUserPlugin.php:225
 #, php-format
 msgid "Your %s account"
-msgstr "Käyttäjätilisi %s -sivustolla"
+msgstr "Votre compte %s"
 
 #: GuestUserPlugin.php:226
 msgid ""
 "An admin has made your account active. You can now log in with your password"
-msgstr "Sivuston ylläpito on aktivoinut käyttäjätilisi. Voit nyt kirjautua salasanallasi."
+msgstr "Un administrateur a activé votre compte. Vous pouvez maintenant vous connecter avec votre mot de passe."
 
 #: config_form.php:5
 msgid "Registration Features"
-msgstr "Rekisteröitymisen hyödyt"
+msgstr "Informations d'enregistrement"
 
 #: config_form.php:8
 msgid ""
 "Add some text to the registration screen so people will know what they get for registering.\n"
 "        As you enable and configure plugins that make use of the guest user, please give them guidance\n"
 "        about what they can and cannot do."
-msgstr ""
+msgstr "Texte à ajouter à la page d'enregistrement pour faire connaitre les conséquences de l'enregistrement. Comme vous activez des extensions qui peuvent faire usage de celle-ci, merci de donner des explications sur ce qu'elles font ou qu'elles ne font pas des données des usagers."
 
 #: config_form.php:21
 msgid "Short Registration Features"
-msgstr "Rekisteröitymisen hyödyt lyhyesti"
+msgstr "Infos sur l'enregistrement rapide"
 
 #: config_form.php:24
 msgid ""
 "Add a shorter version to use as a dropdown from the user bar. If empty, no "
 "dropdown will appear."
-msgstr ""
+msgstr "Proposer un version courte sous forme d'un menu déroulant dans le menu de l'usager. Si ce champ est vide, aucun menu déroulant n'apparait."
 
 #: config_form.php:34
 msgid "Dashboard Label"
-msgstr "Käyttöliittymäteksti ohjausnäkymässä"
+msgstr "Intitulé du tableau de bord"
 
 #: config_form.php:37
 msgid "The text to use for the label on the user's dashboard"
-msgstr ""
+msgstr "Le texte utilisé pour l'intitule du tableau de bord de l'usager"
 
 #: config_form.php:46
 msgid "Login Text"
-msgstr "Kirjautumislinkin käyttöliittymäteksti"
+msgstr "Infos sur l'identifiant"
 
 #: config_form.php:49
 msgid "The text to use for the 'Login' link in the user bar"
-msgstr ""
+msgstr "Le texte à utiliser pour le lien d'identification dans le menu de l'usager "
 
 #: config_form.php:58
 msgid "Register Text"
-msgstr "Rekisteröitymislinkin käyttöliittymäteksti"
+msgstr "Infos sur l'enregistrement"
 
 #: config_form.php:61
 msgid "The text to use for the 'Register' link in the user bar."
-msgstr ""
+msgstr "Le texte à utiliser pour le lien d'enregistrement dans le menu de l'usager"
 
 #: config_form.php:71
 msgid "Allow open registration?"
-msgstr "Vapaa rekisteröityminen"
+msgstr "Permettre l'enregistrement libre ?"
 
 #: config_form.php:74
 msgid "Allow guest user registration without administrator approval?"
-msgstr ""
+msgstr "Les usagers invités peuvent s'inscrire sans l'approbation d'un administrateur ?"
 
 #: config_form.php:92
 msgid "Allow instant access?"
-msgstr "Myönnä välitön pääsy"
+msgstr "Permettre un accès instantané ?"
 
 #: config_form.php:95
 msgid "Allow instant access for 20 minutes for new users"
-msgstr ""
+msgstr "Permettre un accès instantané pendant 20 minutes pour les nouveaux utilisateurs"
 
 #: config_form.php:113
 msgid "Require ReCaptcha?"
-msgstr "Vaadi ReCaptcha"
+msgstr "Exiger ReCaptcha ?"
 
 #: config_form.php:116
 msgid "Check this to require passing a ReCaptcha test when registering"
-msgstr "Vaadi ReCaptcha rekisteröitymislomakkeella"
+msgstr "Case à cocher pour activer le test ReCaptcha lors de l'enregistrement"
 
 #: controllers/UserController.php:55
 #, php-format
 msgid "Failed login attempt from %s"
-msgstr "Epäonnistunut kirjautumisyritys %s -sivustolla"
+msgstr "Échec de la tentative de connexion depuis %s"
 
 #: controllers/UserController.php:62
 msgid ""
 "You are logged in temporarily. Please check your email for a confirmation "
 "message. Once you have confirmed your request, you can log in without time "
 "limits."
-msgstr ""
+msgstr "Vous êtes connecté de façon provisoire. Merci de vérifier votre courrier électronique pour le message de confirmation. Une fois la confirmation faite, vous pourrez vous connecter sans limite de temps."
 
 #: controllers/UserController.php:70
 msgid ""
 "Thank you for registering. Please check your email for a confirmation "
 "message. Once you have confirmed your request, you will be able to log in."
-msgstr ""
+msgstr "Merci de vous avoir enregistré. Veuillez vérifier votre courrier électronique pour le message de confirmation. Une fois la confirmation faite, vous pourrez vous connecter."
 
 #: controllers/UserController.php:76
 msgid ""
 "Thank you for registering. Please check your email for a confirmation "
 "message. Once you have confirmed your request and an administrator activates"
 " your account, you will be able to log in."
-msgstr ""
+msgstr "Merci de vous avoir enregistré. Veuillez vérifier votre courrier électronique pour le message de confirmation. Une fois la confirmation faite et votre compte activé par un administrateur, vous pourrez vous connecter."
 
 #: controllers/UserController.php:115
 msgid "Incorrect password"
-msgstr "Virheellinen salasana"
+msgstr "Mot de passe incorrect"
 
 #: controllers/UserController.php:161
 msgid ""
 "Please check the email we just sent you for the next steps! You're almost "
 "there!"
-msgstr ""
+msgstr "Merci de vérifier le message électronique que nous venons de vous envoyer. Vous êtes presque au bout de vos peines !"
 
 #: controllers/UserController.php:165
 msgid "Invalid token"
-msgstr "Virheellinen avain"
+msgstr "Jeton invalide"
 
 #: controllers/UserController.php:210 views/public/user/update-account.php:4
 msgid "Password again for match"
-msgstr "Salasana uudelleen"
+msgstr "Répétez le mot de passe pour vérification"
 
 #: controllers/UserController.php:220
 msgid "Please verify you're a human"
-msgstr "Roskapostituksen esto"
+msgstr "Merci de confirmer que vous êtes un humain"
 
 #: controllers/UserController.php:232
 #, php-format
 msgid "Thanks for joining %s!"
-msgstr "Kiitos rekisteröitymisestä %s -sivustolle!"
+msgstr "Merci d'avoir rejoint %s !"
 
 #: controllers/UserController.php:234
 msgid "You can now log in using the password you chose."
-msgstr "Voit nyt kirjautua käyttäen valitsemaasi salasanaa."
+msgstr "Maintenant, vous pouvez  vous connecter avec le mot de passe que vous avez choisi"
 
 #: controllers/UserController.php:236
 msgid ""
 "When an administrator approves your account, you will receive another "
 "message that you can use to log in with the password you chose."
-msgstr ""
+msgstr "Lorsqu'un administrateur aura approuvé votre compte, vous recevrez un autre message qui vous invitera à vous connecter avec le mot de passe que vous avez choisi."
 
 #: controllers/UserController.php:238
 #, php-format
 msgid "Registration for %s"
-msgstr "Rekisteröityminen %s -sivustolle"
+msgstr "Enregistrement de %s"
 
 #: controllers/UserController.php:252
 #, php-format
 msgid "Your request to join %s"
-msgstr "Pyyntösi rekisteröityä %s sivustolle"
+msgstr "Votre requête pour rejoindre %s"
 
 #: controllers/UserController.php:253
 msgid "this link"
-msgstr "tätä linkkiä"
+msgstr "ce lien"
 
 #: controllers/UserController.php:253
 #, php-format
@@ -199,48 +200,48 @@ msgid ""
 "You have registered for an account on %s. Please confirm your registration "
 "by following %s.  If you did not request to join %s please disregard this "
 "email."
-msgstr "Olet lähettänyt rekisteröitymispyynnön %s -sivustolle. Vahvista rekisteröitymisesi seuraamalla %s.  Jos et mielestäsi ole lähettänyt rekisteröitymispyyntöä %s -sivustolle, voit poistaa tämän viestin."
+msgstr "Vous vous être enregistré pour un compte sur %s. Merci de confirmer votre enregistrement en suivant %s. Si vous n'avez pas demandé de rejoindre %s, merci d'ignorer ce message."
 
 #: controllers/UserController.php:266
 #, php-format
 msgid "New request to join %s"
-msgstr "Uusi sivuston %s rekisteröitymispyyntö"
+msgstr "Nouvelle demande pour rejoindre %s"
 
 #: controllers/UserController.php:267
 #, php-format
 msgid "A new user has confirmed that they want to join %s : %s"
-msgstr "Uusi käyttäjä on vahvistanut rekisteröitymisen %s : %s"
+msgstr "Un nouvel usager à confirmé son souhait de rejoindre %s : %s"
 
 #: views/public/user/confirm.php:2
 msgid "Confirmation Error"
-msgstr "Vahvistusvirhe"
+msgstr "Erreur à la confirmation"
 
 #: views/public/user/me.php:10
 msgid "Browse and manage your work here."
-msgstr "Selaa"
+msgstr "Parcourez et gérez votre travail ici."
 
 #: views/public/user/stale-token.php:2
 msgid "Stale Token"
-msgstr "Käyttämätön avain"
+msgstr "Jeton périmé"
 
 #: views/public/user/stale-token.php:9
 msgid ""
 "Your temporary access to the site has expired. Please check your email for "
 "the link to follow to confirm your registration."
-msgstr "Väliaikainen käyttöoikeutesi on päättynyt. Ole hyvä ja vie rekisteröityminen päätökseen klikkaamalla linkkiä sähköpostiosoitteeseesi lähetetyssä rekisteröintiviestissä."
+msgstr "Votre accès temporaire au site a expiré. S'il vous plaît, vérifiez vos courriels, vous recevrez un lien à suivre pour valider votre inscription."
 
 #: views/public/user/stale-token.php:11
 msgid "You have been logged out, but can continue browsing the site."
-msgstr "Sinut on kirjattu ulos. Voit kuitenkin jatkaa sivuston selailua."
+msgstr "Vous avez été déconnecté, mais vous pouvez toujours parcourir ce site"
 
 #: views/public/user/update-account.php:5
 msgid "Passwords match!"
-msgstr "Salasanat täsmäävät"
+msgstr "Les mots de passe correspondent !"
 
 #: views/public/user/update-account.php:6
 msgid "Passwords do not match!"
-msgstr "Salasanat eivät täsmää"
+msgstr "Les mots de passe ne correspondent pas !"
 
 #: views/public/user/update-account.php:13
 msgid "Update Account"
-msgstr "Päivitä käyttäjätili"
+msgstr "Actualiser le compte"
