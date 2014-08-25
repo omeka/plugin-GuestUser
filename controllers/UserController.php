@@ -102,7 +102,6 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         $oldPassword->setOrder(0);
         $form->addElement($oldPassword);
 
-        $form->setSubmitButtonText('Update');
         $form->setDefaults($user->toArray());
         $this->view->form = $form;
 
