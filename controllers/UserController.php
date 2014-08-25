@@ -216,8 +216,12 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
                 'captcha' => Omeka_Captcha::getCaptcha()
             ));
         }
-        $registerLabel = get_option('guest_user_register_text') ? get_option('guest_user_register_text') : __('Register');
-        $form->addElement('submit', 'submit', array('label' => $registerLabel));
+        if (current_user()) {
+            $submitLabel = __('Update');
+        } else {
+            $submitLabel = get_option('guest_user_register_text') ? get_option('guest_user_register_text') : __('Register');
+        }
+        $form->addElement('submit', 'submit', array('label' => $submitLabel));
         return $form;
     }
 
