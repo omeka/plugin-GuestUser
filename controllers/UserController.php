@@ -152,7 +152,11 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
             $user = $db->getTable('User')->find($record->user_id);
             $this->_sendAdminNewConfirmedUserEmail($user);
             $this->_sendConfirmedEmail($user);
-            $message = __("Please check the email we just sent you for the next steps! You're almost there!");
+            if(get_option('guest_user_open') == 1) {
+                $message = __("You can now log in using the password you chose.");
+            } else {
+                $message = __("Please check the email we just sent you for the next steps! You're almost there!");
+            }
             $this->_helper->flashMessenger($message, 'success');
             $this->redirect('users/login');
         } else {
