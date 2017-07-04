@@ -234,7 +234,9 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         $siteTitle = get_option('site_title');
         $body = __("Thanks for joining %s!", $siteTitle);
         $siteUrl = absolute_url('/');
-        if(get_option('guest_user_open') == 1) {
+        $openRegistration = (get_option('guest_user_open') == 1);
+        $instantAccess = (get_option('guest_user_instant_access') == 1);
+        if ($openRegistration || $instantAccess) {
             $body .= "<p>" . __("You can now log into %s using the password you chose.", "<a href='$siteUrl'>$siteTitle</a>") . "</p>";
         } else {
             $body .= "<p>" . __("When an administrator approves your account, you will receive another message that you can use to log in with the password you chose.") . "</p>";
@@ -257,7 +259,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         $subject = __("Your request to join %s", $siteTitle);
         $body = __("You have registered for an account on %s. Please confirm your registration by following %s.  If you did not request to join %s please disregard this email.", "<a href='$siteUrl'>$siteTitle</a>", "<a href='$url'>" . __('this link') . "</a>", $siteTitle);
 
-        if(get_option('guest_user_instant_access') == 1) {
+        if (get_option('guest_user_instant_access') == 1) {
             $body .= "<p>" . __("You have temporary access to %s for twenty minutes. You will need to confirm your request to join after that time.", $siteTitle) . "</p>";
         }
         $mail = $this->_getMail($user, $body, $subject);
@@ -274,11 +276,12 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         $url = WEB_ROOT . "/admin/users/edit/" . $user->id;
         $subject = __("New request to join %s", $siteTitle);
         $body = "<p>" . __("A new user has confirmed that they want to join %s : %s" , $siteTitle, "<a href='$url'>" . $user->username . "</a>") . "</p>";
-        if(get_option('guest_user_open') !== 1) {
-            if(get_option('guest_user_instant_access') == 1) {
-                $body .= "<p>" . __("%s has temporary access to the site.", $user->username) . "</p>";
-            }
+        $openRegistration = (get_option('guest_user_open') == 1);
+        $instantAccess = (get_option('guest_user_instant_access') == 1);
+        if (!$openRegistration && !$instantAccess) {
             $body .= "<p>" . __("You will need to make the user active and save the changes to complete registration for %s.", $user->username) . "</p>";
+        } else if ($instantAccess) {
+            $body .= "<p>" . __("%s has temporary access to the site.", $user->username) . "</p>";
         }
 
         $mail = $this->_getMail($user, $body, $subject);
