@@ -90,6 +90,12 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
     {
         $acl = $args['acl'];
         $acl->addRole(new Zend_Acl_Role('guest'), null);
+
+        if (!$acl->has('GuestUser_User')) {
+            $acl->addResource('GuestUser_User');
+        }
+        $acl->allow(null, 'GuestUser_User', array('login', 'register', 'confirm', 'stale-token'));
+        $acl->allow('guest', 'GuestUser_User', array('me', 'update-account'));
     }
 
     public function hookConfig($args)
