@@ -95,7 +95,7 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
             $acl->addResource('GuestUser_User');
         }
         $acl->allow(null, 'GuestUser_User', array('login', 'register', 'confirm', 'stale-token'));
-        $acl->allow('guest', 'GuestUser_User', array('me', 'update-account'));
+        $acl->allow(array('guest', 'researcher'), 'GuestUser_User', array('me', 'update-account'));
     }
 
     public function hookConfig($args)
