@@ -32,7 +32,7 @@
     position: relative;
 }
 
-#admin-bar .navigation li:first-of-type > ul {
+a#menu-admin-bar-welcome + ul {
     position: absolute;
     background: #404040;
     z-index: 10000;
@@ -41,7 +41,8 @@
     width: 125%;
 }
 
-#admin-bar .navigation li:first-of-type:hover > ul {
+a#menu-admin-bar-welcome + ul:hover ,
+a#menu-admin-bar-welcome:hover + ul {
     left: -6px;
 }
 
