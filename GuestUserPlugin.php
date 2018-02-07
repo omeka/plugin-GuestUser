@@ -12,7 +12,6 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
         'define_acl',
         'public_header',
         'public_head',
-        'admin_theme_header',
         'config',
         'config_form',
         'before_save_user',
@@ -105,18 +104,6 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
         include 'config_form.php';
     }
 
-    public function hookAdminThemeHeader($args)
-    {
-        $request = $args['request'];
-        if($request->getControllerName() == 'plugins' && $request->getParam('name') == 'GuestUser') {
-            queue_js_file('tiny_mce/tiny_mce');
-            $js = "if (typeof(Omeka) !== 'undefined'){
-                Omeka.wysiwyg();
-            };";
-            queue_js_string($js);
-        }
-
-    }
     public function hookPublicHead($args)
     {
         queue_css_file('guest-user');
