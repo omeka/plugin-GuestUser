@@ -10,7 +10,6 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
         'install',
         'uninstall',
         'define_acl',
-        'public_header',
         'public_head',
         'config',
         'config_form',
@@ -107,21 +106,6 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
     public function hookPublicHead($args)
     {
         queue_css_file('guest-user');
-        queue_js_file('guest-user');
-    }
-
-    public function hookPublicHeader($args)
-    {
-        $html = "<div id='guest-user-register-info'>";
-        $user = current_user();
-        if(!$user) {
-            $shortCapabilities = get_option('guest_user_short_capabilities');
-            if($shortCapabilities != '') {
-                $html .= $shortCapabilities;
-            }
-        }
-        $html .= "</div>";
-        echo $html;
     }
 
     public function hookBeforeSaveUser($args)
