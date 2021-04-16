@@ -1,4 +1,5 @@
 <?php
+queue_css_file('guest-user');
 $pageTitle = __('Browse Users') . ' ' . __('(%s total)', $total_results);
 echo head(array('title'=>$pageTitle, 'bodyclass'=>'users'));
 echo flash();
@@ -39,38 +40,27 @@ echo flash();
 <?php endif; ?>
 
 
+<div class="browse-controls">
+    <form id='search-users' method='GET'>
+    <input type='text' name='search'/>
+    <button><?php echo __('Search users'); ?></button>
+    <div class="options">
+        <input type='radio' name='search-type' value='username' checked='checked' /><span><?php echo __('Usernames'); ?></span>
+        <input type='radio' name='search-type' value='name' /><span><?php echo __('Real names'); ?></span>
+        <input type='radio' name='search-type' value='email' /><span><?php echo __('Email addresses'); ?></span>
+    </div>
+    </form>
 
-<form id='search-users' method='GET'>
-<button><?php echo __('Search users'); ?></button><input type='text' name='search'/>
-<input type='radio' name='search-type' value='username' checked='checked' /><span><?php echo __('Usernames'); ?></span>
-<input type='radio' name='search-type' value='name' /><span><?php echo __('Real names'); ?></span>
-<input type='radio' name='search-type' value='email' /><span><?php echo __('Email addresses'); ?></span>
-</form>
-
-<ul class='quick-filter-wrapper'>
-    <li>
-        <a tabindex="0" href="#"><?php echo __("Quick Filter"); ?></a>
-        <ul class="dropdown">
-            <li>
-                <span class="quick-filter-heading"><?php echo __("Quick Filter"); ?></span>
-            </li>
-            <li>
-                <a href="<?php echo url('guest-user/user/browse'); ?>"><?php echo __("View All"); ?></a>
-            </li>
-            <?php foreach(get_user_roles() as $value => $name): ?>
-            <li>
-                <a href="<?php echo url('guest-user/user/browse', array('role' => $value)); ?>"><?php echo __("%s", $name); ?></a>
-            </li>
-            <?php endforeach; ?>
-            <li>
-                <a href="<?php echo url('guest-user/user/browse', array('active' => 'true')); ?>"><?php echo __("Active"); ?></a>
-            </li>
-            <li>
-                <a href="<?php echo url('guest-user/user/browse', array('active' => 'false')); ?>"><?php echo __("Not Active"); ?></a>
-            </li>
-        </ul>
-    </li>
-</ul>
+    <select class="quick-filter" name="quick-filter">
+        <option value=""><?php echo __("Quick Filter"); ?></option>
+        <option value="<?php echo url('guest-user/user/browse'); ?>"><?php echo __("View All"); ?></option>
+        <?php foreach(get_user_roles() as $value => $name): ?>
+        <option value="<?php echo url('guest-user/user/browse', array('role' => $value)); ?>"><?php echo __("%s", $name); ?></option>
+        <?php endforeach; ?>
+        <option value="<?php echo url('guest-user/user/browse', array('active' => 'true')); ?>"><?php echo __("Active"); ?></option>
+        <option value="<?php echo url('guest-user/user/browse', array('active' => 'false')); ?>"><?php echo __("Not Active"); ?></option>
+    </select>
+</div>
 
 <?php echo pagination_links(); ?>
 <table id="users">
@@ -114,4 +104,9 @@ echo flash();
 </table>
 <?php echo pagination_links(); ?>
 <?php fire_plugin_hook('admin_users_browse', array('users' => $users, 'view' => $this)); ?>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    Omeka.quickFilter();
+});
+</script>
 <?php echo foot();?>

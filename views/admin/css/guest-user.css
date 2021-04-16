@@ -1,0 +1,16 @@
+.browse-controls {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .browse-controls {
+        flex-wrap: wrap;
+    }
+
+    #search-users {
+        margin-bottom: 20px;
+    }
+}
