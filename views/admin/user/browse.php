@@ -43,12 +43,12 @@ echo flash();
 <div class="browse-controls">
     <form id='search-users' method='GET'>
     <input type='text' name='search'/>
-    <button><?php echo __('Search users'); ?></button>
-    <div class="options">
+    <fieldset class="options">
         <input type='radio' name='search-type' value='username' checked='checked' /><span><?php echo __('Usernames'); ?></span>
         <input type='radio' name='search-type' value='name' /><span><?php echo __('Real names'); ?></span>
         <input type='radio' name='search-type' value='email' /><span><?php echo __('Email addresses'); ?></span>
-    </div>
+    </fieldset>
+    <button type='submit'><?php echo __('Search users'); ?></button>
     </form>
 
     <select class="quick-filter" name="quick-filter">

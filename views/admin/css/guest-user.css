@@ -2,6 +2,13 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+}
+
+#search-users {
+    margin-bottom: 20px;
+}
+
+#search-users input[type=text] {
     margin-bottom: 20px;
 }
 
