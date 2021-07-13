@@ -1,7 +1,7 @@
 # Translation for the Simple Pages plugin for Omeka.
 # Copyright (C) 2011 Roy Rosenzweig Center for History and New Media
 # This file is distributed under the same license as the Omeka package.
-# 
+#
 # Translators:
 # rcheno <remi.cheno@ideo-cairo.org>, 2014
 # Thierry Pasquier <thierry.pasquier@emf.ccsti.eu>, 2013-2014
@@ -134,14 +134,14 @@ msgstr "Vous êtes connecté de façon provisoire. Merci de vérifier votre cour
 msgid ""
 "Thank you for registering. Please check your email for a confirmation "
 "message. Once you have confirmed your request, you will be able to log in."
-msgstr "Merci de vous avoir enregistré. Veuillez vérifier votre courrier électronique pour le message de confirmation. Une fois la confirmation faite, vous pourrez vous connecter."
+msgstr "Merci de vous être enregistré. Veuillez vérifier votre courrier électronique pour le message de confirmation. Une fois la confirmation faite, vous pourrez vous connecter."
 
 #: controllers/UserController.php:76
 msgid ""
 "Thank you for registering. Please check your email for a confirmation "
 "message. Once you have confirmed your request and an administrator activates"
 " your account, you will be able to log in."
-msgstr "Merci de vous avoir enregistré. Veuillez vérifier votre courrier électronique pour le message de confirmation. Une fois la confirmation faite et votre compte activé par un administrateur, vous pourrez vous connecter."
+msgstr "Merci de vous être enregistré. Veuillez vérifier votre courrier électronique pour le message de confirmation. Une fois la confirmation faite et votre compte activé par un administrateur, vous pourrez vous connecter."
 
 #: controllers/UserController.php:115
 msgid "Incorrect password"
@@ -172,7 +172,7 @@ msgstr "Merci d'avoir rejoint %s !"
 
 #: controllers/UserController.php:234
 msgid "You can now log in using the password you chose."
-msgstr "Maintenant, vous pouvez  vous connecter avec le mot de passe que vous avez choisi"
+msgstr "Maintenant, vous pouvez vous connecter avec le mot de passe que vous avez choisi"
 
 #: controllers/UserController.php:236
 msgid ""
@@ -200,7 +200,7 @@ msgid ""
 "You have registered for an account on %s. Please confirm your registration "
 "by following %s.  If you did not request to join %s please disregard this "
 "email."
-msgstr "Vous vous être enregistré pour un compte sur %s. Merci de confirmer votre enregistrement en suivant %s. Si vous n'avez pas demandé de rejoindre %s, merci d'ignorer ce message."
+msgstr "Vous vous êtes enregistré pour un compte sur %s. Merci de confirmer votre enregistrement en suivant %s. Si vous n'avez pas demandé de rejoindre %s, merci d'ignorer ce message."
 
 #: controllers/UserController.php:266
 #, php-format
@@ -210,7 +210,7 @@ msgstr "Nouvelle demande pour rejoindre %s"
 #: controllers/UserController.php:267
 #, php-format
 msgid "A new user has confirmed that they want to join %s : %s"
-msgstr "Un nouvel usager à confirmé son souhait de rejoindre %s : %s"
+msgstr "Un nouvel usager a confirmé son souhait de rejoindre %s : %s"
 
 #: views/public/user/confirm.php:2
 msgid "Confirmation Error"
