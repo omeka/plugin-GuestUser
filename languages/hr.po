@@ -3,212 +3,212 @@
 # This file is distributed under the same license as the Omeka package.
 # 
 # Translators:
-# 72d2c1bc1be92c9fcf9a3bc8e046413f_fd3c651 <2bf4953ea485be2620221690b3005e74_204966>, 2014
+# rijekateam <digitalizacija@gkri.hr>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Omeka Classic\n"
 "Report-Msgid-Bugs-To: http://github.com/omeka/plugin-GuestUser/issues\n"
 "POT-Creation-Date: 2012-01-09 21:49-0500\n"
-"PO-Revision-Date: 2017-09-20 05:39+0000\n"
-"Last-Translator: John Flatness <john@zerocrates.org>\n"
-"Language-Team: Icelandic (http://www.transifex.com/omeka/omeka/language/is/)\n"
+"PO-Revision-Date: 2017-09-19 17:46+0000\n"
+"Last-Translator: rijekateam <digitalizacija@gkri.hr>\n"
+"Language-Team: Croatian (http://www.transifex.com/omeka/omeka/language/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: is\n"
-"Plural-Forms: nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);\n"
+"Language: hr\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 msgid "Guest"
-msgstr "Gestur"
+msgstr "Gost"
 
 #: GuestUserPlugin.php:74 GuestUserPlugin.php:216
 msgid "Login"
-msgstr "Skrá inn"
+msgstr "Prijavi se"
 
 #: GuestUserPlugin.php:75 GuestUserPlugin.php:217
 #: controllers/UserController.php:222 views/public/user/register.php:6
 msgid "Register"
-msgstr "Skráning"
+msgstr "Registriraj se"
 
 #: GuestUserPlugin.php:76 GuestUserPlugin.php:235
 msgid "My Account"
-msgstr "Reikningurinn minn"
+msgstr "Moj račun"
 
 #: GuestUserPlugin.php:193
 msgid "Guest Users"
-msgstr ""
+msgstr "Gostujući korisnici"
 
 #: GuestUserPlugin.php:239
 msgid "Update account info and password"
-msgstr "Uppfæra upplýsingar um reikning og lykilorð"
+msgstr "Obnovi informacije o računu i lozinku"
 
 #: GuestUserPlugin.php:252
 #, php-format
 msgid "Your %s account"
-msgstr "%s reikningurinn þinn"
+msgstr "Vaš %s račun"
 
 #: GuestUserPlugin.php:254
 #, php-format
 msgid ""
 "An admin has made your account on %s active. You can now log in to with your"
 " password at this link:"
-msgstr ""
+msgstr "Administrator je aktivirao Vaš račun na %s. Sada se možete prijaviti sa svojom lozinkom na ovoj poveznici:"
 
 #: config_form.php:5
 msgid "Registration Features"
-msgstr ""
+msgstr "Značajke registracije"
 
 #: config_form.php:8
 msgid ""
 "Add some text to the registration screen so people will know what they get for registering.\n"
 "        As you enable and configure plugins that make use of the guest user, please give them guidance\n"
 "        about what they can and cannot do."
-msgstr ""
+msgstr "Dodajte tekst na zaslon za prijavu kako bi ljudi mogli vidjeti što će dobiti prijavom.\nKada omogućujete i podešavate dodatke koji koriste gostujuće korisnike, uputite ih\nu to što mogu i što ne mogu činiti."
 
 #: config_form.php:21
 msgid "Short Registration Features"
-msgstr ""
+msgstr "Kratke značajke registracije"
 
 #: config_form.php:24
 msgid ""
 "Add a shorter version to use as a dropdown from the user bar. If empty, no "
 "dropdown will appear."
-msgstr ""
+msgstr "Dodajte kraću verziju koja će se koristiti kao padajući izbornik s korisničke trake. Ako ostavite prazno, padajući izbornik neće se pojavljivati."
 
 #: config_form.php:34
 msgid "Dashboard Label"
-msgstr ""
+msgstr "Oznaka upravljačke ploče"
 
 #: config_form.php:37
 msgid "The text to use for the label on the user's dashboard"
-msgstr ""
+msgstr "Tekst koji će se koristiti za oznaku na korisnikovoj upravljačkoj ploči"
 
 #: config_form.php:46
 msgid "Login Text"
-msgstr ""
+msgstr "Tekst za prijavu"
 
 #: config_form.php:49
 msgid "The text to use for the 'Login' link in the user bar"
-msgstr ""
+msgstr "Tekst koji će se koristiti za 'Prijavi se' poveznicu na korisnikovoj traci"
 
 #: config_form.php:58
 msgid "Register Text"
-msgstr ""
+msgstr "Tekst za registraciju"
 
 #: config_form.php:61
 msgid "The text to use for the 'Register' link in the user bar."
-msgstr ""
+msgstr "Tekst koji će se koristiti za 'Registriraj se' povezincu na korisnikovoj traci"
 
 #: config_form.php:71
 msgid "Allow open registration?"
-msgstr "Leyfa opna skráningu?"
+msgstr "Dopusti otvorenu registraciju?"
 
 #: config_form.php:74
 msgid "Allow guest user registration without administrator approval?"
-msgstr "Leyfa skráningu gestanotanda án leyfis stjórnanda?"
+msgstr "Dopusti registraciju gostujućih korisnika bez odobrenja administratora?"
 
 #: config_form.php:92
 msgid "Allow instant access?"
-msgstr "Leyfa skyndiaðgang?"
+msgstr "Dopusti trenutni pristup?"
 
 #: config_form.php:95
 msgid "Allow instant access for 20 minutes for new users"
-msgstr "Leyfa skyndiaðgang í 20 mínútur fyrir nýja notendur"
+msgstr "Dopusti trenutni pristup od 20 min za nove korisnike"
 
 #: config_form.php:113
 msgid "Require ReCaptcha?"
-msgstr ""
+msgstr "Zahtijevaj ReCaptcha?"
 
 #: config_form.php:116
 msgid "Check this to require passing a ReCaptcha test when registering"
-msgstr ""
+msgstr "Označite kućicu ako želite zahtijevati ReCaptcha test prilikom registracije"
 
 #: config_form.php:131
 msgid ""
 "You have not set up ReCaptcha keys in the security settings. We strongly "
 "recommend using ReCaptcha to prevent spam account creation."
-msgstr ""
+msgstr "Niste postavili ReCaptcha ključeve u sigurnosne postavke. Preporučamo vam da koristite ReCaptcha kako bi spriječili stvaranje spam računa."
 
 #: controllers/UserController.php:55
 #, php-format
 msgid "Failed login attempt from %s"
-msgstr "Ekki tókst að skrá inn úr %s"
+msgstr "Neuspješno prijavljivanje s %s"
 
 #: controllers/UserController.php:62
 msgid ""
 "You are logged in temporarily. Please check your email for a confirmation "
 "message. Once you have confirmed your request, you can log in without time "
 "limits."
-msgstr ""
+msgstr "Prijavljeni ste privremeno. Molimo provjerite svoj email račun i potražite potvrdu prijave. Kada potvrdite prijavu, moći ćete se prijavljivati bez vremenskog ograničenja."
 
 #: controllers/UserController.php:70
 msgid ""
 "Thank you for registering. Please check your email for a confirmation "
 "message. Once you have confirmed your request, you will be able to log in."
-msgstr ""
+msgstr "Hvala na registraciji. Potražite u svoju elektroničkoj pošti potvrdu o registraciji. Nakon što potvrdite registraciju moći ćete se prijaviti."
 
 #: controllers/UserController.php:76
 msgid ""
 "Thank you for registering. Please check your email for a confirmation "
 "message. Once you have confirmed your request and an administrator activates"
 " your account, you will be able to log in."
-msgstr ""
+msgstr "Hvala na registraciji. Potražite u svoju elektroničkoj pošti potvrdu o registraciji. Nakon što potvrdite registraciju i kada administrator aktivira Vaš račun, moći ćete se prijaviti."
 
 #: controllers/UserController.php:113
 msgid "Incorrect password"
-msgstr "Rangt lykilorð"
+msgstr "Neispravna zaporka"
 
 #: controllers/UserController.php:155
 msgid ""
 "Please check the email we just sent you for the next steps! You're almost "
 "there!"
-msgstr ""
+msgstr "Molimo provjerite svoju elektroničku poštu i potražite potražite potvrdu koju smo Vam poslali! Još malo i registracija je završena!"
 
 #: controllers/UserController.php:159
 msgid "Invalid token"
-msgstr ""
+msgstr "Nevažeći token"
 
 #: controllers/UserController.php:204 views/public/user/update-account.php:4
 msgid "Password again for match"
-msgstr "Sláið aftur inn lykilorði"
+msgstr "Ponovite unos zaporke"
 
 #: controllers/UserController.php:214
 msgid "Please verify you're a human"
-msgstr "Vinsamlegast staðfestur að þú ert manneskja"
+msgstr "Molimo potvrdite na niste stroj"
 
 #: controllers/UserController.php:220
 msgid "Update"
-msgstr ""
+msgstr "Nadogradi"
 
 #: controllers/UserController.php:231
 #, php-format
 msgid "Thanks for joining %s!"
-msgstr ""
+msgstr "Hvala što ste se pridružili %s!"
 
 #: controllers/UserController.php:234
 #, php-format
 msgid "You can now log into %s using the password you chose."
-msgstr ""
+msgstr "Sada se možete prijaviti na %s koristeći zaporku koju ste izabrali."
 
 #: controllers/UserController.php:236
 msgid ""
 "When an administrator approves your account, you will receive another "
 "message that you can use to log in with the password you chose."
-msgstr ""
+msgstr "Kada administrator odobri vaš račun, primit ćete drugu poruku nakon koje ćete se moći prijaviti sa zaporkom koju ste izabrali."
 
 #: controllers/UserController.php:239
 #, php-format
 msgid "Registration for %s"
-msgstr "Skráning fyrir %s"
+msgstr "Registracija za %s"
 
 #: controllers/UserController.php:253
 #, php-format
 msgid "Your request to join %s"
-msgstr ""
+msgstr "Vaš zahtjev za pridruživanjem %s"
 
 #: controllers/UserController.php:254
 msgid "this link"
-msgstr "þessi hlekkur"
+msgstr "ova poveznica"
 
 #: controllers/UserController.php:254
 #, php-format
@@ -216,96 +216,96 @@ msgid ""
 "You have registered for an account on %s. Please confirm your registration "
 "by following %s.  If you did not request to join %s please disregard this "
 "email."
-msgstr ""
+msgstr "Morate se registrirati za račun na %s. Molimo potvrdite svoju registraciju tako što ćete slijediti %s. Ako niste poslali zahtjev za pridruživanjem %s, molimo zanemarite ovu poruku."
 
 #: controllers/UserController.php:257
 #, php-format
 msgid ""
 "You have temporary access to %s for twenty minutes. You will need to confirm"
 " your request to join after that time."
-msgstr ""
+msgstr "Imate privremeni pristup %s u trajanju od dvadeset minuta. Morat ćete potvrditi svoj zahtjev za pridruživanjem nakon isteka tog vremena."
 
 #: controllers/UserController.php:271
 #, php-format
 msgid "New request to join %s"
-msgstr ""
+msgstr "Novi zahtjev za pridruživanjem %s"
 
 #: controllers/UserController.php:272
 #, php-format
 msgid "A new user has confirmed that they want to join %s : %s"
-msgstr "Nýr notandi hefur staðfest beiðnin um aðgang að %s : %s"
+msgstr "Novi korisnik je potvrdio da se želi pridružiti %s : %s"
 
 #: controllers/UserController.php:275
 #, php-format
 msgid "%s has temporary access to the site."
-msgstr ""
+msgstr "%s ima privremeni pristup stranici."
 
 #: controllers/UserController.php:277
 #, php-format
 msgid ""
 "You will need to make the user active and save the changes to complete "
 "registration for %s."
-msgstr ""
+msgstr "Morat ćete aktivirati korisnika i pohraniti promjene kako biste završili registraciju za %s."
 
 #: views/admin/user/browse.php:45
 msgid "Usernames"
-msgstr ""
+msgstr "Korisnička imena"
 
 #: views/admin/user/browse.php:46
 msgid "Real names"
-msgstr ""
+msgstr "Prava imena"
 
 #: views/admin/user/browse.php:47
 msgid "Email addresses"
-msgstr ""
+msgstr "Adrese elektroničke pošte"
 
 #: views/admin/user/browse.php:62
 #, php-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: views/admin/user/browse.php:66
 msgid "Active"
-msgstr ""
+msgstr "Aktivan"
 
 #: views/admin/user/browse.php:69
 msgid "Not Active"
-msgstr ""
+msgstr "Neaktivan"
 
 #: views/admin/user/browse.php:80
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: views/admin/user/browse.php:82
 msgid "Real Name"
-msgstr ""
+msgstr "Pravo ime"
 
 #: views/public/user/confirm.php:2
 msgid "Confirmation Error"
-msgstr ""
+msgstr "Pogreška prilikom potvrde"
 
 #: views/public/user/stale-token.php:2
 msgid "Stale Token"
-msgstr ""
+msgstr "Zastario token"
 
 #: views/public/user/stale-token.php:9
 msgid ""
 "Your temporary access to the site has expired. Please check your email for "
 "the link to follow to confirm your registration."
-msgstr ""
+msgstr "Vaš privremeni pristup stranici je istekao. Molimo provjerite svoju elektroničku poštu za poveznicu kojom ćete potvrditi svoju registraciju."
 
 #: views/public/user/stale-token.php:11
 msgid "You have been logged out, but can continue browsing the site."
-msgstr ""
+msgstr "Odjavljeni ste, ali možete nastaviti pregledavati stranicu."
 
 #: views/public/user/update-account.php:5
 msgid "Passwords match!"
-msgstr "Aðgangsorð stemma!"
+msgstr "Podudaranje lozinke!"
 
 #: views/public/user/update-account.php:6
 msgid "Passwords do not match!"
-msgstr "Aðgangsorð stemma ekki!"
+msgstr "Zaporke se ne podudaraju"
 
 #: views/public/user/update-account.php:13
 msgid "Update Account"
-msgstr "Uppfærið reikning"
+msgstr "Ažuriraj račun"

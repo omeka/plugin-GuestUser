@@ -3,212 +3,214 @@
 # This file is distributed under the same license as the Omeka package.
 # 
 # Translators:
-# 72d2c1bc1be92c9fcf9a3bc8e046413f_fd3c651 <2bf4953ea485be2620221690b3005e74_204966>, 2014
+# Cédric Valmary <cvalmary@yahoo.fr>, 2016
+# Isabelle Gilles <isabelle.gillesgallet@gmail.com>, 2015
+# rcheno <remi.cheno@ideo-cairo.org>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Omeka Classic\n"
 "Report-Msgid-Bugs-To: http://github.com/omeka/plugin-GuestUser/issues\n"
 "POT-Creation-Date: 2012-01-09 21:49-0500\n"
-"PO-Revision-Date: 2017-09-20 05:39+0000\n"
-"Last-Translator: John Flatness <john@zerocrates.org>\n"
-"Language-Team: Icelandic (http://www.transifex.com/omeka/omeka/language/is/)\n"
+"PO-Revision-Date: 2017-09-23 19:01+0000\n"
+"Last-Translator: Cédric Valmary <cvalmary@yahoo.fr>\n"
+"Language-Team: Occitan (post 1500) (http://www.transifex.com/omeka/omeka/language/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: is\n"
-"Plural-Forms: nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);\n"
+"Language: oc\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "Guest"
-msgstr "Gestur"
+msgstr "Convidat"
 
 #: GuestUserPlugin.php:74 GuestUserPlugin.php:216
 msgid "Login"
-msgstr "Skrá inn"
+msgstr "Identificatz-vos"
 
 #: GuestUserPlugin.php:75 GuestUserPlugin.php:217
 #: controllers/UserController.php:222 views/public/user/register.php:6
 msgid "Register"
-msgstr "Skráning"
+msgstr "Enregistratz-vos"
 
 #: GuestUserPlugin.php:76 GuestUserPlugin.php:235
 msgid "My Account"
-msgstr "Reikningurinn minn"
+msgstr "Mon compte"
 
 #: GuestUserPlugin.php:193
 msgid "Guest Users"
-msgstr ""
+msgstr "Convidats"
 
 #: GuestUserPlugin.php:239
 msgid "Update account info and password"
-msgstr "Uppfæra upplýsingar um reikning og lykilorð"
+msgstr "Actualizar las infos e lo senhal del compte"
 
 #: GuestUserPlugin.php:252
 #, php-format
 msgid "Your %s account"
-msgstr "%s reikningurinn þinn"
+msgstr "Vòstre compte %s"
 
 #: GuestUserPlugin.php:254
 #, php-format
 msgid ""
 "An admin has made your account on %s active. You can now log in to with your"
 " password at this link:"
-msgstr ""
+msgstr "Un administrator a activat vòstre compte sul site %s. Podètz tre ara vos connectar amb vòstre senhal via aqueste ligam :"
 
 #: config_form.php:5
 msgid "Registration Features"
-msgstr ""
+msgstr "Informacions d'enregistrament"
 
 #: config_form.php:8
 msgid ""
 "Add some text to the registration screen so people will know what they get for registering.\n"
 "        As you enable and configure plugins that make use of the guest user, please give them guidance\n"
 "        about what they can and cannot do."
-msgstr ""
+msgstr "Tèxte d'apondre a la pagina d'enregistrament per far conéisser las consequéncias de l'enregistrament. Coma activatz d'extensions que pòdon far usatge d'aquela, mercé de donar d'explicacions sus çò que fan o que fan pas de las donadas dels usatgièrs."
 
 #: config_form.php:21
 msgid "Short Registration Features"
-msgstr ""
+msgstr "Infos sus l'enregistrament rapid"
 
 #: config_form.php:24
 msgid ""
 "Add a shorter version to use as a dropdown from the user bar. If empty, no "
 "dropdown will appear."
-msgstr ""
+msgstr "Prepausar una version corta jos la forma d'un menú desenrotlant dins lo menú de l'usatgièr. Se aqueste camp es void, cap de menú desenrotlant apareis pas."
 
 #: config_form.php:34
 msgid "Dashboard Label"
-msgstr ""
+msgstr "Intitolat del tablèu de bòrd"
 
 #: config_form.php:37
 msgid "The text to use for the label on the user's dashboard"
-msgstr ""
+msgstr "Lo tèxte utilizat per l'intitolat del tablèu de bòrd de l'usatgièr"
 
 #: config_form.php:46
 msgid "Login Text"
-msgstr ""
+msgstr "Infos sus l'identificant"
 
 #: config_form.php:49
 msgid "The text to use for the 'Login' link in the user bar"
-msgstr ""
+msgstr "Lo tèxte d'utilizar pel ligam d'identificacion dins lo menú de l'usatgièr "
 
 #: config_form.php:58
 msgid "Register Text"
-msgstr ""
+msgstr "Infos sus l'enregistrament"
 
 #: config_form.php:61
 msgid "The text to use for the 'Register' link in the user bar."
-msgstr ""
+msgstr "Lo tèxte d'utilizar pel ligam d'enregistrament dins lo menú de l'usatgièr"
 
 #: config_form.php:71
 msgid "Allow open registration?"
-msgstr "Leyfa opna skráningu?"
+msgstr "Permetre l'enregistrament liure ?"
 
 #: config_form.php:74
 msgid "Allow guest user registration without administrator approval?"
-msgstr "Leyfa skráningu gestanotanda án leyfis stjórnanda?"
+msgstr "Los usatgièrs convidats se pòdon inscriure sens l'aprovacion d'un administrator ?"
 
 #: config_form.php:92
 msgid "Allow instant access?"
-msgstr "Leyfa skyndiaðgang?"
+msgstr "Permetre un accès instantanèu ?"
 
 #: config_form.php:95
 msgid "Allow instant access for 20 minutes for new users"
-msgstr "Leyfa skyndiaðgang í 20 mínútur fyrir nýja notendur"
+msgstr "Permetre un accès instantanèu pendent 20 minutas pels novèls utilizaires"
 
 #: config_form.php:113
 msgid "Require ReCaptcha?"
-msgstr ""
+msgstr "Exigir ReCaptcha ?"
 
 #: config_form.php:116
 msgid "Check this to require passing a ReCaptcha test when registering"
-msgstr ""
+msgstr "Casa de marcar per activar lo tèst ReCaptcha al moment de l'enregistrament"
 
 #: config_form.php:131
 msgid ""
 "You have not set up ReCaptcha keys in the security settings. We strongly "
 "recommend using ReCaptcha to prevent spam account creation."
-msgstr ""
+msgstr "Avètz pas completat vòstra clau d'activacion ReCaptcha dins los paramètres de seguretat. Vos conselham bravament d'utilizar ReCaptcha per contrar la creacion de comptes de spammaires."
 
 #: controllers/UserController.php:55
 #, php-format
 msgid "Failed login attempt from %s"
-msgstr "Ekki tókst að skrá inn úr %s"
+msgstr "Fracàs de la temptativa de connexion dempuèi %s"
 
 #: controllers/UserController.php:62
 msgid ""
 "You are logged in temporarily. Please check your email for a confirmation "
 "message. Once you have confirmed your request, you can log in without time "
 "limits."
-msgstr ""
+msgstr "Sètz connectat de faiçon provisòria. Mercé de verificar vòstre corrièr electronic pel messatge de confirmacion. Un còp la confirmacion faita, vos poiretz connectar sens limit de temps."
 
 #: controllers/UserController.php:70
 msgid ""
 "Thank you for registering. Please check your email for a confirmation "
 "message. Once you have confirmed your request, you will be able to log in."
-msgstr ""
+msgstr "Mercé de vos èsser enregistrat. Verificatz vòstre corrièr electronic pel messatge de confirmacion. Un còp la confirmacion faita, vos poiretz connectar."
 
 #: controllers/UserController.php:76
 msgid ""
 "Thank you for registering. Please check your email for a confirmation "
 "message. Once you have confirmed your request and an administrator activates"
 " your account, you will be able to log in."
-msgstr ""
+msgstr "Mercé de vos èsser enregistrat. Verificatz vòstre corrièr electronic pel messatge de confirmacion. Un còp la confirmacion faita e vòstre compte activat per un administrator, vos poiretz connectar."
 
 #: controllers/UserController.php:113
 msgid "Incorrect password"
-msgstr "Rangt lykilorð"
+msgstr "Senhal incorrècte"
 
 #: controllers/UserController.php:155
 msgid ""
 "Please check the email we just sent you for the next steps! You're almost "
 "there!"
-msgstr ""
+msgstr "Mercé de verificar lo messatge electronic que vos venèm de mandar. I sètz gaireben !"
 
 #: controllers/UserController.php:159
 msgid "Invalid token"
-msgstr ""
+msgstr "Geton invalid"
 
 #: controllers/UserController.php:204 views/public/user/update-account.php:4
 msgid "Password again for match"
-msgstr "Sláið aftur inn lykilorði"
+msgstr "Repetissètz lo senhal per verificacion"
 
 #: controllers/UserController.php:214
 msgid "Please verify you're a human"
-msgstr "Vinsamlegast staðfestur að þú ert manneskja"
+msgstr "Mercé de confirmar que sètz un uman"
 
 #: controllers/UserController.php:220
 msgid "Update"
-msgstr ""
+msgstr "Actualizar"
 
 #: controllers/UserController.php:231
 #, php-format
 msgid "Thanks for joining %s!"
-msgstr ""
+msgstr "Mercé d'aver rejunt %s !"
 
 #: controllers/UserController.php:234
 #, php-format
 msgid "You can now log into %s using the password you chose."
-msgstr ""
+msgstr "Podètz tre ara vos connectar a %s amb lo senhal qu'avètz causit"
 
 #: controllers/UserController.php:236
 msgid ""
 "When an administrator approves your account, you will receive another "
 "message that you can use to log in with the password you chose."
-msgstr ""
+msgstr "Quand un administrator aurà aprovat vòstre compte, recebretz un autre messatge que vos convidarà a vos connectar amb lo senhal qu'avètz causit."
 
 #: controllers/UserController.php:239
 #, php-format
 msgid "Registration for %s"
-msgstr "Skráning fyrir %s"
+msgstr "Enregistrament de %s"
 
 #: controllers/UserController.php:253
 #, php-format
 msgid "Your request to join %s"
-msgstr ""
+msgstr "Vòstra demanda d'inscripcion a %s"
 
 #: controllers/UserController.php:254
 msgid "this link"
-msgstr "þessi hlekkur"
+msgstr "aqueste ligam"
 
 #: controllers/UserController.php:254
 #, php-format
@@ -216,96 +218,96 @@ msgid ""
 "You have registered for an account on %s. Please confirm your registration "
 "by following %s.  If you did not request to join %s please disregard this "
 "email."
-msgstr ""
+msgstr "Avètz creat un compte sus %s. Mercé de confirmar vòstra inscripcion en seguent %s. Se vos sètz pas inscrit a %s, mercé d'ignorar aqueste messatge."
 
 #: controllers/UserController.php:257
 #, php-format
 msgid ""
 "You have temporary access to %s for twenty minutes. You will need to confirm"
 " your request to join after that time."
-msgstr ""
+msgstr "Vòstre accès temporari a %s durarà vint minutas. Una confirmacion de vòstra demanda d'inscripcion serà puèi necessària."
 
 #: controllers/UserController.php:271
 #, php-format
 msgid "New request to join %s"
-msgstr ""
+msgstr "Novèla demanda d'inscripcion a %s"
 
 #: controllers/UserController.php:272
 #, php-format
 msgid "A new user has confirmed that they want to join %s : %s"
-msgstr "Nýr notandi hefur staðfest beiðnin um aðgang að %s : %s"
+msgstr "L'usatgièr %s a confirmat son inscripcion a %s"
 
 #: controllers/UserController.php:275
 #, php-format
 msgid "%s has temporary access to the site."
-msgstr ""
+msgstr "%s a un accès temporari al site."
 
 #: controllers/UserController.php:277
 #, php-format
 msgid ""
 "You will need to make the user active and save the changes to complete "
 "registration for %s."
-msgstr ""
+msgstr "Es necessari d'activar l'utilizaire e d'enregistrar las modificacions per finalizar l'inscripcion de %s."
 
 #: views/admin/user/browse.php:45
 msgid "Usernames"
-msgstr ""
+msgstr "Noms d'utilizaire"
 
 #: views/admin/user/browse.php:46
 msgid "Real names"
-msgstr ""
+msgstr "Identitats realas"
 
 #: views/admin/user/browse.php:47
 msgid "Email addresses"
-msgstr ""
+msgstr "Adreças de corrièl"
 
 #: views/admin/user/browse.php:62
 #, php-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: views/admin/user/browse.php:66
 msgid "Active"
-msgstr ""
+msgstr "Actiu"
 
 #: views/admin/user/browse.php:69
 msgid "Not Active"
-msgstr ""
+msgstr "Inactiu"
 
 #: views/admin/user/browse.php:80
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: views/admin/user/browse.php:82
 msgid "Real Name"
-msgstr ""
+msgstr "Identitat reala"
 
 #: views/public/user/confirm.php:2
 msgid "Confirmation Error"
-msgstr ""
+msgstr "Error a la confirmacion"
 
 #: views/public/user/stale-token.php:2
 msgid "Stale Token"
-msgstr ""
+msgstr "Geton perimit"
 
 #: views/public/user/stale-token.php:9
 msgid ""
 "Your temporary access to the site has expired. Please check your email for "
 "the link to follow to confirm your registration."
-msgstr ""
+msgstr "Vòstre accès temporari al site a expirat. Se vos plai, verificatz vòstres corrièls, recebretz un ligam de seguir per validar vòstra inscripcion."
 
 #: views/public/user/stale-token.php:11
 msgid "You have been logged out, but can continue browsing the site."
-msgstr ""
+msgstr "Sètz estat desconnectat, mas podètz totjorn percórrer aqueste site"
 
 #: views/public/user/update-account.php:5
 msgid "Passwords match!"
-msgstr "Aðgangsorð stemma!"
+msgstr "Los senhals correspondon !"
 
 #: views/public/user/update-account.php:6
 msgid "Passwords do not match!"
-msgstr "Aðgangsorð stemma ekki!"
+msgstr "Los senhals correspondon pas !"
 
 #: views/public/user/update-account.php:13
 msgid "Update Account"
-msgstr "Uppfærið reikning"
+msgstr "Actualizar lo compte"

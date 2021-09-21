@@ -1,17 +1,17 @@
-# Translation for the Simple Pages plugin for Omeka.
+# Translation for the Guest User plugin for Omeka.
 # Copyright (C) 2011 Roy Rosenzweig Center for History and New Media
 # This file is distributed under the same license as the Omeka package.
 # 
 # Translators:
-# Matti Lassila <matti.lassila@gmail.com>, 2013
+# Matti Lassila <matti.lassila@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
-"Project-Id-Version: Omeka\n"
+"Project-Id-Version: Omeka Classic\n"
 "Report-Msgid-Bugs-To: http://github.com/omeka/plugin-GuestUser/issues\n"
 "POT-Creation-Date: 2012-01-09 21:49-0500\n"
-"PO-Revision-Date: 2013-10-13 19:11+0000\n"
-"Last-Translator: Matti Lassila <matti.lassila@gmail.com>\n"
-"Language-Team: Finnish (Finland) (http://www.transifex.com/projects/p/omeka/language/fi_FI/)\n"
+"PO-Revision-Date: 2017-09-19 17:46+0000\n"
+"Last-Translator: John Flatness <john@zerocrates.org>\n"
+"Language-Team: Finnish (Finland) (http://www.transifex.com/omeka/omeka/language/fi_FI/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,32 +21,38 @@ msgstr ""
 msgid "Guest"
 msgstr "Vieras"
 
-#: GuestUserPlugin.php:75 GuestUserPlugin.php:184
+#: GuestUserPlugin.php:74 GuestUserPlugin.php:216
 msgid "Login"
 msgstr "Kirjaudu"
 
-#: GuestUserPlugin.php:76 GuestUserPlugin.php:185
-#: controllers/UserController.php:225 views/public/user/register.php:6
+#: GuestUserPlugin.php:75 GuestUserPlugin.php:217
+#: controllers/UserController.php:222 views/public/user/register.php:6
 msgid "Register"
 msgstr "Rekistöröidy"
 
-#: GuestUserPlugin.php:208
+#: GuestUserPlugin.php:76 GuestUserPlugin.php:235
 msgid "My Account"
 msgstr "Käyttäjätili"
 
-#: GuestUserPlugin.php:212
+#: GuestUserPlugin.php:193
+msgid "Guest Users"
+msgstr ""
+
+#: GuestUserPlugin.php:239
 msgid "Update account info and password"
 msgstr "Päivitä käyttäjätilin tiedot ja salasana"
 
-#: GuestUserPlugin.php:225
+#: GuestUserPlugin.php:252
 #, php-format
 msgid "Your %s account"
 msgstr "Käyttäjätilisi %s -sivustolla"
 
-#: GuestUserPlugin.php:226
+#: GuestUserPlugin.php:254
+#, php-format
 msgid ""
-"An admin has made your account active. You can now log in with your password"
-msgstr "Sivuston ylläpito on aktivoinut käyttäjätilisi. Voit nyt kirjautua salasanallasi."
+"An admin has made your account on %s active. You can now log in to with your"
+" password at this link:"
+msgstr ""
 
 #: config_form.php:5
 msgid "Registration Features"
@@ -57,7 +63,7 @@ msgid ""
 "Add some text to the registration screen so people will know what they get for registering.\n"
 "        As you enable and configure plugins that make use of the guest user, please give them guidance\n"
 "        about what they can and cannot do."
-msgstr ""
+msgstr "Laadi rekisteröitymissivulle teksti, joka selventää kiinnostuneille käyttäjille rekisteröitymisen hyödyt.\nKäyttäjille on hyvä kertoa, mitä mahdollisuuksia vierailijatunnus antaa."
 
 #: config_form.php:21
 msgid "Short Registration Features"
@@ -67,7 +73,7 @@ msgstr "Rekisteröitymisen hyödyt lyhyesti"
 msgid ""
 "Add a shorter version to use as a dropdown from the user bar. If empty, no "
 "dropdown will appear."
-msgstr ""
+msgstr "Lyhyt rekisteröitymisen hyötyjä esittelevä teksti näytettäväksi sivun yläreunan alasvetovalikossa. Oletuksena alasvetovalikkoa ei näytetä."
 
 #: config_form.php:34
 msgid "Dashboard Label"
@@ -75,7 +81,7 @@ msgstr "Käyttöliittymäteksti ohjausnäkymässä"
 
 #: config_form.php:37
 msgid "The text to use for the label on the user's dashboard"
-msgstr ""
+msgstr "Käyttöliittymäteksti käyttäjän ohjausnäkymässä"
 
 #: config_form.php:46
 msgid "Login Text"
@@ -83,7 +89,7 @@ msgstr "Kirjautumislinkin käyttöliittymäteksti"
 
 #: config_form.php:49
 msgid "The text to use for the 'Login' link in the user bar"
-msgstr ""
+msgstr "Kirjaitumislinkin teksti valikossa"
 
 #: config_form.php:58
 msgid "Register Text"
@@ -91,7 +97,7 @@ msgstr "Rekisteröitymislinkin käyttöliittymäteksti"
 
 #: config_form.php:61
 msgid "The text to use for the 'Register' link in the user bar."
-msgstr ""
+msgstr "Rekisteröitymislinkin teksti valikossa."
 
 #: config_form.php:71
 msgid "Allow open registration?"
@@ -99,7 +105,7 @@ msgstr "Vapaa rekisteröityminen"
 
 #: config_form.php:74
 msgid "Allow guest user registration without administrator approval?"
-msgstr ""
+msgstr "Salli vierailijatunnuksen rekisteröinti ilman ylläpidon hyväksyntää?"
 
 #: config_form.php:92
 msgid "Allow instant access?"
@@ -107,7 +113,7 @@ msgstr "Myönnä välitön pääsy"
 
 #: config_form.php:95
 msgid "Allow instant access for 20 minutes for new users"
-msgstr ""
+msgstr "Myöntää uusille käyttäjille 20 minuutin välittömän pääsyn sivustolle"
 
 #: config_form.php:113
 msgid "Require ReCaptcha?"
@@ -116,6 +122,12 @@ msgstr "Vaadi ReCaptcha"
 #: config_form.php:116
 msgid "Check this to require passing a ReCaptcha test when registering"
 msgstr "Vaadi ReCaptcha rekisteröitymislomakkeella"
+
+#: config_form.php:131
+msgid ""
+"You have not set up ReCaptcha keys in the security settings. We strongly "
+"recommend using ReCaptcha to prevent spam account creation."
+msgstr ""
 
 #: controllers/UserController.php:55
 #, php-format
@@ -127,73 +139,78 @@ msgid ""
 "You are logged in temporarily. Please check your email for a confirmation "
 "message. Once you have confirmed your request, you can log in without time "
 "limits."
-msgstr ""
+msgstr "Olet nyt kirjautuneena sivustolle väliaikaisesti. Sähköpostiisi on lähetetty käyttäjätunnuksen vahvistusviesti. Vahvistettuasi tunnuksen voit kirjautua sisään ilman aikarajaa."
 
 #: controllers/UserController.php:70
 msgid ""
 "Thank you for registering. Please check your email for a confirmation "
 "message. Once you have confirmed your request, you will be able to log in."
-msgstr ""
+msgstr "Kiitos rekisteröitymisestä. Sähköpostiisi on lähetetty vahvistusviesti. Vahvistettuasi käyttäjätunnuksen voit kirjautua sisään."
 
 #: controllers/UserController.php:76
 msgid ""
 "Thank you for registering. Please check your email for a confirmation "
 "message. Once you have confirmed your request and an administrator activates"
 " your account, you will be able to log in."
-msgstr ""
+msgstr "Kiitos rekisteröitymisestä. Sähköpostiisi on lähetetty vahvistusviesti. Vahvistettuasi käyttäjätunnuksen ja ylläpidon hyväksyttyä rekisteröitymisen voit kirjautua sisään."
 
-#: controllers/UserController.php:115
+#: controllers/UserController.php:113
 msgid "Incorrect password"
 msgstr "Virheellinen salasana"
 
-#: controllers/UserController.php:161
+#: controllers/UserController.php:155
 msgid ""
 "Please check the email we just sent you for the next steps! You're almost "
 "there!"
-msgstr ""
+msgstr "Sähköpostiisi on lähetetty vahvistusviesti ja ohjeita. Tunnuksesi on pikapuolin valmis."
 
-#: controllers/UserController.php:165
+#: controllers/UserController.php:159
 msgid "Invalid token"
 msgstr "Virheellinen avain"
 
-#: controllers/UserController.php:210 views/public/user/update-account.php:4
+#: controllers/UserController.php:204 views/public/user/update-account.php:4
 msgid "Password again for match"
 msgstr "Salasana uudelleen"
 
-#: controllers/UserController.php:220
+#: controllers/UserController.php:214
 msgid "Please verify you're a human"
 msgstr "Roskapostituksen esto"
 
-#: controllers/UserController.php:232
+#: controllers/UserController.php:220
+msgid "Update"
+msgstr ""
+
+#: controllers/UserController.php:231
 #, php-format
 msgid "Thanks for joining %s!"
 msgstr "Kiitos rekisteröitymisestä %s -sivustolle!"
 
 #: controllers/UserController.php:234
-msgid "You can now log in using the password you chose."
-msgstr "Voit nyt kirjautua käyttäen valitsemaasi salasanaa."
+#, php-format
+msgid "You can now log into %s using the password you chose."
+msgstr ""
 
 #: controllers/UserController.php:236
 msgid ""
 "When an administrator approves your account, you will receive another "
 "message that you can use to log in with the password you chose."
-msgstr ""
+msgstr "Ylläpitäjän hyväksyttyä rekisteröitymisesi saat uuden vahvistusviestin."
 
-#: controllers/UserController.php:238
+#: controllers/UserController.php:239
 #, php-format
 msgid "Registration for %s"
 msgstr "Rekisteröityminen %s -sivustolle"
 
-#: controllers/UserController.php:252
+#: controllers/UserController.php:253
 #, php-format
 msgid "Your request to join %s"
 msgstr "Pyyntösi rekisteröityä %s sivustolle"
 
-#: controllers/UserController.php:253
+#: controllers/UserController.php:254
 msgid "this link"
 msgstr "tätä linkkiä"
 
-#: controllers/UserController.php:253
+#: controllers/UserController.php:254
 #, php-format
 msgid ""
 "You have registered for an account on %s. Please confirm your registration "
@@ -201,23 +218,71 @@ msgid ""
 "email."
 msgstr "Olet lähettänyt rekisteröitymispyynnön %s -sivustolle. Vahvista rekisteröitymisesi seuraamalla %s.  Jos et mielestäsi ole lähettänyt rekisteröitymispyyntöä %s -sivustolle, voit poistaa tämän viestin."
 
-#: controllers/UserController.php:266
+#: controllers/UserController.php:257
+#, php-format
+msgid ""
+"You have temporary access to %s for twenty minutes. You will need to confirm"
+" your request to join after that time."
+msgstr ""
+
+#: controllers/UserController.php:271
 #, php-format
 msgid "New request to join %s"
 msgstr "Uusi sivuston %s rekisteröitymispyyntö"
 
-#: controllers/UserController.php:267
+#: controllers/UserController.php:272
 #, php-format
 msgid "A new user has confirmed that they want to join %s : %s"
 msgstr "Uusi käyttäjä on vahvistanut rekisteröitymisen %s : %s"
 
+#: controllers/UserController.php:275
+#, php-format
+msgid "%s has temporary access to the site."
+msgstr ""
+
+#: controllers/UserController.php:277
+#, php-format
+msgid ""
+"You will need to make the user active and save the changes to complete "
+"registration for %s."
+msgstr ""
+
+#: views/admin/user/browse.php:45
+msgid "Usernames"
+msgstr ""
+
+#: views/admin/user/browse.php:46
+msgid "Real names"
+msgstr ""
+
+#: views/admin/user/browse.php:47
+msgid "Email addresses"
+msgstr ""
+
+#: views/admin/user/browse.php:62
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: views/admin/user/browse.php:66
+msgid "Active"
+msgstr ""
+
+#: views/admin/user/browse.php:69
+msgid "Not Active"
+msgstr ""
+
+#: views/admin/user/browse.php:80
+msgid "ID"
+msgstr ""
+
+#: views/admin/user/browse.php:82
+msgid "Real Name"
+msgstr ""
+
 #: views/public/user/confirm.php:2
 msgid "Confirmation Error"
 msgstr "Vahvistusvirhe"
-
-#: views/public/user/me.php:10
-msgid "Browse and manage your work here."
-msgstr "Selaa"
 
 #: views/public/user/stale-token.php:2
 msgid "Stale Token"

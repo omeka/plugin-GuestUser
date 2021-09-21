@@ -1,4 +1,4 @@
-# Translation for the Simple Pages plugin for Omeka.
+# Translation for the Guest User plugin for Omeka.
 # Copyright (C) 2011 Roy Rosenzweig Center for History and New Media
 # This file is distributed under the same license as the Omeka package.
 # 
@@ -7,47 +7,53 @@
 # Mikhail Shvartsman <Shvar@rsl.ru>, 2013-2014
 msgid ""
 msgstr ""
-"Project-Id-Version: Omeka\n"
+"Project-Id-Version: Omeka Classic\n"
 "Report-Msgid-Bugs-To: http://github.com/omeka/plugin-GuestUser/issues\n"
 "POT-Creation-Date: 2012-01-09 21:49-0500\n"
-"PO-Revision-Date: 2014-01-29 10:13+0000\n"
-"Last-Translator: Mikhail Shvartsman <Shvar@rsl.ru>\n"
-"Language-Team: Russian (http://www.transifex.com/projects/p/omeka/language/ru/)\n"
+"PO-Revision-Date: 2017-09-19 22:03+0000\n"
+"Last-Translator: John Flatness <john@zerocrates.org>\n"
+"Language-Team: Russian (http://www.transifex.com/omeka/omeka/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 msgid "Guest"
 msgstr "Гость"
 
-#: GuestUserPlugin.php:75 GuestUserPlugin.php:184
+#: GuestUserPlugin.php:74 GuestUserPlugin.php:216
 msgid "Login"
 msgstr "Логин"
 
-#: GuestUserPlugin.php:76 GuestUserPlugin.php:185
-#: controllers/UserController.php:225 views/public/user/register.php:6
+#: GuestUserPlugin.php:75 GuestUserPlugin.php:217
+#: controllers/UserController.php:222 views/public/user/register.php:6
 msgid "Register"
 msgstr "Зарегистрироваться"
 
-#: GuestUserPlugin.php:208
+#: GuestUserPlugin.php:76 GuestUserPlugin.php:235
 msgid "My Account"
 msgstr "Моя учётная запись"
 
-#: GuestUserPlugin.php:212
+#: GuestUserPlugin.php:193
+msgid "Guest Users"
+msgstr ""
+
+#: GuestUserPlugin.php:239
 msgid "Update account info and password"
 msgstr "Обновить информацию об учётной записи и пароле"
 
-#: GuestUserPlugin.php:225
+#: GuestUserPlugin.php:252
 #, php-format
 msgid "Your %s account"
 msgstr "Ваша %s учётная запись"
 
-#: GuestUserPlugin.php:226
+#: GuestUserPlugin.php:254
+#, php-format
 msgid ""
-"An admin has made your account active. You can now log in with your password"
-msgstr "Администратор активировал вашу учётную запись. Теперь вы можете войти в неё, используя пароль."
+"An admin has made your account on %s active. You can now log in to with your"
+" password at this link:"
+msgstr ""
 
 #: config_form.php:5
 msgid "Registration Features"
@@ -118,6 +124,12 @@ msgstr "Требуется повторный ввод каптчи?"
 msgid "Check this to require passing a ReCaptcha test when registering"
 msgstr "Проверьте, требуется ли повторный ввод каптчи при регистрации"
 
+#: config_form.php:131
+msgid ""
+"You have not set up ReCaptcha keys in the security settings. We strongly "
+"recommend using ReCaptcha to prevent spam account creation."
+msgstr ""
+
 #: controllers/UserController.php:55
 #, php-format
 msgid "Failed login attempt from %s"
@@ -143,36 +155,41 @@ msgid ""
 " your account, you will be able to log in."
 msgstr "Благодарим вас за регистрацию. Пожалуйста, проверьте почту для подтверждения регистрации. Как только вы подтвердите запрос и администратор активирует ваш аккаунт, вы сможете войти в систему."
 
-#: controllers/UserController.php:115
+#: controllers/UserController.php:113
 msgid "Incorrect password"
 msgstr "Неверный пароль"
 
-#: controllers/UserController.php:161
+#: controllers/UserController.php:155
 msgid ""
 "Please check the email we just sent you for the next steps! You're almost "
 "there!"
 msgstr "Пожалуйста, проверьте почту, мы только что послали вам инструкцию по дальнейшим действиям. Вы почти в конце пути."
 
-#: controllers/UserController.php:165
+#: controllers/UserController.php:159
 msgid "Invalid token"
 msgstr "Неверный опознавательный знак"
 
-#: controllers/UserController.php:210 views/public/user/update-account.php:4
+#: controllers/UserController.php:204 views/public/user/update-account.php:4
 msgid "Password again for match"
 msgstr "Введите пароль ещё раз для сравнения"
 
-#: controllers/UserController.php:220
+#: controllers/UserController.php:214
 msgid "Please verify you're a human"
 msgstr "Пожалуйста, подтвердите, что вы человек"
 
-#: controllers/UserController.php:232
+#: controllers/UserController.php:220
+msgid "Update"
+msgstr ""
+
+#: controllers/UserController.php:231
 #, php-format
 msgid "Thanks for joining %s!"
 msgstr "Благодарим за подключение %s!"
 
 #: controllers/UserController.php:234
-msgid "You can now log in using the password you chose."
-msgstr "Теперь вы можете войти, используя выбранный пароль."
+#, php-format
+msgid "You can now log into %s using the password you chose."
+msgstr ""
 
 #: controllers/UserController.php:236
 msgid ""
@@ -180,21 +197,21 @@ msgid ""
 "message that you can use to log in with the password you chose."
 msgstr "Когда администратор разрешит использование вашего аккаунта, вы получит еще одно сообщение о том, что можете войти в систему, используя выбранный пароль."
 
-#: controllers/UserController.php:238
+#: controllers/UserController.php:239
 #, php-format
 msgid "Registration for %s"
 msgstr "Регистрация для %s"
 
-#: controllers/UserController.php:252
+#: controllers/UserController.php:253
 #, php-format
 msgid "Your request to join %s"
 msgstr "Ваш запрос на присоединение %s"
 
-#: controllers/UserController.php:253
+#: controllers/UserController.php:254
 msgid "this link"
 msgstr "эта ссылка"
 
-#: controllers/UserController.php:253
+#: controllers/UserController.php:254
 #, php-format
 msgid ""
 "You have registered for an account on %s. Please confirm your registration "
@@ -202,23 +219,71 @@ msgid ""
 "email."
 msgstr "Вы зарегистрировались в аккаунте %s. Пожалуйста, подтвердите вашу регистрацию %s. Если вы не запрашивали регистрацию %s, то, пожалуйста, не обращайте внимание на это письмо."
 
-#: controllers/UserController.php:266
+#: controllers/UserController.php:257
+#, php-format
+msgid ""
+"You have temporary access to %s for twenty minutes. You will need to confirm"
+" your request to join after that time."
+msgstr ""
+
+#: controllers/UserController.php:271
 #, php-format
 msgid "New request to join %s"
 msgstr "Ваш запрос на присоединение %s"
 
-#: controllers/UserController.php:267
+#: controllers/UserController.php:272
 #, php-format
 msgid "A new user has confirmed that they want to join %s : %s"
 msgstr "Новый пользователь подтвердил, что хочет присоединиться к  %s : %s"
 
+#: controllers/UserController.php:275
+#, php-format
+msgid "%s has temporary access to the site."
+msgstr ""
+
+#: controllers/UserController.php:277
+#, php-format
+msgid ""
+"You will need to make the user active and save the changes to complete "
+"registration for %s."
+msgstr ""
+
+#: views/admin/user/browse.php:45
+msgid "Usernames"
+msgstr ""
+
+#: views/admin/user/browse.php:46
+msgid "Real names"
+msgstr ""
+
+#: views/admin/user/browse.php:47
+msgid "Email addresses"
+msgstr ""
+
+#: views/admin/user/browse.php:62
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: views/admin/user/browse.php:66
+msgid "Active"
+msgstr ""
+
+#: views/admin/user/browse.php:69
+msgid "Not Active"
+msgstr ""
+
+#: views/admin/user/browse.php:80
+msgid "ID"
+msgstr ""
+
+#: views/admin/user/browse.php:82
+msgid "Real Name"
+msgstr ""
+
 #: views/public/user/confirm.php:2
 msgid "Confirmation Error"
 msgstr "Ошибка подтверждения"
-
-#: views/public/user/me.php:10
-msgid "Browse and manage your work here."
-msgstr "Управление работой и её просмотр"
 
 #: views/public/user/stale-token.php:2
 msgid "Stale Token"

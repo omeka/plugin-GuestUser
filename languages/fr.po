@@ -1,18 +1,19 @@
-# Translation for the Simple Pages plugin for Omeka.
+# Translation for the Guest User plugin for Omeka.
 # Copyright (C) 2011 Roy Rosenzweig Center for History and New Media
 # This file is distributed under the same license as the Omeka package.
 # 
 # Translators:
+# Isabelle Gilles <isabelle.gillesgallet@gmail.com>, 2015
 # rcheno <remi.cheno@ideo-cairo.org>, 2014
 # Thierry Pasquier <thierry.pasquier@emf.ccsti.eu>, 2013-2014
 msgid ""
 msgstr ""
-"Project-Id-Version: Omeka\n"
+"Project-Id-Version: Omeka Classic\n"
 "Report-Msgid-Bugs-To: http://github.com/omeka/plugin-GuestUser/issues\n"
 "POT-Creation-Date: 2012-01-09 21:49-0500\n"
-"PO-Revision-Date: 2014-07-27 21:28+0000\n"
-"Last-Translator: rcheno <remi.cheno@ideo-cairo.org>\n"
-"Language-Team: French (http://www.transifex.com/projects/p/omeka/language/fr/)\n"
+"PO-Revision-Date: 2017-09-19 17:46+0000\n"
+"Last-Translator: Isabelle Gilles <isabelle.gillesgallet@gmail.com>\n"
+"Language-Team: French (http://www.transifex.com/omeka/omeka/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,32 +23,38 @@ msgstr ""
 msgid "Guest"
 msgstr "Invité"
 
-#: GuestUserPlugin.php:75 GuestUserPlugin.php:184
+#: GuestUserPlugin.php:74 GuestUserPlugin.php:216
 msgid "Login"
 msgstr "Identifiez-vous"
 
-#: GuestUserPlugin.php:76 GuestUserPlugin.php:185
-#: controllers/UserController.php:225 views/public/user/register.php:6
+#: GuestUserPlugin.php:75 GuestUserPlugin.php:217
+#: controllers/UserController.php:222 views/public/user/register.php:6
 msgid "Register"
 msgstr "Enregistrez-vous"
 
-#: GuestUserPlugin.php:208
+#: GuestUserPlugin.php:76 GuestUserPlugin.php:235
 msgid "My Account"
 msgstr "Mon compte"
 
-#: GuestUserPlugin.php:212
+#: GuestUserPlugin.php:193
+msgid "Guest Users"
+msgstr "Invités"
+
+#: GuestUserPlugin.php:239
 msgid "Update account info and password"
 msgstr "Actualiser les infos et le mot de passe du compte"
 
-#: GuestUserPlugin.php:225
+#: GuestUserPlugin.php:252
 #, php-format
 msgid "Your %s account"
 msgstr "Votre compte %s"
 
-#: GuestUserPlugin.php:226
+#: GuestUserPlugin.php:254
+#, php-format
 msgid ""
-"An admin has made your account active. You can now log in with your password"
-msgstr "Un administrateur a activé votre compte. Vous pouvez maintenant vous connecter avec votre mot de passe."
+"An admin has made your account on %s active. You can now log in to with your"
+" password at this link:"
+msgstr "Un administrateur a activé votre compte sur le site %s. Vous pouvez dès à présent vous connecter avec votre mot de passe via ce lien :"
 
 #: config_form.php:5
 msgid "Registration Features"
@@ -118,6 +125,12 @@ msgstr "Exiger ReCaptcha ?"
 msgid "Check this to require passing a ReCaptcha test when registering"
 msgstr "Case à cocher pour activer le test ReCaptcha lors de l'enregistrement"
 
+#: config_form.php:131
+msgid ""
+"You have not set up ReCaptcha keys in the security settings. We strongly "
+"recommend using ReCaptcha to prevent spam account creation."
+msgstr "Vous n'avez pas renseigné votre clé d'activation ReCaptcha dans les paramètres de sécurité. Nous vous conseillons vivement d'utiliser ReCaptcha pour contrer la création de comptes de spammeurs."
+
 #: controllers/UserController.php:55
 #, php-format
 msgid "Failed login attempt from %s"
@@ -141,38 +154,43 @@ msgid ""
 "Thank you for registering. Please check your email for a confirmation "
 "message. Once you have confirmed your request and an administrator activates"
 " your account, you will be able to log in."
-msgstr "Merci de vous avoir enregistré. Veuillez vérifier votre courrier électronique pour le message de confirmation. Une fois la confirmation faite et votre compte activé par un administrateur, vous pourrez vous connecter."
+msgstr "Merci de vous être enregistré. Veuillez vérifier votre courrier électronique pour le message de confirmation. Une fois la confirmation faite et votre compte activé par un administrateur, vous pourrez vous connecter."
 
-#: controllers/UserController.php:115
+#: controllers/UserController.php:113
 msgid "Incorrect password"
 msgstr "Mot de passe incorrect"
 
-#: controllers/UserController.php:161
+#: controllers/UserController.php:155
 msgid ""
 "Please check the email we just sent you for the next steps! You're almost "
 "there!"
-msgstr "Merci de vérifier le message électronique que nous venons de vous envoyer. Vous êtes presque au bout de vos peines !"
+msgstr "Merci de vérifier le message électronique que nous venons de vous envoyer. Vous y êtes presque !"
 
-#: controllers/UserController.php:165
+#: controllers/UserController.php:159
 msgid "Invalid token"
 msgstr "Jeton invalide"
 
-#: controllers/UserController.php:210 views/public/user/update-account.php:4
+#: controllers/UserController.php:204 views/public/user/update-account.php:4
 msgid "Password again for match"
 msgstr "Répétez le mot de passe pour vérification"
 
-#: controllers/UserController.php:220
+#: controllers/UserController.php:214
 msgid "Please verify you're a human"
 msgstr "Merci de confirmer que vous êtes un humain"
 
-#: controllers/UserController.php:232
+#: controllers/UserController.php:220
+msgid "Update"
+msgstr "Actualiser"
+
+#: controllers/UserController.php:231
 #, php-format
 msgid "Thanks for joining %s!"
 msgstr "Merci d'avoir rejoint %s !"
 
 #: controllers/UserController.php:234
-msgid "You can now log in using the password you chose."
-msgstr "Maintenant, vous pouvez  vous connecter avec le mot de passe que vous avez choisi"
+#, php-format
+msgid "You can now log into %s using the password you chose."
+msgstr "Vous pouvez dès à présent vous connecter à %s avec le mot de passe que vous avez choisi"
 
 #: controllers/UserController.php:236
 msgid ""
@@ -180,45 +198,93 @@ msgid ""
 "message that you can use to log in with the password you chose."
 msgstr "Lorsqu'un administrateur aura approuvé votre compte, vous recevrez un autre message qui vous invitera à vous connecter avec le mot de passe que vous avez choisi."
 
-#: controllers/UserController.php:238
+#: controllers/UserController.php:239
 #, php-format
 msgid "Registration for %s"
 msgstr "Enregistrement de %s"
 
-#: controllers/UserController.php:252
+#: controllers/UserController.php:253
 #, php-format
 msgid "Your request to join %s"
-msgstr "Votre requête pour rejoindre %s"
+msgstr "Votre demande d'inscription à %s"
 
-#: controllers/UserController.php:253
+#: controllers/UserController.php:254
 msgid "this link"
 msgstr "ce lien"
 
-#: controllers/UserController.php:253
+#: controllers/UserController.php:254
 #, php-format
 msgid ""
 "You have registered for an account on %s. Please confirm your registration "
 "by following %s.  If you did not request to join %s please disregard this "
 "email."
-msgstr "Vous vous être enregistré pour un compte sur %s. Merci de confirmer votre enregistrement en suivant %s. Si vous n'avez pas demandé de rejoindre %s, merci d'ignorer ce message."
+msgstr "Vous avez créé un compte sur %s. Merci de confirmer votre inscription en suivant %s. Si vous ne vous êtes pas inscrit à %s, merci d'ignorer ce message."
 
-#: controllers/UserController.php:266
+#: controllers/UserController.php:257
+#, php-format
+msgid ""
+"You have temporary access to %s for twenty minutes. You will need to confirm"
+" your request to join after that time."
+msgstr "Votre accès temporaire à %s durera vingt minutes. Une confirmation de votre demande d'inscription sera ensuite nécessaire."
+
+#: controllers/UserController.php:271
 #, php-format
 msgid "New request to join %s"
-msgstr "Nouvelle demande pour rejoindre %s"
+msgstr "Nouvelle demande d'inscription à %s"
 
-#: controllers/UserController.php:267
+#: controllers/UserController.php:272
 #, php-format
 msgid "A new user has confirmed that they want to join %s : %s"
-msgstr "Un nouvel usager à confirmé son souhait de rejoindre %s : %s"
+msgstr "L'usager %s a confirmé son inscription à %s"
+
+#: controllers/UserController.php:275
+#, php-format
+msgid "%s has temporary access to the site."
+msgstr "%s a un accès temporaire au site."
+
+#: controllers/UserController.php:277
+#, php-format
+msgid ""
+"You will need to make the user active and save the changes to complete "
+"registration for %s."
+msgstr "Il est nécessaire d'activer l'utilisateur et d'enregistrer les modifications pour finaliser l'inscription de %s."
+
+#: views/admin/user/browse.php:45
+msgid "Usernames"
+msgstr "Noms d'utilisateur"
+
+#: views/admin/user/browse.php:46
+msgid "Real names"
+msgstr "Identités réelles"
+
+#: views/admin/user/browse.php:47
+msgid "Email addresses"
+msgstr "Adresses de courriel"
+
+#: views/admin/user/browse.php:62
+#, php-format
+msgid "%s"
+msgstr "%s"
+
+#: views/admin/user/browse.php:66
+msgid "Active"
+msgstr "Actif"
+
+#: views/admin/user/browse.php:69
+msgid "Not Active"
+msgstr "Inactif"
+
+#: views/admin/user/browse.php:80
+msgid "ID"
+msgstr "ID"
+
+#: views/admin/user/browse.php:82
+msgid "Real Name"
+msgstr "Identité réelle"
 
 #: views/public/user/confirm.php:2
 msgid "Confirmation Error"
 msgstr "Erreur à la confirmation"
-
-#: views/public/user/me.php:10
-msgid "Browse and manage your work here."
-msgstr "Parcourez et gérez votre travail ici."
 
 #: views/public/user/stale-token.php:2
 msgid "Stale Token"

@@ -3,49 +3,50 @@
 # This file is distributed under the same license as the Omeka package.
 # 
 # Translators:
-# 72d2c1bc1be92c9fcf9a3bc8e046413f_fd3c651 <2bf4953ea485be2620221690b3005e74_204966>, 2014
+# Konstantina Elma <konstantinaelma@hotmail.com>, 2015
+# T.G. Dallas, 2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Omeka Classic\n"
 "Report-Msgid-Bugs-To: http://github.com/omeka/plugin-GuestUser/issues\n"
 "POT-Creation-Date: 2012-01-09 21:49-0500\n"
-"PO-Revision-Date: 2017-09-20 05:39+0000\n"
-"Last-Translator: John Flatness <john@zerocrates.org>\n"
-"Language-Team: Icelandic (http://www.transifex.com/omeka/omeka/language/is/)\n"
+"PO-Revision-Date: 2021-01-21 08:33+0000\n"
+"Last-Translator: T.G. Dallas\n"
+"Language-Team: Greek (Greece) (http://www.transifex.com/omeka/omeka/language/el_GR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: is\n"
-"Plural-Forms: nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);\n"
+"Language: el_GR\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Guest"
-msgstr "Gestur"
+msgstr "Επισκέπτης"
 
 #: GuestUserPlugin.php:74 GuestUserPlugin.php:216
 msgid "Login"
-msgstr "Skrá inn"
+msgstr "Σύνδεση"
 
 #: GuestUserPlugin.php:75 GuestUserPlugin.php:217
 #: controllers/UserController.php:222 views/public/user/register.php:6
 msgid "Register"
-msgstr "Skráning"
+msgstr "Εγγραφή"
 
 #: GuestUserPlugin.php:76 GuestUserPlugin.php:235
 msgid "My Account"
-msgstr "Reikningurinn minn"
+msgstr "Ο λογαριασμός μου"
 
 #: GuestUserPlugin.php:193
 msgid "Guest Users"
-msgstr ""
+msgstr "Επισκέπτες"
 
 #: GuestUserPlugin.php:239
 msgid "Update account info and password"
-msgstr "Uppfæra upplýsingar um reikning og lykilorð"
+msgstr "Ανανεώστε τις πληροφορίες του λογαριασμού σας και τον κωδικό πρόσβασης "
 
 #: GuestUserPlugin.php:252
 #, php-format
 msgid "Your %s account"
-msgstr "%s reikningurinn þinn"
+msgstr "Ο %s λογαριασμός σας"
 
 #: GuestUserPlugin.php:254
 #, php-format
@@ -101,23 +102,23 @@ msgstr ""
 
 #: config_form.php:71
 msgid "Allow open registration?"
-msgstr "Leyfa opna skráningu?"
+msgstr "Να επιτρέπεται ανοιχτή εγγραφή ?"
 
 #: config_form.php:74
 msgid "Allow guest user registration without administrator approval?"
-msgstr "Leyfa skráningu gestanotanda án leyfis stjórnanda?"
+msgstr "Να επιτρέπεται η εγγραφή χρηστών χωρίς την έγκριση του διαχειριστή;"
 
 #: config_form.php:92
 msgid "Allow instant access?"
-msgstr "Leyfa skyndiaðgang?"
+msgstr "Να επιτρέπεται άμεση πρόσβαση?"
 
 #: config_form.php:95
 msgid "Allow instant access for 20 minutes for new users"
-msgstr "Leyfa skyndiaðgang í 20 mínútur fyrir nýja notendur"
+msgstr "Να επιτρέπεται άμεση πρόσβαση για 20 λεπτά στους νέους χρήστες"
 
 #: config_form.php:113
 msgid "Require ReCaptcha?"
-msgstr ""
+msgstr "Να απαιτείται ReCaptcha?"
 
 #: config_form.php:116
 msgid "Check this to require passing a ReCaptcha test when registering"
@@ -132,7 +133,7 @@ msgstr ""
 #: controllers/UserController.php:55
 #, php-format
 msgid "Failed login attempt from %s"
-msgstr "Ekki tókst að skrá inn úr %s"
+msgstr "Απέτυχε η προσπάθεια σύνδεσης από τον %s"
 
 #: controllers/UserController.php:62
 msgid ""
@@ -156,7 +157,7 @@ msgstr ""
 
 #: controllers/UserController.php:113
 msgid "Incorrect password"
-msgstr "Rangt lykilorð"
+msgstr "Λανθασμένος κωδικός πρόσβασης"
 
 #: controllers/UserController.php:155
 msgid ""
@@ -170,20 +171,20 @@ msgstr ""
 
 #: controllers/UserController.php:204 views/public/user/update-account.php:4
 msgid "Password again for match"
-msgstr "Sláið aftur inn lykilorði"
+msgstr ""
 
 #: controllers/UserController.php:214
 msgid "Please verify you're a human"
-msgstr "Vinsamlegast staðfestur að þú ert manneskja"
+msgstr ""
 
 #: controllers/UserController.php:220
 msgid "Update"
-msgstr ""
+msgstr "Ανανέωση"
 
 #: controllers/UserController.php:231
 #, php-format
 msgid "Thanks for joining %s!"
-msgstr ""
+msgstr "Ευχαριστούμε για τη συμμετοχή %s!"
 
 #: controllers/UserController.php:234
 #, php-format
@@ -199,16 +200,16 @@ msgstr ""
 #: controllers/UserController.php:239
 #, php-format
 msgid "Registration for %s"
-msgstr "Skráning fyrir %s"
+msgstr ""
 
 #: controllers/UserController.php:253
 #, php-format
 msgid "Your request to join %s"
-msgstr ""
+msgstr "Το αίτημα σας να γίνετε μέλος %s"
 
 #: controllers/UserController.php:254
 msgid "this link"
-msgstr "þessi hlekkur"
+msgstr "αυτός ο σύνδεσμος"
 
 #: controllers/UserController.php:254
 #, php-format
@@ -228,17 +229,17 @@ msgstr ""
 #: controllers/UserController.php:271
 #, php-format
 msgid "New request to join %s"
-msgstr ""
+msgstr "Νέο αίτημα να γίνετε μέλος %s"
 
 #: controllers/UserController.php:272
 #, php-format
 msgid "A new user has confirmed that they want to join %s : %s"
-msgstr "Nýr notandi hefur staðfest beiðnin um aðgang að %s : %s"
+msgstr ""
 
 #: controllers/UserController.php:275
 #, php-format
 msgid "%s has temporary access to the site."
-msgstr ""
+msgstr "%s έχει προσωρινή πρόσβαση σε αυτόν τον ιστότοπο"
 
 #: controllers/UserController.php:277
 #, php-format
@@ -249,40 +250,40 @@ msgstr ""
 
 #: views/admin/user/browse.php:45
 msgid "Usernames"
-msgstr ""
+msgstr "Ονόματα χρηστών"
 
 #: views/admin/user/browse.php:46
 msgid "Real names"
-msgstr ""
+msgstr "Πραγματικά ονόματα"
 
 #: views/admin/user/browse.php:47
 msgid "Email addresses"
-msgstr ""
+msgstr "Διευθύνσεις email"
 
 #: views/admin/user/browse.php:62
 #, php-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: views/admin/user/browse.php:66
 msgid "Active"
-msgstr ""
+msgstr "Ενεργό"
 
 #: views/admin/user/browse.php:69
 msgid "Not Active"
-msgstr ""
+msgstr "Ανενεργό "
 
 #: views/admin/user/browse.php:80
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: views/admin/user/browse.php:82
 msgid "Real Name"
-msgstr ""
+msgstr "Πραγματικό Όνομα"
 
 #: views/public/user/confirm.php:2
 msgid "Confirmation Error"
-msgstr ""
+msgstr "Σφάλμα Επιβεβαίωσης "
 
 #: views/public/user/stale-token.php:2
 msgid "Stale Token"
@@ -300,12 +301,12 @@ msgstr ""
 
 #: views/public/user/update-account.php:5
 msgid "Passwords match!"
-msgstr "Aðgangsorð stemma!"
+msgstr "Οι κωδικοί πρόσβασης ταυτίζονται!"
 
 #: views/public/user/update-account.php:6
 msgid "Passwords do not match!"
-msgstr "Aðgangsorð stemma ekki!"
+msgstr "Οι κωδικοί πρόσβασης δεν ταυτίζονται!"
 
 #: views/public/user/update-account.php:13
 msgid "Update Account"
-msgstr "Uppfærið reikning"
+msgstr "Ανανέωση Λογαριασμού"

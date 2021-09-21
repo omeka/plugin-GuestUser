@@ -1,51 +1,58 @@
-# Translation for the Simple Pages plugin for Omeka.
+# Translation for the Guest User plugin for Omeka.
 # Copyright (C) 2011 Roy Rosenzweig Center for History and New Media
 # This file is distributed under the same license as the Omeka package.
 # 
 # Translators:
+# Tomasz Sopylo <tomasz@sopylo.pl>, 2016
 # vortage <vortage@o2.pl>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: Omeka\n"
+"Project-Id-Version: Omeka Classic\n"
 "Report-Msgid-Bugs-To: http://github.com/omeka/plugin-GuestUser/issues\n"
 "POT-Creation-Date: 2012-01-09 21:49-0500\n"
-"PO-Revision-Date: 2014-07-10 14:12+0000\n"
-"Last-Translator: vortage <vortage@o2.pl>\n"
-"Language-Team: Polish (http://www.transifex.com/projects/p/omeka/language/pl/)\n"
+"PO-Revision-Date: 2017-09-19 17:46+0000\n"
+"Last-Translator: Tomasz Sopylo <tomasz@sopylo.pl>\n"
+"Language-Team: Polish (http://www.transifex.com/omeka/omeka/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pl\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 msgid "Guest"
 msgstr "Gość"
 
-#: GuestUserPlugin.php:75 GuestUserPlugin.php:184
+#: GuestUserPlugin.php:74 GuestUserPlugin.php:216
 msgid "Login"
 msgstr "Login"
 
-#: GuestUserPlugin.php:76 GuestUserPlugin.php:185
-#: controllers/UserController.php:225 views/public/user/register.php:6
+#: GuestUserPlugin.php:75 GuestUserPlugin.php:217
+#: controllers/UserController.php:222 views/public/user/register.php:6
 msgid "Register"
 msgstr "Zarejestrowany"
 
-#: GuestUserPlugin.php:208
+#: GuestUserPlugin.php:76 GuestUserPlugin.php:235
 msgid "My Account"
 msgstr "Moje konto"
 
-#: GuestUserPlugin.php:212
+#: GuestUserPlugin.php:193
+msgid "Guest Users"
+msgstr ""
+
+#: GuestUserPlugin.php:239
 msgid "Update account info and password"
 msgstr ""
 
-#: GuestUserPlugin.php:225
+#: GuestUserPlugin.php:252
 #, php-format
 msgid "Your %s account"
 msgstr ""
 
-#: GuestUserPlugin.php:226
+#: GuestUserPlugin.php:254
+#, php-format
 msgid ""
-"An admin has made your account active. You can now log in with your password"
+"An admin has made your account on %s active. You can now log in to with your"
+" password at this link:"
 msgstr ""
 
 #: config_form.php:5
@@ -95,7 +102,7 @@ msgstr ""
 
 #: config_form.php:71
 msgid "Allow open registration?"
-msgstr ""
+msgstr "Pozwolić na otwartą rejestrację?"
 
 #: config_form.php:74
 msgid "Allow guest user registration without administrator approval?"
@@ -107,7 +114,7 @@ msgstr ""
 
 #: config_form.php:95
 msgid "Allow instant access for 20 minutes for new users"
-msgstr ""
+msgstr "Pozwól na natychmiastowy dostęp przez 20 minut dla nowych użytkowników"
 
 #: config_form.php:113
 msgid "Require ReCaptcha?"
@@ -115,6 +122,12 @@ msgstr ""
 
 #: config_form.php:116
 msgid "Check this to require passing a ReCaptcha test when registering"
+msgstr ""
+
+#: config_form.php:131
+msgid ""
+"You have not set up ReCaptcha keys in the security settings. We strongly "
+"recommend using ReCaptcha to prevent spam account creation."
 msgstr ""
 
 #: controllers/UserController.php:55
@@ -142,35 +155,40 @@ msgid ""
 " your account, you will be able to log in."
 msgstr ""
 
-#: controllers/UserController.php:115
+#: controllers/UserController.php:113
 msgid "Incorrect password"
 msgstr ""
 
-#: controllers/UserController.php:161
+#: controllers/UserController.php:155
 msgid ""
 "Please check the email we just sent you for the next steps! You're almost "
 "there!"
 msgstr ""
 
-#: controllers/UserController.php:165
+#: controllers/UserController.php:159
 msgid "Invalid token"
 msgstr "Nieprawidłowy token"
 
-#: controllers/UserController.php:210 views/public/user/update-account.php:4
+#: controllers/UserController.php:204 views/public/user/update-account.php:4
 msgid "Password again for match"
 msgstr ""
 
-#: controllers/UserController.php:220
+#: controllers/UserController.php:214
 msgid "Please verify you're a human"
 msgstr ""
 
-#: controllers/UserController.php:232
+#: controllers/UserController.php:220
+msgid "Update"
+msgstr "Aktualizuj"
+
+#: controllers/UserController.php:231
 #, php-format
 msgid "Thanks for joining %s!"
 msgstr ""
 
 #: controllers/UserController.php:234
-msgid "You can now log in using the password you chose."
+#, php-format
+msgid "You can now log into %s using the password you chose."
 msgstr ""
 
 #: controllers/UserController.php:236
@@ -179,21 +197,21 @@ msgid ""
 "message that you can use to log in with the password you chose."
 msgstr ""
 
-#: controllers/UserController.php:238
+#: controllers/UserController.php:239
 #, php-format
 msgid "Registration for %s"
 msgstr ""
 
-#: controllers/UserController.php:252
+#: controllers/UserController.php:253
 #, php-format
 msgid "Your request to join %s"
 msgstr ""
 
-#: controllers/UserController.php:253
+#: controllers/UserController.php:254
 msgid "this link"
 msgstr ""
 
-#: controllers/UserController.php:253
+#: controllers/UserController.php:254
 #, php-format
 msgid ""
 "You have registered for an account on %s. Please confirm your registration "
@@ -201,33 +219,81 @@ msgid ""
 "email."
 msgstr ""
 
-#: controllers/UserController.php:266
+#: controllers/UserController.php:257
+#, php-format
+msgid ""
+"You have temporary access to %s for twenty minutes. You will need to confirm"
+" your request to join after that time."
+msgstr ""
+
+#: controllers/UserController.php:271
 #, php-format
 msgid "New request to join %s"
 msgstr ""
 
-#: controllers/UserController.php:267
+#: controllers/UserController.php:272
 #, php-format
 msgid "A new user has confirmed that they want to join %s : %s"
-msgstr ""
+msgstr "Nowy użytkownik potwierdził, że chce dołączyć do %s : %s"
+
+#: controllers/UserController.php:275
+#, php-format
+msgid "%s has temporary access to the site."
+msgstr "%s ma tymczasowy dostęp do strony."
+
+#: controllers/UserController.php:277
+#, php-format
+msgid ""
+"You will need to make the user active and save the changes to complete "
+"registration for %s."
+msgstr "Musisz aktywować użytkownika %s i zapisać zmiany by dokończyć rejestrację."
+
+#: views/admin/user/browse.php:45
+msgid "Usernames"
+msgstr "Nazwy użytkowników"
+
+#: views/admin/user/browse.php:46
+msgid "Real names"
+msgstr "Imię i nazwisko"
+
+#: views/admin/user/browse.php:47
+msgid "Email addresses"
+msgstr "Adres email"
+
+#: views/admin/user/browse.php:62
+#, php-format
+msgid "%s"
+msgstr "%s"
+
+#: views/admin/user/browse.php:66
+msgid "Active"
+msgstr "Aktywny"
+
+#: views/admin/user/browse.php:69
+msgid "Not Active"
+msgstr "Nie aktywny"
+
+#: views/admin/user/browse.php:80
+msgid "ID"
+msgstr "ID"
+
+#: views/admin/user/browse.php:82
+msgid "Real Name"
+msgstr "Imię i nazwisko"
 
 #: views/public/user/confirm.php:2
 msgid "Confirmation Error"
-msgstr ""
-
-#: views/public/user/me.php:10
-msgid "Browse and manage your work here."
-msgstr ""
+msgstr "Błąd potwierdzenia"
 
 #: views/public/user/stale-token.php:2
 msgid "Stale Token"
-msgstr ""
+msgstr "Przeterminowany token"
 
 #: views/public/user/stale-token.php:9
 msgid ""
 "Your temporary access to the site has expired. Please check your email for "
 "the link to follow to confirm your registration."
-msgstr ""
+msgstr "Twój tymczasowy dostęp do strony dobiegł końca. Link do potwierdzenia rejestracji został przesłany na podany adres email. Prosimy o sprawdzenie."
 
 #: views/public/user/stale-token.php:11
 msgid "You have been logged out, but can continue browsing the site."
@@ -235,7 +301,7 @@ msgstr "Zostaniesz wylogowany, ale możesz dalej przeglądać stronę."
 
 #: views/public/user/update-account.php:5
 msgid "Passwords match!"
-msgstr ""
+msgstr "Hasła zgadzają się!"
 
 #: views/public/user/update-account.php:6
 msgid "Passwords do not match!"
@@ -243,4 +309,4 @@ msgstr "Hasła nie pasują do siebie!"
 
 #: views/public/user/update-account.php:13
 msgid "Update Account"
-msgstr ""
+msgstr "Aktualizuj konto"

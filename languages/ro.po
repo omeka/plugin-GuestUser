@@ -3,125 +3,126 @@
 # This file is distributed under the same license as the Omeka package.
 # 
 # Translators:
-# 72d2c1bc1be92c9fcf9a3bc8e046413f_fd3c651 <2bf4953ea485be2620221690b3005e74_204966>, 2014
+# Doru  DEACONU <dumitrudeaconu@yahoo.com>, 2014
+# Nicolaie Constantinescu <kosson@gmail.com>, 2015,2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Omeka Classic\n"
 "Report-Msgid-Bugs-To: http://github.com/omeka/plugin-GuestUser/issues\n"
 "POT-Creation-Date: 2012-01-09 21:49-0500\n"
-"PO-Revision-Date: 2017-09-20 05:39+0000\n"
-"Last-Translator: John Flatness <john@zerocrates.org>\n"
-"Language-Team: Icelandic (http://www.transifex.com/omeka/omeka/language/is/)\n"
+"PO-Revision-Date: 2017-09-23 19:01+0000\n"
+"Last-Translator: Nicolaie Constantinescu <kosson@gmail.com>\n"
+"Language-Team: Romanian (http://www.transifex.com/omeka/omeka/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: is\n"
-"Plural-Forms: nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);\n"
+"Language: ro\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
 msgid "Guest"
-msgstr "Gestur"
+msgstr "Oaspete"
 
 #: GuestUserPlugin.php:74 GuestUserPlugin.php:216
 msgid "Login"
-msgstr "Skrá inn"
+msgstr "Login"
 
 #: GuestUserPlugin.php:75 GuestUserPlugin.php:217
 #: controllers/UserController.php:222 views/public/user/register.php:6
 msgid "Register"
-msgstr "Skráning"
+msgstr "Înregistrare"
 
 #: GuestUserPlugin.php:76 GuestUserPlugin.php:235
 msgid "My Account"
-msgstr "Reikningurinn minn"
+msgstr "Contul meu"
 
 #: GuestUserPlugin.php:193
 msgid "Guest Users"
-msgstr ""
+msgstr "Utilizatori oaspeți"
 
 #: GuestUserPlugin.php:239
 msgid "Update account info and password"
-msgstr "Uppfæra upplýsingar um reikning og lykilorð"
+msgstr "Actualizează informațiile privind contul și parola"
 
 #: GuestUserPlugin.php:252
 #, php-format
 msgid "Your %s account"
-msgstr "%s reikningurinn þinn"
+msgstr "Contul personal %s"
 
 #: GuestUserPlugin.php:254
 #, php-format
 msgid ""
 "An admin has made your account on %s active. You can now log in to with your"
 " password at this link:"
-msgstr ""
+msgstr "Un administrator ți-a făcut contul %s activ. Te poți loga cu parola la următorul link:"
 
 #: config_form.php:5
 msgid "Registration Features"
-msgstr ""
+msgstr "Detalii de înregistrare"
 
 #: config_form.php:8
 msgid ""
 "Add some text to the registration screen so people will know what they get for registering.\n"
 "        As you enable and configure plugins that make use of the guest user, please give them guidance\n"
 "        about what they can and cannot do."
-msgstr ""
+msgstr "Adaugă ceva text la ecranul de înregistrare pentru ca oamenii să știe ce obțin dacă se înregistrează.\nPe măsură ce activezi și configurezi pluginuri care fac uz de utilizatorul oaspete, oferiți-le ghidaj\ndespre ce pot face și ce nu pot face."
 
 #: config_form.php:21
 msgid "Short Registration Features"
-msgstr ""
+msgstr "Caracteristici ale înregistrării pe scurt"
 
 #: config_form.php:24
 msgid ""
 "Add a shorter version to use as a dropdown from the user bar. If empty, no "
 "dropdown will appear."
-msgstr ""
+msgstr "Adaugă o versiune prescurtată pentru a fi utilizată ca un dropdown in bara utilizatorului. Dacă este goală, nu va apărea niciun dropdown."
 
 #: config_form.php:34
 msgid "Dashboard Label"
-msgstr ""
+msgstr "Eticheta panoului"
 
 #: config_form.php:37
 msgid "The text to use for the label on the user's dashboard"
-msgstr ""
+msgstr "Textul care va fi utilizat în panoul utilizatorului"
 
 #: config_form.php:46
 msgid "Login Text"
-msgstr ""
+msgstr "Textul de logare"
 
 #: config_form.php:49
 msgid "The text to use for the 'Login' link in the user bar"
-msgstr ""
+msgstr "Textul folosit pentru linkul de Login din bara utilizatorului"
 
 #: config_form.php:58
 msgid "Register Text"
-msgstr ""
+msgstr "Textul de înregistrare"
 
 #: config_form.php:61
 msgid "The text to use for the 'Register' link in the user bar."
-msgstr ""
+msgstr "Textul folosit pentru linkul Înregistrează-te din bara utilizatorului"
 
 #: config_form.php:71
 msgid "Allow open registration?"
-msgstr "Leyfa opna skráningu?"
+msgstr "Permiți înregistrarea deschisă?"
 
 #: config_form.php:74
 msgid "Allow guest user registration without administrator approval?"
-msgstr "Leyfa skráningu gestanotanda án leyfis stjórnanda?"
+msgstr "Permiți înregistrarea oaspeților fără aprobarea administratorului?"
 
 #: config_form.php:92
 msgid "Allow instant access?"
-msgstr "Leyfa skyndiaðgang?"
+msgstr "Permiți accesul instantaneu?"
 
 #: config_form.php:95
 msgid "Allow instant access for 20 minutes for new users"
-msgstr "Leyfa skyndiaðgang í 20 mínútur fyrir nýja notendur"
+msgstr "Permite accesul instantaneu pentru 20 de minute pentru utilizatorii noi"
 
 #: config_form.php:113
 msgid "Require ReCaptcha?"
-msgstr ""
+msgstr "Ceri ReCaptcha?"
 
 #: config_form.php:116
 msgid "Check this to require passing a ReCaptcha test when registering"
-msgstr ""
+msgstr "Bifează asta pentru a cere să fie trecut testul ReCaptcha la momentul înregistrării"
 
 #: config_form.php:131
 msgid ""
@@ -132,7 +133,7 @@ msgstr ""
 #: controllers/UserController.php:55
 #, php-format
 msgid "Failed login attempt from %s"
-msgstr "Ekki tókst að skrá inn úr %s"
+msgstr ""
 
 #: controllers/UserController.php:62
 msgid ""
@@ -156,7 +157,7 @@ msgstr ""
 
 #: controllers/UserController.php:113
 msgid "Incorrect password"
-msgstr "Rangt lykilorð"
+msgstr "Parolă incorectă"
 
 #: controllers/UserController.php:155
 msgid ""
@@ -166,24 +167,24 @@ msgstr ""
 
 #: controllers/UserController.php:159
 msgid "Invalid token"
-msgstr ""
+msgstr "Token nevalid"
 
 #: controllers/UserController.php:204 views/public/user/update-account.php:4
 msgid "Password again for match"
-msgstr "Sláið aftur inn lykilorði"
+msgstr "Introdu din nou parola pentru verificare"
 
 #: controllers/UserController.php:214
 msgid "Please verify you're a human"
-msgstr "Vinsamlegast staðfestur að þú ert manneskja"
+msgstr "Ești om sau automat?"
 
 #: controllers/UserController.php:220
 msgid "Update"
-msgstr ""
+msgstr "Actualizează"
 
 #: controllers/UserController.php:231
 #, php-format
 msgid "Thanks for joining %s!"
-msgstr ""
+msgstr "Bine ai venit la %s!"
 
 #: controllers/UserController.php:234
 #, php-format
@@ -199,16 +200,16 @@ msgstr ""
 #: controllers/UserController.php:239
 #, php-format
 msgid "Registration for %s"
-msgstr "Skráning fyrir %s"
+msgstr ""
 
 #: controllers/UserController.php:253
 #, php-format
 msgid "Your request to join %s"
-msgstr ""
+msgstr "Cererea ta de înregistrare la %s"
 
 #: controllers/UserController.php:254
 msgid "this link"
-msgstr "þessi hlekkur"
+msgstr "acest link"
 
 #: controllers/UserController.php:254
 #, php-format
@@ -216,7 +217,7 @@ msgid ""
 "You have registered for an account on %s. Please confirm your registration "
 "by following %s.  If you did not request to join %s please disregard this "
 "email."
-msgstr ""
+msgstr "Te-ai înregistrat la %s. Confirmă urmând %s. Dacă nu este de la tine solicitarea pentru înscrierea la %s, te rog ignoră acest email."
 
 #: controllers/UserController.php:257
 #, php-format
@@ -233,7 +234,7 @@ msgstr ""
 #: controllers/UserController.php:272
 #, php-format
 msgid "A new user has confirmed that they want to join %s : %s"
-msgstr "Nýr notandi hefur staðfest beiðnin um aðgang að %s : %s"
+msgstr ""
 
 #: controllers/UserController.php:275
 #, php-format
@@ -249,44 +250,44 @@ msgstr ""
 
 #: views/admin/user/browse.php:45
 msgid "Usernames"
-msgstr ""
+msgstr "Nume de utilizatori"
 
 #: views/admin/user/browse.php:46
 msgid "Real names"
-msgstr ""
+msgstr "Nume reale"
 
 #: views/admin/user/browse.php:47
 msgid "Email addresses"
-msgstr ""
+msgstr "Adrese de email"
 
 #: views/admin/user/browse.php:62
 #, php-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: views/admin/user/browse.php:66
 msgid "Active"
-msgstr ""
+msgstr "Activ"
 
 #: views/admin/user/browse.php:69
 msgid "Not Active"
-msgstr ""
+msgstr "Inactiv"
 
 #: views/admin/user/browse.php:80
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: views/admin/user/browse.php:82
 msgid "Real Name"
-msgstr ""
+msgstr "Nume real"
 
 #: views/public/user/confirm.php:2
 msgid "Confirmation Error"
-msgstr ""
+msgstr "Eroare de confirmare"
 
 #: views/public/user/stale-token.php:2
 msgid "Stale Token"
-msgstr ""
+msgstr "Token oprit"
 
 #: views/public/user/stale-token.php:9
 msgid ""
@@ -300,12 +301,12 @@ msgstr ""
 
 #: views/public/user/update-account.php:5
 msgid "Passwords match!"
-msgstr "Aðgangsorð stemma!"
+msgstr "Parolele se potrivesc!"
 
 #: views/public/user/update-account.php:6
 msgid "Passwords do not match!"
-msgstr "Aðgangsorð stemma ekki!"
+msgstr "Parolele nu se potrivesc!"
 
 #: views/public/user/update-account.php:13
 msgid "Update Account"
-msgstr "Uppfærið reikning"
+msgstr "Actualizează contul"

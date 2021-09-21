@@ -3,49 +3,49 @@
 # This file is distributed under the same license as the Omeka package.
 # 
 # Translators:
-# 72d2c1bc1be92c9fcf9a3bc8e046413f_fd3c651 <2bf4953ea485be2620221690b3005e74_204966>, 2014
+# Rivo Zängov <eraser@eraser.ee>, 2015-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Omeka Classic\n"
 "Report-Msgid-Bugs-To: http://github.com/omeka/plugin-GuestUser/issues\n"
 "POT-Creation-Date: 2012-01-09 21:49-0500\n"
-"PO-Revision-Date: 2017-09-20 05:39+0000\n"
-"Last-Translator: John Flatness <john@zerocrates.org>\n"
-"Language-Team: Icelandic (http://www.transifex.com/omeka/omeka/language/is/)\n"
+"PO-Revision-Date: 2017-09-19 19:06+0000\n"
+"Last-Translator: Rivo Zängov <eraser@eraser.ee>\n"
+"Language-Team: Estonian (http://www.transifex.com/omeka/omeka/language/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: is\n"
-"Plural-Forms: nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);\n"
+"Language: et\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Guest"
-msgstr "Gestur"
+msgstr "Külaline"
 
 #: GuestUserPlugin.php:74 GuestUserPlugin.php:216
 msgid "Login"
-msgstr "Skrá inn"
+msgstr "Logi sisse"
 
 #: GuestUserPlugin.php:75 GuestUserPlugin.php:217
 #: controllers/UserController.php:222 views/public/user/register.php:6
 msgid "Register"
-msgstr "Skráning"
+msgstr "Registreeru"
 
 #: GuestUserPlugin.php:76 GuestUserPlugin.php:235
 msgid "My Account"
-msgstr "Reikningurinn minn"
+msgstr "Minu konto"
 
 #: GuestUserPlugin.php:193
 msgid "Guest Users"
-msgstr ""
+msgstr "Külalised"
 
 #: GuestUserPlugin.php:239
 msgid "Update account info and password"
-msgstr "Uppfæra upplýsingar um reikning og lykilorð"
+msgstr "Uuenda konto infot ja parooli"
 
 #: GuestUserPlugin.php:252
 #, php-format
 msgid "Your %s account"
-msgstr "%s reikningurinn þinn"
+msgstr "Sinu %s konto"
 
 #: GuestUserPlugin.php:254
 #, php-format
@@ -56,7 +56,7 @@ msgstr ""
 
 #: config_form.php:5
 msgid "Registration Features"
-msgstr ""
+msgstr "Registreerumise funktsiionid"
 
 #: config_form.php:8
 msgid ""
@@ -77,51 +77,51 @@ msgstr ""
 
 #: config_form.php:34
 msgid "Dashboard Label"
-msgstr ""
+msgstr "Töölaua silt"
 
 #: config_form.php:37
 msgid "The text to use for the label on the user's dashboard"
-msgstr ""
+msgstr "Tekst, mida kasutatakse kasutaja töölaua sildil"
 
 #: config_form.php:46
 msgid "Login Text"
-msgstr ""
+msgstr "Sisselogimise tekst"
 
 #: config_form.php:49
 msgid "The text to use for the 'Login' link in the user bar"
-msgstr ""
+msgstr "Tekst, mida kasutatakse 'Logi sisse' lingina kasutajaribal"
 
 #: config_form.php:58
 msgid "Register Text"
-msgstr ""
+msgstr "Registrerumise tekst"
 
 #: config_form.php:61
 msgid "The text to use for the 'Register' link in the user bar."
-msgstr ""
+msgstr "Tekst, mida kasutatakse 'Registreeru' lingina kasutajaribal"
 
 #: config_form.php:71
 msgid "Allow open registration?"
-msgstr "Leyfa opna skráningu?"
+msgstr "Lubada avatud registreeruimine?"
 
 #: config_form.php:74
 msgid "Allow guest user registration without administrator approval?"
-msgstr "Leyfa skráningu gestanotanda án leyfis stjórnanda?"
+msgstr "Kas külalised saavad registreeruda ilma administraatori heakskiiduta?"
 
 #: config_form.php:92
 msgid "Allow instant access?"
-msgstr "Leyfa skyndiaðgang?"
+msgstr "Lubada kohene ligipääs?"
 
 #: config_form.php:95
 msgid "Allow instant access for 20 minutes for new users"
-msgstr "Leyfa skyndiaðgang í 20 mínútur fyrir nýja notendur"
+msgstr "Luba uutele kasutajatele kohe ligipääs 20 minutiks"
 
 #: config_form.php:113
 msgid "Require ReCaptcha?"
-msgstr ""
+msgstr "Nõuda ReCaptcha kasutamist?"
 
 #: config_form.php:116
 msgid "Check this to require passing a ReCaptcha test when registering"
-msgstr ""
+msgstr "Märgi see valik, et nõuda registreerumisel ReCaptcha testi läbimist"
 
 #: config_form.php:131
 msgid ""
@@ -132,7 +132,7 @@ msgstr ""
 #: controllers/UserController.php:55
 #, php-format
 msgid "Failed login attempt from %s"
-msgstr "Ekki tókst að skrá inn úr %s"
+msgstr ""
 
 #: controllers/UserController.php:62
 msgid ""
@@ -156,59 +156,59 @@ msgstr ""
 
 #: controllers/UserController.php:113
 msgid "Incorrect password"
-msgstr "Rangt lykilorð"
+msgstr "Vale parool"
 
 #: controllers/UserController.php:155
 msgid ""
 "Please check the email we just sent you for the next steps! You're almost "
 "there!"
-msgstr ""
+msgstr "Palun vaata kirja järgmiste sammude kohta, mille me sulle just saatsime! Sa oled juba peaaegu kohal!"
 
 #: controllers/UserController.php:159
 msgid "Invalid token"
-msgstr ""
+msgstr "Vigane kontrollkood"
 
 #: controllers/UserController.php:204 views/public/user/update-account.php:4
 msgid "Password again for match"
-msgstr "Sláið aftur inn lykilorði"
+msgstr "Parooli kordamine ei kattu"
 
 #: controllers/UserController.php:214
 msgid "Please verify you're a human"
-msgstr "Vinsamlegast staðfestur að þú ert manneskja"
+msgstr "Palun kinnita, et sa oled inimene"
 
 #: controllers/UserController.php:220
 msgid "Update"
-msgstr ""
+msgstr "Uuenda"
 
 #: controllers/UserController.php:231
 #, php-format
 msgid "Thanks for joining %s!"
-msgstr ""
+msgstr "Täname, et liitusid saidiga %s!"
 
 #: controllers/UserController.php:234
 #, php-format
 msgid "You can now log into %s using the password you chose."
-msgstr ""
+msgstr "Sa võid nüüd saidile %s sisse logida kasutades oma valitud parooli."
 
 #: controllers/UserController.php:236
 msgid ""
 "When an administrator approves your account, you will receive another "
 "message that you can use to log in with the password you chose."
-msgstr ""
+msgstr "Kui administraator kiidab sinu kasutajakonto heaks, siis saadetakse sulle kiri, et sa võid oma valitud parooliga sisse logida."
 
 #: controllers/UserController.php:239
 #, php-format
 msgid "Registration for %s"
-msgstr "Skráning fyrir %s"
+msgstr ""
 
 #: controllers/UserController.php:253
 #, php-format
 msgid "Your request to join %s"
-msgstr ""
+msgstr "Uus soov registreeruda saidil %s"
 
 #: controllers/UserController.php:254
 msgid "this link"
-msgstr "þessi hlekkur"
+msgstr "see link"
 
 #: controllers/UserController.php:254
 #, php-format
@@ -228,61 +228,61 @@ msgstr ""
 #: controllers/UserController.php:271
 #, php-format
 msgid "New request to join %s"
-msgstr ""
+msgstr "Uus soov registreeruda saidil %s"
 
 #: controllers/UserController.php:272
 #, php-format
 msgid "A new user has confirmed that they want to join %s : %s"
-msgstr "Nýr notandi hefur staðfest beiðnin um aðgang að %s : %s"
+msgstr "Uus kasutaja on kinnitanud, et soovib liituda %s : %s"
 
 #: controllers/UserController.php:275
 #, php-format
 msgid "%s has temporary access to the site."
-msgstr ""
+msgstr "%s on ajutine ligipääs saidile."
 
 #: controllers/UserController.php:277
 #, php-format
 msgid ""
 "You will need to make the user active and save the changes to complete "
 "registration for %s."
-msgstr ""
+msgstr "Sa pead tegema kasutaja aktiivseks ja salvestama muudatused, et lõpetada registreerumine saidil %s."
 
 #: views/admin/user/browse.php:45
 msgid "Usernames"
-msgstr ""
+msgstr "Kasutajanimed"
 
 #: views/admin/user/browse.php:46
 msgid "Real names"
-msgstr ""
+msgstr "Tegelikud nimed"
 
 #: views/admin/user/browse.php:47
 msgid "Email addresses"
-msgstr ""
+msgstr "E-posti aadressid"
 
 #: views/admin/user/browse.php:62
 #, php-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: views/admin/user/browse.php:66
 msgid "Active"
-msgstr ""
+msgstr "Aktiivne"
 
 #: views/admin/user/browse.php:69
 msgid "Not Active"
-msgstr ""
+msgstr "Pole aktiivne"
 
 #: views/admin/user/browse.php:80
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: views/admin/user/browse.php:82
 msgid "Real Name"
-msgstr ""
+msgstr "Tegelik nimi"
 
 #: views/public/user/confirm.php:2
 msgid "Confirmation Error"
-msgstr ""
+msgstr "Kinnitamise viga"
 
 #: views/public/user/stale-token.php:2
 msgid "Stale Token"
@@ -292,20 +292,20 @@ msgstr ""
 msgid ""
 "Your temporary access to the site has expired. Please check your email for "
 "the link to follow to confirm your registration."
-msgstr ""
+msgstr "Sinu ajutine ligipääs saidile on aegunud. Palun kontrolli oma e-posti, et näha linki, millega saad oma registreerumise kinnitada."
 
 #: views/public/user/stale-token.php:11
 msgid "You have been logged out, but can continue browsing the site."
-msgstr ""
+msgstr "Sa oled välja loginud, aga sa võid jätkata saidi sirvimist."
 
 #: views/public/user/update-account.php:5
 msgid "Passwords match!"
-msgstr "Aðgangsorð stemma!"
+msgstr "Paroolid kattuvad!"
 
 #: views/public/user/update-account.php:6
 msgid "Passwords do not match!"
-msgstr "Aðgangsorð stemma ekki!"
+msgstr "Paroolid ei kattu!"
 
 #: views/public/user/update-account.php:13
 msgid "Update Account"
-msgstr "Uppfærið reikning"
+msgstr "Uuenda kontot"
