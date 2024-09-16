@@ -87,6 +87,8 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         $user = current_user();
 
         $form = $this->_getForm(array('user'=>$user));
+        // do not include captcha when updating account - no bot should be able to access this page anyway
+        $form->removeElement('captcha');
         $form->getElement('new_password')->setLabel(__("New Password"));
         $form->getElement('new_password')->setRequired(false);
         $form->getElement('new_password_confirm')->setRequired(false);
