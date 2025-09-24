@@ -1,7 +1,7 @@
 <?php
 $user = current_user();
 $pageTitle =  get_option('guest_user_dashboard_label');
-echo head(array('title' => $pageTitle));
+echo head(array('title' => $pageTitle, 'bodyClass' => 'user-dashboard guest-user'));
 ?>
 <h1><?php echo $pageTitle; ?></h1>
 

@@ -1,7 +1,7 @@
 <?php
 queue_css_file('guest-user');
 $pageTitle = __('Browse Users') . ' ' . __('(%s total)', $total_results);
-echo head(array('title'=>$pageTitle, 'bodyclass'=>'users'));
+echo head(array('title'=>$pageTitle, 'bodyclass'=>'users guest-user'));
 echo flash();
 ?>
 

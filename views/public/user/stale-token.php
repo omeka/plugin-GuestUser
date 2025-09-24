@@ -1,5 +1,5 @@
 <?php
-$head = array('title'=> __('Stale Token'));
+$head = array('title'=> __('Stale Token'), 'bodyClass' => 'stale-token guest-user');
 echo head($head);
 ?>
 <h1><?php echo $head['title']; ?></h1>

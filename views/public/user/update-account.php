@@ -9,7 +9,7 @@ queue_js_string($js);
 queue_js_file('guest-user-password');
 queue_css_file('skeleton');
 $pageTitle = __('Update Account');
-echo head(array('bodyclass' => 'update-account', 'title' => $pageTitle));
+echo head(array('bodyclass' => 'update-account guest-user', 'title' => $pageTitle));
 ?>
 <h1><?php echo $pageTitle; ?></h1>
 <?php echo flash(); ?>
