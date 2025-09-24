@@ -1,4 +1,4 @@
 jQuery('document').ready(function() {
-    var adminBarHeight = jQuery('#admin-bar');
-    jQuery('#guest-user-register-info').css('top', adminBarHeight + 'px');
+    var adminBar = jQuery('#admin-bar');
+    jQuery('#guest-user-register-info').prependTo(adminBar);
 });

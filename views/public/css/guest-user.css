@@ -92,17 +92,9 @@ h2.guest-user-widget-label {
     text-transform: uppercase;
 }
 
-div#guest-user-register-info {
-    background: rgba(0,0,0,0.75);    
-    color: #fff;
-    position:absolute;
-    right: 0;
-    top: 40px;
-    font-family:Arvo, serif !important;
-    font-size: 12px;
-    width: 250px;
-    display: none;
-    padding: 3px;
+#guest-user-register-info {
+    float: left;
+    margin: 0 .5rem;
 }
 
 div.guest-user-widget {
@@ -110,8 +102,7 @@ div.guest-user-widget {
     margin: 0 1.5em 1.5em 0;
     width: 210px;
     height: 200px;
-    overflow: auto;
-    float: left;
+    display: inline-block;
     background-color: white;
 }
 
