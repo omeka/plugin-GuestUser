@@ -5,7 +5,7 @@
 }
 
 #search-users {
-    margin-bottom: 20px;
+    margin-bottom: 20px !important;
 }
 
 #search-users input[type=text] {
