@@ -1,6 +1,6 @@
 <?php
 queue_css_file('guest-user');
-$pageTitle = __('Browse Users') . ' ' . __('(%s total)', $total_results);
+$pageTitle = __('Browse Guest Users') . ' ' . __('(%s total)', $total_results);
 echo head(array('title'=>$pageTitle, 'bodyclass'=>'users guest-user'));
 echo flash();
 ?>
@@ -42,7 +42,7 @@ echo flash();
 
 <div class="browse-controls">
     <form id='search-users' method='GET'>
-    <input type='text' name='search'/>
+    <input type='text' name='search' aria-label="<?php echo __('Search users query'); ?>" />
     <fieldset class="options">
         <label><input type='radio' name='search-type' value='username' checked='checked' /><?php echo __('Usernames'); ?></label>
         <label><input type='radio' name='search-type' value='name' /><?php echo __('Real names'); ?></label>
@@ -51,7 +51,7 @@ echo flash();
     <button type='submit'><?php echo __('Search users'); ?></button>
     </form>
 
-    <select class="quick-filter" name="quick-filter">
+    <select class="quick-filter" name="quick-filter" aria-label="<?php echo __('Quick Filter'); ?>">
         <option value=""><?php echo __("Quick Filter"); ?></option>
         <option value="<?php echo url('guest-user/user/browse'); ?>"><?php echo __("View All"); ?></option>
         <?php foreach(get_user_roles() as $value => $name): ?>
