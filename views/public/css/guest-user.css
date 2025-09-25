@@ -1,23 +1,39 @@
+.guest-user .field label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 10px;
+    margin-bottom: 0;
+    width: 100%;
+}
+
 .guest-user .required-label {
     background-color: #E7E7E7;
     border-radius: 2px;
-    padding: .25rem .5rem;
+    padding: 0 .25rem;
     margin: .25rem 0;
     display: block;
     width: max-content;
     font-weight: normal;
 }
 
-.guest-user .two.columns {
-    width: 20%;
-}
-
-.guest-user .five.columns {
-    width: 50%;
-}
-
 .guest-user .field {
-    display: flow-root;
+    display: flex;
+    gap: 0 1rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.guest-user .field .two.columns {
+    width: 20%;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.guest-user .field .five.columns {
+    width: 50%;
+    margin-left: 0;
+    padding-left: 0;
 }
 
 .guest-user .field .inputs {
@@ -118,4 +134,11 @@ div.guest-user-widget-odd {
 p.explanation {
     margin-top: 0px;
     
+}
+
+@media screen and (max-width: 767px) {
+    .guest-user .two.columns.alpha,
+    .guest-user .five.columns.omega {
+        width: 100%;
+    }
 }
