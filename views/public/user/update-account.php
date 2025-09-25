@@ -7,7 +7,6 @@ var guestUserPasswordsNoMatchText = '" . __("Passwords do not match!") . "'; ";
 
 queue_js_string($js);
 queue_js_file('guest-user-password');
-queue_css_file('skeleton');
 $pageTitle = __('Update Account');
 echo head(array('bodyclass' => 'update-account guest-user', 'title' => $pageTitle));
 ?>

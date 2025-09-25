@@ -1,6 +1,5 @@
 <?php
 queue_js_file('guest-user-password');
-queue_css_file('skeleton');
 $pageTitle = get_option('guest_user_register_text') ? get_option('guest_user_register_text') : __('Register');
 echo head(array('bodyclass' => 'register guest-user', 'title' => $pageTitle));
 ?>
