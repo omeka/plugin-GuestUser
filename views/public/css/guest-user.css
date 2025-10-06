@@ -101,11 +101,11 @@ a#menu-admin-bar-welcome + ul li {
 
 h2.guest-user-widget-label {
     border-bottom: 1px solid rgba(0,0,0,.3);
-    margin: 0;
-    padding: 0 10px;
+    margin: -.5rem -.5rem .5rem;
+    padding: .5rem;
     font-size: 1em;
-    margin-bottom: .75em;
     text-transform: uppercase;
+    line-height: 1.5;
 }
 
 #guest-user-register-info {
@@ -113,27 +113,31 @@ h2.guest-user-widget-label {
     margin: 0 .5rem;
 }
 
+.guest-user-widgets {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+@media screen and (max-width: 767px) {
+    .guest-user-widgets {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 div.guest-user-widget {
     border: 1px solid rgba(0,0,0,.3);
-    margin: 0 1.5em 1.5em 0;
-    width: 210px;
-    height: 200px;
-    display: inline-block;
     background-color: white;
+    padding: .5rem;
 }
 
 div.guest-user-widget ul {
-    padding: 0 10px 0 30px;
+    padding: 0 0 1rem .75rem;
     margin: 0;
-}
-
-div.guest-user-widget-odd {
-    clear:right;
 }
 
 p.explanation {
     margin-top: 0px;
-    
 }
 
 @media screen and (max-width: 767px) {
