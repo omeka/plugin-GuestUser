@@ -90,6 +90,7 @@ a#menu-admin-bar-welcome + ul {
 a#menu-admin-bar-welcome + ul:hover ,
 a#menu-admin-bar-welcome:hover + ul {
     left: -6px;
+    top: 100%;
 }
 
 a#menu-admin-bar-welcome + ul li {
