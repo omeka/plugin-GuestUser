@@ -101,7 +101,7 @@ a#menu-admin-bar-welcome + ul li {
 
 h2.guest-user-widget-label {
     border-bottom: 1px solid rgba(0,0,0,.3);
-    margin: -.5rem -.5rem .5rem;
+    margin: -1rem -1rem 1rem;
     padding: .5rem;
     font-size: 1em;
     text-transform: uppercase;
@@ -119,6 +119,12 @@ h2.guest-user-widget-label {
     gap: 1rem;
 }
 
+.guest-user-widget ul,
+.guest-user-widget p,
+.guest-user-widget > * {
+    margin: 1rem 0;
+}
+
 @media screen and (max-width: 767px) {
     .guest-user-widgets {
         grid-template-columns: repeat(2, 1fr);
@@ -128,12 +134,11 @@ h2.guest-user-widget-label {
 div.guest-user-widget {
     border: 1px solid rgba(0,0,0,.3);
     background-color: white;
-    padding: .5rem;
+    padding: 1rem;
 }
 
 div.guest-user-widget ul {
-    padding: 0 0 1rem .75rem;
-    margin: 0;
+    padding: 0 0 0 .75rem;
 }
 
 p.explanation {
