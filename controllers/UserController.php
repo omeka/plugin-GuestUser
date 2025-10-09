@@ -205,7 +205,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
         );
         $form->addElement('password', 'new_password_confirm',
                         array(
-                                'label'         => __('Re-type the Password'),
+                                'label'         => __('Repeat New Password'),
                                 'required'      => true,
                                 'class'         => 'textinput',
                                 'errorMessages' => array(__('New password must be typed correctly twice.'))
