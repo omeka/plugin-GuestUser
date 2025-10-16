@@ -86,6 +86,10 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
     {
         $user = current_user();
 
+        if(!$user) {
+            $this->redirect('users/login');
+        }
+
         $form = $this->_getForm(array('user'=>$user));
         $form->getElement('new_password')->setLabel(__("New Password"));
         $form->getElement('new_password')->setRequired(false);
@@ -127,7 +131,7 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
     {
         $user = current_user();
         if(!$user) {
-            $this->redirect('/');
+            $this->redirect('users/login');
         }
         $widgets = array();
         $widgets = apply_filters('guest_user_widgets', $widgets);
