@@ -83,13 +83,14 @@ a#menu-admin-bar-welcome + ul {
     z-index: 10000;
     padding-left: 3px;
     left: -9999px;
-    width: 125%;
+    width: 100%;
 }
 
 a#menu-admin-bar-welcome + ul:hover ,
 a#menu-admin-bar-welcome:hover + ul {
     left: -6px;
     top: 100%;
+    padding: 12px 6px;
 }
 
 a#menu-admin-bar-welcome + ul li {
