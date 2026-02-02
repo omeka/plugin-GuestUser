@@ -112,6 +112,7 @@ h2.guest-user-widget-label {
 #guest-user-register-info {
     float: left;
     margin: 0 .5rem;
+    line-height: 1.5;
 }
 
 .guest-user-widgets {
