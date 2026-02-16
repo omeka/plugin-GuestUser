@@ -118,7 +118,9 @@ class GuestUser_UserController extends Omeka_Controller_AbstractActionController
             return;
         }
 
-        $user->setPassword($_POST['new_password']);
+        if (trim($_POST['new_password'])) {
+            $user->setPassword($_POST['new_password']);
+        }
         $user->setPostData($_POST);
         try {
             $user->save($_POST);
